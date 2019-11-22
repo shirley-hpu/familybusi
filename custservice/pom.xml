@@ -34,7 +34,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.4.13</version>
+            <version>3.4.14</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.netty</groupId>
