@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.ConUserRelMapper">
+
+
+    <sql id="Base_Column_List">
+    SERV_ACCT_ID, CONTRACT_NO, ID_NO, PAY_TYPE, PAY_VALUE, CHKOUT_PRI, BILL_ORDER, EFF_DATE, 
+    EXP_DATE, FINISH_FLAG, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, DATE_CYCLE,RATE_FLAG,cycle_type
+    </sql>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.ConUserRel">
+        insert into cs_conuserrel_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="servAcctId != null">
+                SERV_ACCT_ID,
+            </if>
+            <if test="contractNo != null">
+                CONTRACT_NO,
+            </if>
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="payType != null">
+                PAY_TYPE,
+            </if>
+            <if test="payValue != null">
+                PAY_VALUE,
+            </if>
+            <if test="chkoutPri != null">
+                CHKOUT_PRI,
+            </if>
+            <if test="billOrder != null">
+                BILL_ORDER,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="dateCycle != null">
+                DATE_CYCLE,
+            </if>
+            <if test="rateFlag != null">
+                RATE_FLAG,
+            </if>
+            <if test="cycleType != null">
+                cycle_type,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="servAcctId != null">
+                #{servAcctId,jdbcType=DECIMAL},
+            </if>
+            <if test="contractNo != null">
+                #{contractNo,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=VARCHAR},
+            </if>
+            <if test="payValue != null">
+                #{payValue,jdbcType=DECIMAL},
+            </if>
+            <if test="chkoutPri != null">
+                #{chkoutPri,jdbcType=DECIMAL},
+            </if>
+            <if test="billOrder != null">
+                #{billOrder,jdbcType=DECIMAL},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="dateCycle != null">
+                #{dateCycle,jdbcType=DECIMAL},
+            </if>
+            <if test="rateFlag != null">
+                #{rateFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="cycleType != null">
+                #{cycleType,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.ConUserRel">
+        insert into cs_conuserrel_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="servAcctId != null">
+                SERV_ACCT_ID,
+            </if>
+            <if test="contractNo != null">
+                CONTRACT_NO,
+            </if>
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="payType != null">
+                PAY_TYPE,
+            </if>
+            <if test="payValue != null">
+                PAY_VALUE,
+            </if>
+            <if test="chkoutPri != null">
+                CHKOUT_PRI,
+            </if>
+            <if test="billOrder != null">
+                BILL_ORDER,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="dateCycle != null">
+                DATE_CYCLE,
+            </if>
+            <if test="rateFlag != null">
+                RATE_FLAG,
+            </if>
+            <if test="cycleType != null">
+                cycle_type,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="servAcctId != null">
+                #{servAcctId,jdbcType=DECIMAL},
+            </if>
+            <if test="contractNo != null">
+                #{contractNo,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=VARCHAR},
+            </if>
+            <if test="payValue != null">
+                #{payValue,jdbcType=DECIMAL},
+            </if>
+            <if test="chkoutPri != null">
+                #{chkoutPri,jdbcType=DECIMAL},
+            </if>
+            <if test="billOrder != null">
+                #{billOrder,jdbcType=DECIMAL},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="dateCycle != null">
+                #{dateCycle,jdbcType=DECIMAL},
+            </if>
+            <if test="rateFlag != null">
+                #{rateFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="cycleType != null">
+                #{cycleType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="drop" parameterType="ConUserRel">
+        delete from cs_conuserrel_info
+        where SERV_ACCT_ID = #{servAcctId,jdbcType=DECIMAL}
+    </delete>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.ConUserRel">
+        update cs_conuserrel_info
+        <set>
+            <if test="payType != null">
+                PAY_TYPE = #{payType,jdbcType=VARCHAR},
+            </if>
+            <if test="payValue != null">
+                PAY_VALUE = #{payValue,jdbcType=DECIMAL},
+            </if>
+            <if test="chkoutPri != null">
+                CHKOUT_PRI = #{chkoutPri,jdbcType=DECIMAL},
+            </if>
+            <if test="billOrder != null">
+                BILL_ORDER = #{billOrder,jdbcType=DECIMAL},
+            </if>
+            <if test="effDate != null">
+                EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="dateCycle != null">
+                DATE_CYCLE = #{dateCycle,jdbcType=DECIMAL},
+            </if>
+            <if test="rateFlag != null">
+                RATE_FLAG = #{rateFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="cycleType != null">
+                cycle_type = #{cycleType,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where SERV_ACCT_ID = #{servAcctId,jdbcType=DECIMAL}
+    </update>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_conuserrel_info
+        where SERV_ACCT_ID = #{servAcctId,jdbcType=DECIMAL}
+    </select>
+
+    <select id="qryContractRltList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_conuserrel_info
+        <where>
+            <if test="params.servAcctId != null and params.servAcctId != ''">
+                SERV_ACCT_ID = #{params.servAcctId}
+            </if>
+            <if test="params.contractNo != null and params.contractNo != ''">
+                AND CONTRACT_NO = #{params.contractNo}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.payType != null and params.payType != ''">
+                AND PAY_TYPE = #{params.payType}
+            </if>
+            <if test="params.payValue != null and params.payValue != ''">
+                AND PAY_VALUE = #{params.payValue}
+            </if>
+            <if test="params.chkoutPri != null and params.chkoutPri != ''">
+                AND CHKOUT_PRI = #{params.chkoutPri}
+            </if>
+            <if test="params.billOrder != null and params.billOrder != ''">
+                AND BILL_ORDER = #{params.billOrder}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.remark != null and params.remark != ''">
+                AND REMARK = #{params.remark}
+            </if>
+            <if test="params.dateCycle != null and params.dateCycle != ''">
+                AND DATE_CYCLE = #{params.dateCycle}
+            </if>
+            <if test="params.rateFlag != null and params.rateFlag != ''">
+                AND RATE_FLAG = #{params.rateFlag}
+            </if>
+            <if test="params.cycleType != null and params.cycleType != ''">
+                AND cycle_type = #{params.cycleType}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryContractRltHisList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        SERV_ACCT_ID, CONTRACT_NO, ID_NO, PAY_TYPE, PAY_VALUE, CHKOUT_PRI, BILL_ORDER, EFF_DATE,
+        EXP_DATE, FINISH_FLAG, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK,
+        DATE_CYCLE,RATE_FLAG,cycle_type,UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from cs_conuserrel_info_his
+        <where>
+            <if test="inparams.servAcctId != null and inparams.servAcctId != ''">
+                SERV_ACCT_ID = #{inparams.servAcctId}
+            </if>
+            <if test="inparams.contractNo != null and inparams.contractNo != ''">
+                AND CONTRACT_NO = #{inparams.contractNo}
+            </if>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                AND ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.payType != null and inparams.payType != ''">
+                AND PAY_TYPE = #{inparams.payType}
+            </if>
+            <if test="inparams.payValue != null and inparams.payValue != ''">
+                AND PAY_VALUE = #{inparams.payValue}
+            </if>
+            <if test="inparams.chkoutPri != null and inparams.chkoutPri != ''">
+                AND CHKOUT_PRI = #{inparams.chkoutPri}
+            </if>
+            <if test="inparams.billOrder != null and inparams.billOrder != ''">
+                AND BILL_ORDER = #{inparams.billOrder}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.remark != null and inparams.remark != ''">
+                AND REMARK = #{inparams.remark}
+            </if>
+            <if test="inparams.dateCycle != null and inparams.dateCycle != ''">
+                AND DATE_CYCLE = #{inparams.dateCycle}
+            </if>
+            <if test="inparams.rateFlag != null and inparams.rateFlag != ''">
+                AND RATE_FLAG = #{inparams.rateFlag}
+            </if>
+            <if test="inparams.cycleType != null and inparams.cycleType != ''">
+                AND cycle_type = #{inparams.cycleType}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.ConUserRel">
+        update cs_conuserrel_info
+        <set>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE ID_NO = #{idNo,jdbcType=DECIMAL}
+    </update>
+
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.ConUserRel">
+        <id column="SERV_ACCT_ID" property="servAcctId" jdbcType="DECIMAL"/>
+        <result column="CONTRACT_NO" property="contractNo" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="PAY_TYPE" property="payType" jdbcType="VARCHAR"/>
+        <result column="PAY_VALUE" property="payValue" jdbcType="DECIMAL"/>
+        <result column="CHKOUT_PRI" property="chkoutPri" jdbcType="DECIMAL"/>
+        <result column="BILL_ORDER" property="billOrder" jdbcType="DECIMAL"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="DATE_CYCLE" property="dateCycle" jdbcType="DECIMAL"/>
+        <result column="RATE_FLAG" property="rateFlag" jdbcType="VARCHAR"/>
+        <result column="cycle_type" property="cycleType" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

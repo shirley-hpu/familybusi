@@ -1,0 +1,33 @@
+{
+    "ROOT":{
+        "BODY":{
+            "DETAIL_MSG":"OK",
+            "OUT_DATA":{
+                "DISCOUNTINFOLIST":[
+                    {
+                        "DISCOUNT_NAME":"优惠规则一：家长资费享受8折优惠"
+                    },
+                    {
+                        "DISCOUNT_NAME":"优惠规则二：家庭套餐前三个月价格直降至50元/月"
+                    },
+                    {
+                        "DISCOUNT_NAME":"优惠规则三：这是调用接口返回的数据"
+                    }
+                ]
+            },
+            "PROMPT_MSG":"",
+            "REQUEST_ID":"20190815152351518_10633_33",
+            "RETURN_CODE":"0",
+            "RETURN_MSG":"OK",
+            "RUN_IP":"172.18.232.69",
+            "USER_MSG":"OK"
+        },
+        "HEADER":{
+            "DB_ID":"A1",
+            "ROUTING":{
+                "ROUTE_KEY":"14",
+                "ROUTE_VALUE":"aan70W"
+            }
+        }
+    }
+}

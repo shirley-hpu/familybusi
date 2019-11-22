@@ -1,0 +1,79 @@
+spring:
+  #整合mybatis数据源
+  datasource:
+    password: dbfamilyadm
+    username: dbfamilyadm
+    url: jdbc:mysql://172.18.231.40:8066/family_center?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  main:
+    allow-bean-definition-overriding: true
+
+#mybatis配置  独立节点
+mybatis:
+  #实体类对应的包
+  type-aliases-package: com.sitech.family.compservice.dto
+  #mapper文件的位置 mapperLocations指的路径是src/main/resources
+  mapper-locations: classpath:mybatismapper/*.xml
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#日志级别
+logging:
+  level:
+    com.sitech.family.compservice: debug
+    com:
+      bes:
+        enterprise:
+          web:
+            crane:
+              http11: debug
+
+jcf:
+  core:
+    databind-json-type: fastjson
+    bean:
+      bean-scan-packages: com.sitech.**
+  callee:
+    a:
+      inter-class-or-svc-names: com_sitech_pgmng_atom_inter_IAttrArrayQryAoSvc_query,com_sitech_pgmng_comp_inter_IMoreBusiRelChkCoSvc_chkMoreBusiRel,
+        com_sitech_pgmng_atom_inter_IPopularPgPrcQryAoSvc_query,com_sitech_pgmng_atom_inter_IQryGoodsPrcDetailAoSvc_query,
+        com_sitech_pgmng_atom_inter_ISearchPgPrcAoSvc_searchPgPrc,com_sitech_pgmng_atom_inter_IQryGoodsPrcDetailAoSvc_query,
+        com_sitech_pgmng_atom_inter_IAttrQryBaseSvc_query,com_sitech_pgmng_comp_inter_IBusiRelChkCoSvc_chkBusiRel
+        #是否开启熔断
+      #circuit-breaker-enable: false
+      #被调的服务类型
+      architecture-type: hsf
+      #针对springcloud服务，需要在服务前加上这些
+      #prefix: http://CUSTCENTER/
+  service:
+    type: hsf
+  hsf:
+    application:
+      consumerAppName: jcf30Test
+    registry:
+      address: 172.21.3.92:2180,172.21.3.99:2181,172.21.3.100:2182
+    protocol:
+      name: dubbo
+      port: 33350
+      threads: 2
+    usedforclient: true
+    provider:
+      timeout: 10000
+
+#分布式序列配置
+idss:
+  zookeeper-servers: 172.18.234.240:2181
+  zookeeper-session-timeout: 10000
+  tenant: /Y11241
+  allow-auth: true
+  client-max-try-times: 5
+  distributed-model: fixed
+  root-path: /sequence-server
+  auth-type: digest
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IPdGoodsPrcDictMapper">
+
+    <resultMap id="goodsPrcResult" type="com.sitech.family.custqryservice.dto.mapperdto.PdGoodsPrcDict">
+        <result property="prcId" column="PRC_ID" jdbcType="VARCHAR"></result>
+        <result property="goodsId" column="GOODS_ID" jdbcType="VARCHAR"></result>
+        <result property="goodsPrcDesc" column="GOODS_PRC_DESC" jdbcType="VARCHAR"></result>
+        <result property="brandId" column="BRAND_ID" jdbcType="VARCHAR"></result>
+        <result property="effRuleId" column="EFF_RULE_ID" jdbcType="VARCHAR"></result>
+        <result property="expRuleId" column="EXP_RULE_ID" jdbcType="VARCHAR"></result>
+        <result property="cancelRuleId" column="CANCEL_RULE_ID" jdbcType="VARCHAR"></result>
+        <result property="userRange" column="USE_RANGE" jdbcType="VARCHAR"></result>
+        <result property="saleFlag" column="SALE_FLAG" jdbcType="VARCHAR"></result>
+        <result property="minNum" column="MIN_NUM" jdbcType="DECIMAL"></result>
+        <result property="maxNum" column="MAX_NUM" jdbcType="DECIMAL"></result>
+        <result property="version" column="VERSION" jdbcType="DECIMAL"></result>
+        <result property="modifyFlag" column="MODIFY_FLAG" jdbcType="VARCHAR"></result>
+        <result property="uniCode" column="UNI_CODE" jdbcType="VARCHAR"></result>
+        <result property="effNum" column="EFF_NUM" jdbcType="DECIMAL"></result>
+        <result property="unExpNum" column="UNEXP_NUM" jdbcType="DECIMAL"></result>
+        <result property="prcClass" column="PRC_CLASS" jdbcType="VARCHAR"></result>
+        <result property="chineseIndex" column="CHINESE_INDEX" jdbcType="VARCHAR"></result>
+        <result property="prcName" column="PRC_NAME" jdbcType="VARCHAR"></result>
+        <result property="prcType" column="PRC_TYPE" jdbcType="VARCHAR"></result>
+        <result property="billingMode" column="BILLING_MODE" jdbcType="VARCHAR"></result>
+        <result property="effDate" column="EFF_DATE" jdbcType="TIMESTAMP"></result>
+        <result property="expDate" column="EXP_DATE" jdbcType="TIMESTAMP"></result>
+        <result property="state" column="STATE" jdbcType="VARCHAR"></result>
+        <result property="createLogin" column="CREATE_LOGIN" jdbcType="VARCHAR"></result>
+        <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"></result>
+
+    </resultMap>
+    <select id="qryGoodsPrcInfo" resultMap="goodsPrcResult" parameterType="Map">
+        select * from pd_goodsprc_dict
+        <where>
+        <if test="params.prcId != null and params.prcId != ''">
+            PRC_ID = #{params.prcId}
+        </if>
+        <if test="params.goodsId != null and params.goodsId != ''">
+            AND GOODS_ID = #{params.goodsId}
+        </if>
+        </where>
+    </select>
+</mapper>

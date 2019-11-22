@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sitech.ijcf:ijcf-boot-starter-actuator:3.1.5.20180716.030704-18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-actuator/3.1.5.20180716.030704-18/ijcf-boot-starter-actuator-3.1.5.20180716.030704-18.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-actuator/3.1.5.20180716.030704-18/ijcf-boot-starter-actuator-3.1.5.20180716.030704-18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-actuator/3.1.5.20180716.030704-18/ijcf-boot-starter-actuator-3.1.5.20180716.030704-18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

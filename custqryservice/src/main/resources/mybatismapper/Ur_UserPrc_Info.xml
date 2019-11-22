@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserPrcMapper" >
+
+    <select id="query" resultMap="userPrcMapperMap">
+        select PRODPRCINS_ID, ID_NO, RELPRCINS_ID, TRANPRCINS_ID, PROD_PRCID, PARPRC_ID, PROD_ID, PRICING_ID, EFF_DATE, EXP_DATE, STATE, STATE_DATE, GROUP_ID, TEAM_ID, DEVELOP_LOGIN, PROD_MAIN_FLAG, FINISH_FLAG, ORDER_DATE, REMARK, SERV_ORDER_ID, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, DATA_OPSOURCE, ORDER_SOURCE, CANCLE_SOURCE, ORDER_LOGINNO, GOODSINS_ID
+        from ur_userprc_info where PRODPRCINS_ID = #{prodprcinsId};
+    </select>
+
+    <resultMap id="userPrcMapperMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserPrc">
+        <id property="prodprcinsId" column="PRODPRCINS_ID"></id>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="relprcinsId" column="RELPRCINS_ID"></result>
+        <result property="tranprcinsId" column="TRANPRCINS_ID"></result>
+        <result property="prodPrcid" column="PROD_PRCID"></result>
+        <result property="parprcId" column="PARPRC_ID"></result>
+        <result property="prodId" column="PROD_ID"></result>
+        <result property="pricingId" column="PRICING_ID"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="state" column="STATE"></result>
+        <result property="stateDate" column="STATE_DATE"></result>
+        <result property="groupId" column="GROUP_ID"></result>
+        <result property="teamId" column="TEAM_ID"></result>
+        <result property="developLogin" column="DEVELOP_LOGIN"></result>
+        <result property="prodMainFlag" column="PROD_MAIN_FLAG"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="orderDate" column="ORDER_DATE"></result>
+        <result property="remark" column="REMARK"></result>
+        <result property="servOrderId" column="SERV_ORDER_ID"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="dataOpsource" column="DATA_OPSOURCE"></result>
+        <result property="orderSource" column="ORDER_SOURCE"></result>
+        <result property="cancleSource" column="CANCLE_SOURCE"></result>
+        <result property="orderLoginno" column="ORDER_LOGINNO"></result>
+        <result property="goodsinsId" column="GOODSINS_ID"></result>
+    </resultMap>
+
+</mapper>

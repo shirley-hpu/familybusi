@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.GoodsSaleMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.GoodsSale">
+        <id column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="GOODSINS_ID" property="goodsinsId" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="GOODS_TYPE" property="goodsType" jdbcType="VARCHAR"/>
+        <result column="OP_TYPE" property="opType" jdbcType="VARCHAR"/>
+        <result column="SELL_SERIAL_NO" property="sellSerialNo" jdbcType="DECIMAL"/>
+        <result column="GOODS_ID" property="goodsId" jdbcType="VARCHAR"/>
+        <result column="PRC_ID" property="prcId" jdbcType="VARCHAR"/>
+        <result column="SKU_ID" property="skuId" jdbcType="VARCHAR"/>
+        <result column="RESOURCE_NO" property="resourceNo" jdbcType="VARCHAR"/>
+        <result column="OLD_PRODPRCINS_ID" property="oldProdprcinsId" jdbcType="DECIMAL"/>
+        <result column="OLD_SELL_SERIAL_NO" property="oldSellSerialNo" jdbcType="DECIMAL"/>
+        <result column="OLD_GOODS_ID" property="oldGoodsId" jdbcType="VARCHAR"/>
+        <result column="OLD_PRC_ID" property="oldPrcId" jdbcType="VARCHAR"/>
+        <result column="OLD_SKU_ID" property="oldSkuId" jdbcType="VARCHAR"/>
+        <result column="OLD_RESOURCE_NO" property="oldResourceNo" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="DEVELOP_LOGIN" property="developLogin" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="OP_NOTE" property="opNote" jdbcType="VARCHAR"/>
+        <result column="BUY_NAME" property="buyName" jdbcType="VARCHAR"/>
+        <result column="BUY_ICCID" property="buyIccid" jdbcType="VARCHAR"/>
+        <result column="CONTACT_ID" property="contactId" jdbcType="VARCHAR"/>
+        <result column="SUB_ORDER_ID" property="subOrderId" jdbcType="VARCHAR"/>
+        <result column="SUB_ORDER_ACCEPT" property="subOrderAccept" jdbcType="DECIMAL"/>
+        <result column="ORDLINE_ID" property="ordlineId" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="BACK_FLAG" property="backFlag" jdbcType="VARCHAR"/>
+        <result column="BACK_ACCEPT_ID" property="backAcceptId" jdbcType="VARCHAR"/>
+        <result column="SHOULD_PAY" property="shouldPay" jdbcType="DECIMAL"/>
+        <result column="REAL_PAY" property="realPay" jdbcType="DECIMAL"/>
+        <result column="FAV_FEE" property="favFee" jdbcType="DECIMAL"/>
+        <result column="CHANTYPE_ID" property="chantypeId" jdbcType="VARCHAR"/>
+        <result column="OP_SOURCE" property="opSource" jdbcType="VARCHAR"/>
+        <result column="OUT_ORDER_ID" property="outOrderId" jdbcType="VARCHAR"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    LOGIN_ACCEPT, GOODSINS_ID, ID_NO, OP_CODE, GOODS_TYPE, OP_TYPE, SELL_SERIAL_NO, GOODS_ID, 
+    PRC_ID, SKU_ID, RESOURCE_NO, OLD_PRODPRCINS_ID, OLD_SELL_SERIAL_NO, OLD_GOODS_ID, 
+    OLD_PRC_ID, OLD_SKU_ID, OLD_RESOURCE_NO, EFF_DATE, EXP_DATE, DEVELOP_LOGIN, LOGIN_NO, 
+    OP_NOTE, BUY_NAME, BUY_ICCID, CONTACT_ID, SUB_ORDER_ID, SUB_ORDER_ACCEPT, ORDLINE_ID, 
+    OP_TIME, BACK_FLAG, BACK_ACCEPT_ID, SHOULD_PAY, REAL_PAY, FAV_FEE, CHANTYPE_ID, OP_SOURCE, 
+    OUT_ORDER_ID, FINISH_FLAG
+  </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_goodssale_rd
+        where LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL}
+    </select>
+
+    <delete id="drop" parameterType="java.lang.Long">
+    delete from ur_goodssale_rd
+    where LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL}
+  </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.GoodsSale">
+        insert into ur_goodssale_rd
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="goodsinsId != null">
+                GOODSINS_ID,
+            </if>
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="goodsType != null">
+                GOODS_TYPE,
+            </if>
+            <if test="opType != null">
+                OP_TYPE,
+            </if>
+            <if test="sellSerialNo != null">
+                SELL_SERIAL_NO,
+            </if>
+            <if test="goodsId != null">
+                GOODS_ID,
+            </if>
+            <if test="prcId != null">
+                PRC_ID,
+            </if>
+            <if test="skuId != null">
+                SKU_ID,
+            </if>
+            <if test="resourceNo != null">
+                RESOURCE_NO,
+            </if>
+            <if test="oldProdprcinsId != null">
+                OLD_PRODPRCINS_ID,
+            </if>
+            <if test="oldSellSerialNo != null">
+                OLD_SELL_SERIAL_NO,
+            </if>
+            <if test="oldGoodsId != null">
+                OLD_GOODS_ID,
+            </if>
+            <if test="oldPrcId != null">
+                OLD_PRC_ID,
+            </if>
+            <if test="oldSkuId != null">
+                OLD_SKU_ID,
+            </if>
+            <if test="oldResourceNo != null">
+                OLD_RESOURCE_NO,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="developLogin != null">
+                DEVELOP_LOGIN,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="opNote != null">
+                OP_NOTE,
+            </if>
+            <if test="buyName != null">
+                BUY_NAME,
+            </if>
+            <if test="buyIccid != null">
+                BUY_ICCID,
+            </if>
+            <if test="contactId != null">
+                CONTACT_ID,
+            </if>
+            <if test="subOrderId != null">
+                SUB_ORDER_ID,
+            </if>
+            <if test="subOrderAccept != null">
+                SUB_ORDER_ACCEPT,
+            </if>
+            <if test="ordlineId != null">
+                ORDLINE_ID,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="backFlag != null">
+                BACK_FLAG,
+            </if>
+            <if test="backAcceptId != null">
+                BACK_ACCEPT_ID,
+            </if>
+            <if test="shouldPay != null">
+                SHOULD_PAY,
+            </if>
+            <if test="realPay != null">
+                REAL_PAY,
+            </if>
+            <if test="favFee != null">
+                FAV_FEE,
+            </if>
+            <if test="chantypeId != null">
+                CHANTYPE_ID,
+            </if>
+            <if test="opSource != null">
+                OP_SOURCE,
+            </if>
+            <if test="outOrderId != null">
+                OUT_ORDER_ID,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsinsId != null">
+                #{goodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsType != null">
+                #{goodsType,jdbcType=VARCHAR},
+            </if>
+            <if test="opType != null">
+                #{opType,jdbcType=VARCHAR},
+            </if>
+            <if test="sellSerialNo != null">
+                #{sellSerialNo,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="prcId != null">
+                #{prcId,jdbcType=VARCHAR},
+            </if>
+            <if test="skuId != null">
+                #{skuId,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceNo != null">
+                #{resourceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="oldProdprcinsId != null">
+                #{oldProdprcinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="oldSellSerialNo != null">
+                #{oldSellSerialNo,jdbcType=DECIMAL},
+            </if>
+            <if test="oldGoodsId != null">
+                #{oldGoodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldPrcId != null">
+                #{oldPrcId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldSkuId != null">
+                #{oldSkuId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldResourceNo != null">
+                #{oldResourceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="developLogin != null">
+                #{developLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="opNote != null">
+                #{opNote,jdbcType=VARCHAR},
+            </if>
+            <if test="buyName != null">
+                #{buyName,jdbcType=VARCHAR},
+            </if>
+            <if test="buyIccid != null">
+                #{buyIccid,jdbcType=VARCHAR},
+            </if>
+            <if test="contactId != null">
+                #{contactId,jdbcType=VARCHAR},
+            </if>
+            <if test="subOrderId != null">
+                #{subOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="subOrderAccept != null">
+                #{subOrderAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="ordlineId != null">
+                #{ordlineId,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="backFlag != null">
+                #{backFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="backAcceptId != null">
+                #{backAcceptId,jdbcType=VARCHAR},
+            </if>
+            <if test="shouldPay != null">
+                #{shouldPay,jdbcType=DECIMAL},
+            </if>
+            <if test="realPay != null">
+                #{realPay,jdbcType=DECIMAL},
+            </if>
+            <if test="favFee != null">
+                #{favFee,jdbcType=DECIMAL},
+            </if>
+            <if test="chantypeId != null">
+                #{chantypeId,jdbcType=VARCHAR},
+            </if>
+            <if test="opSource != null">
+                #{opSource,jdbcType=VARCHAR},
+            </if>
+            <if test="outOrderId != null">
+                #{outOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.GoodsSale">
+        update ur_goodssale_rd
+        <set>
+            <if test="goodsinsId != null">
+                GOODSINS_ID = #{goodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                ID_NO = #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsType != null">
+                GOODS_TYPE = #{goodsType,jdbcType=VARCHAR},
+            </if>
+            <if test="opType != null">
+                OP_TYPE = #{opType,jdbcType=VARCHAR},
+            </if>
+            <if test="sellSerialNo != null">
+                SELL_SERIAL_NO = #{sellSerialNo,jdbcType=DECIMAL},
+            </if>
+            <if test="goodsId != null">
+                GOODS_ID = #{goodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="prcId != null">
+                PRC_ID = #{prcId,jdbcType=VARCHAR},
+            </if>
+            <if test="skuId != null">
+                SKU_ID = #{skuId,jdbcType=VARCHAR},
+            </if>
+            <if test="resourceNo != null">
+                RESOURCE_NO = #{resourceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="oldProdprcinsId != null">
+                OLD_PRODPRCINS_ID = #{oldProdprcinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="oldSellSerialNo != null">
+                OLD_SELL_SERIAL_NO = #{oldSellSerialNo,jdbcType=DECIMAL},
+            </if>
+            <if test="oldGoodsId != null">
+                OLD_GOODS_ID = #{oldGoodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldPrcId != null">
+                OLD_PRC_ID = #{oldPrcId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldSkuId != null">
+                OLD_SKU_ID = #{oldSkuId,jdbcType=VARCHAR},
+            </if>
+            <if test="oldResourceNo != null">
+                OLD_RESOURCE_NO = #{oldResourceNo,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="developLogin != null">
+                DEVELOP_LOGIN = #{developLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="opNote != null">
+                OP_NOTE = #{opNote,jdbcType=VARCHAR},
+            </if>
+            <if test="buyName != null">
+                BUY_NAME = #{buyName,jdbcType=VARCHAR},
+            </if>
+            <if test="buyIccid != null">
+                BUY_ICCID = #{buyIccid,jdbcType=VARCHAR},
+            </if>
+            <if test="contactId != null">
+                CONTACT_ID = #{contactId,jdbcType=VARCHAR},
+            </if>
+            <if test="subOrderId != null">
+                SUB_ORDER_ID = #{subOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="subOrderAccept != null">
+                SUB_ORDER_ACCEPT = #{subOrderAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="ordlineId != null">
+                ORDLINE_ID = #{ordlineId,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="backFlag != null">
+                BACK_FLAG = #{backFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="backAcceptId != null">
+                BACK_ACCEPT_ID = #{backAcceptId,jdbcType=VARCHAR},
+            </if>
+            <if test="shouldPay != null">
+                SHOULD_PAY = #{shouldPay,jdbcType=DECIMAL},
+            </if>
+            <if test="realPay != null">
+                REAL_PAY = #{realPay,jdbcType=DECIMAL},
+            </if>
+            <if test="favFee != null">
+                FAV_FEE = #{favFee,jdbcType=DECIMAL},
+            </if>
+            <if test="chantypeId != null">
+                CHANTYPE_ID = #{chantypeId,jdbcType=VARCHAR},
+            </if>
+            <if test="opSource != null">
+                OP_SOURCE = #{opSource,jdbcType=VARCHAR},
+            </if>
+            <if test="outOrderId != null">
+                OUT_ORDER_ID = #{outOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL}
+    </update>
+</mapper>

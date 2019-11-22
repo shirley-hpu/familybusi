@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.IUserStateMapper">
+
+    <insert id="create" parameterType="UserState">
+      insert into cs_userstate_info
+      ( STATE_CHANGE_NO,ID_NO,RUN_CODE,EFF_DATE,EXP_DATE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE )
+       values
+       ( #{stateChangeNo}, #{idNo}, #{runCode}, #{effDate}, #{expDate}, #{finishFlag}, #{opTime}, #{loginNo}, #{loginAccept}, #{opCode}, #{opNote}, #{systemNote} );
+    </insert>
+
+    <insert id="insert" parameterType="UserState">
+        insert into cs_userstate_info_his
+                ( STATE_CHANGE_NO,ID_NO,RUN_CODE,EFF_DATE,EXP_DATE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE, UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE, UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE)
+        values
+               ( #{stateChangeNo}, #{idNo}, #{runCode}, #{effDate}, #{expDate}, #{finishFlag}, #{opTime}, #{loginNo}, #{loginAccept}, #{opCode}, #{opNote}, #{systemNote}, #{updateTime}, #{updateType}, #{updateCode}, #{updateLogin}, #{updateAccept}, #{updateDate} );
+    </insert>
+
+    <update id="modify" parameterType="UserState">
+        update cs_userstate_info
+        <trim prefix="set" suffixOverrides=",">
+            <if test="runCode != null">RUN_CODE = #{runCode},</if>
+            <if test="effDate != null">EFF_DATE = #{effDate},</if>
+            <if test="expDate != null">EXP_DATE = #{expDate},</if>
+            <if test="finishFlag != null">FINISH_FLAG = #{finishFlag},</if>
+            <if test="opTime != null">OP_TIME = #{opTime},</if>
+            <if test="loginNo != null">LOGIN_NO = #{loginNo},</if>
+            <if test="loginAccept != null">LOGIN_ACCEPT = #{loginAccept},</if>
+            <if test="opCode != null">OP_CODE = #{opCode},</if>
+            <if test="opNote != null">OP_NOTE = #{opNote},</if>
+            <if test="systemNote != null">SYSTEM_NOTE = #{systemNote},</if>
+            <if test="bak1 != null">BAK1 = #{bak1},</if>
+            <if test="bak2 != null">BAK2 = #{bak2},</if>
+        </trim>
+        where STATE_CHANGE_NO = #{stateChangeNo};
+    </update>
+
+    <delete id="drop" parameterType="UserState">
+        delete from cs_userstate_info where STATE_CHANGE_NO = #{stateChangeNo};
+    </delete>
+
+    <select id="query" resultMap="userStateMap">
+         select
+          STATE_CHANGE_NO,ID_NO,RUN_CODE,EFF_DATE,EXP_DATE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE,BAK1,BAK2
+          from cs_userstate_info
+         where STATE_CHANGE_NO = #{stateChangeNo};
+    </select>
+
+    <select id="qryUserStateList" parameterType="Map" resultMap="userStateMap">
+        select
+        STATE_CHANGE_NO,ID_NO,RUN_CODE,EFF_DATE,EXP_DATE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE,BAK1,BAK2
+        from cs_userstate_info
+        <where>
+            <if test="params.stateChangeNo != null and params.stateChangeNo != ''">
+                STATE_CHANGE_NO = #{params.stateChangeNo}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.runCode != null and params.runCode != ''">
+                AND RUN_CODE = #{params.runCode}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opNote != null and params.opNote != ''">
+                AND OP_NOTE = #{params.opNote}
+            </if>
+            <if test="params.systemNote != null and params.systemNote != ''">
+                AND SYSTEM_NOTE = #{params.systemNote}
+            </if>
+            <if test="params.bak1 != null and params.bak1 != ''">
+                AND BAK1 = #{params.bak1}
+            </if>
+            <if test="params.bak1 != null and params.bak1 != ''">
+                AND BAK2 = #{params.bak2}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserStateHisList" parameterType="Map" resultMap="userStateMap">
+        select
+        STATE_CHANGE_NO,ID_NO,RUN_CODE,EFF_DATE,EXP_DATE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE,BAK1,BAK2,
+        UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE, UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from cs_userstate_info_his
+        <where>
+            <if test="inparams.stateChangeNo != null and inparams.stateChangeNo != ''">
+                STATE_CHANGE_NO = #{inparams.stateChangeNo}
+            </if>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                AND ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.runCode != null and inparams.runCode != ''">
+                AND RUN_CODE = #{inparams.runCode}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opNote != null and inparams.opNote != ''">
+                AND OP_NOTE = #{inparams.opNote}
+            </if>
+            <if test="inparams.systemNote != null and inparams.systemNote != ''">
+                AND SYSTEM_NOTE = #{inparams.systemNote}
+            </if>
+            <if test="inparams.bak1 != null and inparams.bak1 != ''">
+                AND BAK1 = #{inparams.bak1}
+            </if>
+            <if test="inparams.bak1 != null and inparams.bak1 != ''">
+                AND BAK2 = #{inparams.bak1}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <resultMap id="userStateMap" type="com.sitech.family.custservice.dto.mapperdto.UserState">
+        <id property="stateChangeNo" column="STATE_CHANGE_NO"></id>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="runCode" column="RUN_CODE"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opNote" column="OP_NOTE"></result>
+        <result property="systemNote" column="SYSTEM_NOTE"></result>
+        <result property="bak1" column="BAK1"></result>
+        <result property="bak2" column="BAK2"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+</mapper>

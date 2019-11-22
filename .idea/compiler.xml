@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="compservice" />
+        <module name="custqryservice" />
+        <module name="familyservice" />
+        <module name="custservice" />
+        <module name="familydll" />
+        <module name="familypreservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="compservice" target="1.8" />
+      <module name="custqryservice" target="8" />
+      <module name="custservice" target="1.8" />
+      <module name="familybusi" target="1.8" />
+      <module name="familydll" target="1.8" />
+      <module name="familypreservice" target="1.8" />
+      <module name="familyservice" target="1.8" />
+      <module name="otherservice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="compservice" options="-parameters" />
+      <module name="custqryservice" options="-parameters" />
+      <module name="custservice" options="-parameters" />
+      <module name="familydll" options="-parameters" />
+      <module name="familypreservice" options="-parameters" />
+      <module name="familyservice" options="-parameters" />
+      <module name="otherservice" options="-parameters" />
+    </option>
+  </component>
+</project>

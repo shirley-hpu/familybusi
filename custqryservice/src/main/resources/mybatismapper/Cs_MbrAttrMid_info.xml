@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IMbrAttrMidMapper">
+    <resultMap id="mbrAttrMidMap" type="com.sitech.family.custqryservice.dto.mapperdto.MbrAttrMid">
+        <id property="insValue" column="INS_VALUE"></id>
+        <id property="attrId" column="ATTR_ID"></id>
+        <id property="effDate" column="EFF_DATE"></id>
+        <id property="attrNo" column="ATTR_NO"></id>
+        <result property="insType" column="INS_TYPE"></result>
+        <result property="attrValue" column="ATTR_VALUE"></result>
+        <result property="grpNo" column="GRP_NO"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="outAccept" column="OUP_ACCEPT"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opNote" column="OP_NOTE"></result>
+        <result property="systemNote" column="SYSTEM_NOTE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+    </resultMap>
+
+    <select id="qryMbrAttrMidList" parameterType="Map" resultMap="mbrAttrMidMap">
+        select
+        INS_TYPE, INS_VALUE, ATTR_ID, EFF_DATE, ATTR_NO, ATTR_VALUE, GRP_NO, EXP_DATE,
+        OP_TIME, OP_CODE,LOGIN_NO, OUP_ACCEPT, LOGIN_ACCEPT, OP_NOTE, SYSTEM_NOTE
+        from cs_mbrattrmid_info
+        <where>
+            <if test="params.insType != null and params.insType != ''">
+                INS_TYPE = #{params.insType}
+            </if>
+            <if test="params.insValue != null and params.insValue != ''">
+                AND INS_VALUE = #{params.insValue}
+            </if>
+            <if test="params.attrId != null and params.attrId != ''">
+                AND ATTR_ID = #{params.attrId}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.attrNo != null and params.attrNo != ''">
+                AND ATTR_NO = #{params.attrNo}
+            </if>
+            <if test="params.attrValue != null and params.attrValue != ''">
+                AND ATTR_VALUE = #{params.attrValue}
+            </if>
+            <if test="params.grpNo != null and params.grpNo != ''">
+                AND GRP_NO = #{params.grpNo}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.outAccept != null and params.outAccept != ''">
+                AND OUP_ACCEPT = #{params.outAccept}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opNote != null and params.opNote != ''">
+                AND OP_NOTE = #{params.opNote}
+            </if>
+            <if test="params.systemNote != null and params.systemNote != ''">
+                AND SYSTEM_NOTE = #{params.systemNote}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

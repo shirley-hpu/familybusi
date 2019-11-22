@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserFavAttrMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserFavAttr">
+        <id column="FAVINS_ID" property="favinsId" jdbcType="DECIMAL"/>
+        <id column="ATTR_ID" property="attrId" jdbcType="VARCHAR"/>
+        <id column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="ATTR_VALUE" property="attrValue" jdbcType="VARCHAR"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="SERV_ORDER_ID" property="servOrderId" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    FAVINS_ID, ATTR_ID, EFF_DATE, ATTR_VALUE, EXP_DATE, LOGIN_NO, LOGIN_ACCEPT, SERV_ORDER_ID, 
+    OP_TIME, OP_CODE
+  </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_userfavattr_info
+        where FAVINS_ID = #{favinsId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+    </select>
+
+    <delete id="drop" parameterType="map">
+    delete from ur_userfavattr_info
+    where FAVINS_ID = #{favinsId,jdbcType=DECIMAL}
+      and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+      and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+  </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.UserFavAttr">
+        insert into ur_userfavattr_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="favinsId != null">
+                FAVINS_ID,
+            </if>
+            <if test="attrId != null">
+                ATTR_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="attrValue != null">
+                ATTR_VALUE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="favinsId != null">
+                #{favinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="attrId != null">
+                #{attrId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attrValue != null">
+                #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="servOrderId != null">
+                #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.UserFavAttr">
+        update ur_userfavattr_info
+        <set>
+            <if test="attrValue != null">
+                ATTR_VALUE = #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID = #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where FAVINS_ID = #{favinsId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+    </update>
+
+    <!-- 历史表 -->
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserFavAttr">
+        insert into ur_userfavattr_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="favinsId != null">
+                FAVINS_ID,
+            </if>
+            <if test="attrId != null">
+                ATTR_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="attrValue != null">
+                ATTR_VALUE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="favinsId != null">
+                #{favinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="attrId != null">
+                #{attrId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attrValue != null">
+                #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="servOrderId != null">
+                #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

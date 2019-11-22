@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.preservice.mapper.FmPreOrderRdMapper">
+
+    <insert id="commit" parameterType="Map">
+        insert into fm_preorder_rd
+          (PHONE_NO,OP_DATE,OP_TIME,PRE_OP_CODE,PRE_OP_NAME,PRE_NOTE,PRE_PRC_ID,PRE_REL_ID,PRE_REL_NAME,PRE_PRC_NAME,PRE_PRC_DESC,PRE_PRC_PRICE,PRE_ADDRESS_ID,PRE_ADDRESS_INFO,PRE_INSTALL_TIME)
+        values
+          (#{phoneNo},#{opDate},#{opTime},#{preOpCode},#{preOpName},#{preNote},#{prePrcId},#{preRelId},#{preRelName},#{prePrcName},#{prePrcDesc},#{prePrcPrice},#{preAddressId},#{preAddressInfo},#{preInstallTime})
+    </insert>
+
+    <resultMap id="fmPreOrderRdOutDto" type="com.sitech.preservice.dto.FmPreOrderRdOutDto">
+        <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR"/>
+        <result column="OP_DATE" property="opDate" jdbcType="VARCHAR"/>
+        <result column="PRE_OP_CODE" property="preOpCode" jdbcType="VARCHAR"/>
+        <result column="PRE_OP_NAME" property="preOpName" jdbcType="VARCHAR"/>
+        <result column="PRE_NOTE" property="preNote" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="PRE_PRC_ID" property="prePrcId" jdbcType="VARCHAR"/>
+        <result column="PRE_REL_ID" property="preRelId" jdbcType="VARCHAR"/>
+        <result column="PRE_REL_NAME" property="preRelName" jdbcType="VARCHAR"/>
+        <result column="PRE_PRC_NAME" property="prePrcName" jdbcType="VARCHAR"/>
+        <result column="PRE_PRC_DESC" property="prePrcDesc" jdbcType="VARCHAR"/>
+        <result column="PRE_PRC_PRICE" property="prePrcPrice" jdbcType="VARCHAR"/>
+        <result column="PRE_ADDRESS_ID" property="preAddressId" jdbcType="VARCHAR"/>
+        <result column="PRE_ADDRESS_INFO" property="preAddressInfo" jdbcType="VARCHAR"/>
+        <result column="PRE_INSTALL_TIME" property="preInstallTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="query" parameterType="Map" resultMap="fmPreOrderRdOutDto">
+        select
+          PHONE_NO,
+          OP_DATE,
+          OP_TIME,
+          PRE_OP_CODE,
+          PRE_OP_NAME,
+          PRE_NOTE,
+          PRE_PRC_ID,
+          PRE_REL_ID,
+          PRE_REL_NAME,
+          PRE_PRC_NAME,
+          PRE_PRC_DESC,
+          PRE_PRC_PRICE,
+          PRE_ADDRESS_ID,
+          PRE_ADDRESS_INFO,
+          PRE_INSTALL_TIME
+        from fm_preorder_rd
+        where PHONE_NO = #{phoneNo} and OP_Date = #{opDate}
+        <if test="preOpCode != null and preOpCode != ''">
+            and PRE_OP_CODE = #{preOpCode}
+        </if>
+    </select>
+</mapper>

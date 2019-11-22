@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.UserGoodsLmtMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserGoodsLmt">
+        <id column="LIMITINS_ID" property="limitinsId" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="GOODS_ID" property="goodsId" jdbcType="VARCHAR"/>
+        <result column="PRC_ID" property="prcId" jdbcType="VARCHAR"/>
+        <result column="FUNCTION_CODE" property="functionCode" jdbcType="VARCHAR"/>
+        <result column="LIMIT_TYPE" property="limitType" jdbcType="VARCHAR"/>
+        <result column="RULE_ID" property="ruleId" jdbcType="DECIMAL"/>
+        <result column="LIMIT_LEVEL_ID" property="limitLevelId" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="LIMIT_FLAG" property="limitFlag" jdbcType="VARCHAR"/>
+        <result column="MAX_VALUE" property="maxValue" jdbcType="DECIMAL"/>
+        <result column="MIX_VALUE" property="mixValue" jdbcType="DECIMAL"/>
+        <result column="BRAND_ID" property="brandId" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="LIMIT_DETAILMSG" property="limitDetailmsg" jdbcType="VARCHAR"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        LIMITINS_ID, ID_NO, GOODS_ID, PRC_ID, LIMIT_TYPE, RULE_ID, FUNCTION_CODE, EFF_DATE, EXP_DATE, LIMIT_LEVEL_ID,
+        LIMIT_FLAG, MAX_VALUE, MIX_VALUE, BRAND_ID, LOGIN_NO, LOGIN_ACCEPT, OP_TIME, OP_CODE, LIMIT_DETAILMSG, REMARK
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergoodslmt_info
+        where LIMITINS_ID = #{limitinsId,jdbcType=DECIMAL}
+    </select>
+
+</mapper>

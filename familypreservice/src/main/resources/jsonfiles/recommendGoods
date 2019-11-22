@@ -1,0 +1,66 @@
+{
+  "ROOT": {
+    "BODY": {
+      "DETAIL_MSG": "OK",
+      "OUT_DATA": {
+        "FAMPRC_DESC": "权益包含：30元100M宽带+20元IPTV等",
+        "FAMPRC_ID": "BMAG4623",
+        "FAMPRC_NAME": "和家计划套餐和38元",
+        "MAIN_PRICE": "58",
+        "OPEN_FAMPRC_LIST": [
+          {
+            "MEMBER_ROLE_ID": "35002",
+            "MEMBER_ROLE_NAME": "极光宽带",
+            "PRC_ID": "BMAG7045",
+            "PRC_NAME": "家庭套餐叠加宽带500M",
+            "PRC_PRICE": "150",
+            "PRC_FAM_PRICE": 150,
+            "KD_BYTES": "500M"
+          },
+          {
+            "MEMBER_ROLE_ID": "35002",
+            "MEMBER_ROLE_NAME": "极光宽带",
+            "PRC_ID": "BMAG4664",
+            "PRC_NAME": "家庭套餐叠加宽带300M",
+            "PRC_PRICE": "90",
+            "PRC_FAM_PRICE": 90,
+            "KD_BYTES": "300M"
+          }
+        ],
+        "OPEN_FLAG": "Y",
+        "RECOM_FAMPRC_LIST": [
+          {
+            "MEMBER_ROLE_ID": "35007",
+            "MEMBER_ROLE_NAME": "IPTV成员",
+            "PRC_ID": "BMAG4670",
+            "PRC_NAME": "魔百和TV家庭叠加套餐(20元)",
+            "PRC_PRICE": "20",
+            "PRC_FAM_PRICE": "20",
+            "KD_BYTES": ""
+          },
+          {
+            "MEMBER_ROLE_ID": "35005",
+            "MEMBER_ROLE_NAME": "家庭固话",
+            "PRC_ID": "BMAG4673",
+            "PRC_NAME": "IMS固话家庭叠加套餐(9元)",
+            "PRC_PRICE": "9",
+            "PRC_FAM_PRICE": "9",
+            "KD_BYTES": ""
+          }
+        ]
+      },
+      "PROMPT_MSG": "",
+      "REQUEST_ID": "20191024150026768_12384_75",
+      "RETURN_CODE": "0",
+      "RETURN_MSG": "OK",
+      "RUN_IP": "10.208.201.60",
+      "USER_MSG": "OK"
+    },
+    "HEADER": {
+      "ROUTING": {
+        "ROUTE_KEY": "15",
+        "ROUTE_VALUE": "16"
+      }
+    }
+  }
+}

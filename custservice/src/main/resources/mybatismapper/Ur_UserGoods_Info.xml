@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserGoodsMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserGoods">
+        <id column="GOODSINS_ID" property="goodsinsId" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="RELGOODSINS_ID" property="relgoodsinsId" jdbcType="DECIMAL"/>
+        <result column="TRANGOODSINS_ID" property="trangoodsinsId" jdbcType="DECIMAL"/>
+        <result column="PRC_ID" property="prcId" jdbcType="VARCHAR"/>
+        <result column="PARPRC_ID" property="parprcId" jdbcType="VARCHAR"/>
+        <result column="GOODS_ID" property="goodsId" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="STATE" property="state" jdbcType="VARCHAR"/>
+        <result column="STATE_DATE" property="stateDate" jdbcType="TIMESTAMP"/>
+        <result column="DEVELOP_LOGIN" property="developLogin" jdbcType="VARCHAR"/>
+        <result column="GOODS_MAIN_FLAG" property="goodsMainFlag" jdbcType="VARCHAR"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="ORDER_DATE" property="orderDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="SERV_ORDER_ID" property="servOrderId" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="DATA_OPSOURCE" property="dataOpsource" jdbcType="VARCHAR"/>
+        <result column="ORDER_SOURCE" property="orderSource" jdbcType="VARCHAR"/>
+        <result column="CANCLE_SOURCE" property="cancleSource" jdbcType="VARCHAR"/>
+        <result column="ORDER_LOGINNO" property="orderLoginno" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        GOODSINS_ID, ID_NO, RELGOODSINS_ID, TRANGOODSINS_ID, PRC_ID, PARPRC_ID, GOODS_ID, EFF_DATE, EXP_DATE,STATE, STATE_DATE,
+        DEVELOP_LOGIN, GOODS_MAIN_FLAG, FINISH_FLAG, ORDER_DATE, REMARK, SERV_ORDER_ID, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT,
+        DATA_OPSOURCE, ORDER_SOURCE, CANCLE_SOURCE, ORDER_LOGINNO
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergoods_info
+        where GOODSINS_ID = #{goodsinsId,jdbcType=DECIMAL}
+    </select>
+
+    <delete id="drop" parameterType="map">
+        delete from ur_usergoods_info
+        where GOODSINS_ID = #{goodsinsId,jdbcType=DECIMAL}
+    </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGoods">
+        insert into ur_usergoods_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsinsId != null">
+                GOODSINS_ID,
+            </if>
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="relgoodsinsId != null">
+                RELGOODSINS_ID,
+            </if>
+            <if test="trangoodsinsId != null">
+                TRANGOODSINS_ID,
+            </if>
+            <if test="prcId != null">
+                PRC_ID,
+            </if>
+            <if test="parprcId != null">
+                PARPRC_ID,
+            </if>
+            <if test="goodsId != null">
+                GOODS_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+            <if test="developLogin != null">
+                DEVELOP_LOGIN,
+            </if>
+            <if test="goodsMainFlag != null">
+                GOODS_MAIN_FLAG,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="orderDate != null">
+                ORDER_DATE,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="dataOpsource != null">
+                DATA_OPSOURCE,
+            </if>
+            <if test="orderSource != null">
+                ORDER_SOURCE,
+            </if>
+            <if test="cancleSource != null">
+                CANCLE_SOURCE,
+            </if>
+            <if test="orderLoginno != null">
+                ORDER_LOGINNO,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsinsId != null">
+                #{goodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="relgoodsinsId != null">
+                #{relgoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="trangoodsinsId != null">
+                #{trangoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="prcId != null">
+                #{prcId,jdbcType=VARCHAR},
+            </if>
+            <if test="parprcId != null">
+                #{parprcId,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="developLogin != null">
+                #{developLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsMainFlag != null">
+                #{goodsMainFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="orderDate != null">
+                #{orderDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="servOrderId != null">
+                #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dataOpsource != null">
+                #{dataOpsource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderSource != null">
+                #{orderSource,jdbcType=VARCHAR},
+            </if>
+            <if test="cancleSource != null">
+                #{cancleSource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderLoginno != null">
+                #{orderLoginno,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGoods">
+        insert into ur_usergoods_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="goodsinsId != null">
+                GOODSINS_ID,
+            </if>
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="relgoodsinsId != null">
+                RELGOODSINS_ID,
+            </if>
+            <if test="trangoodsinsId != null">
+                TRANGOODSINS_ID,
+            </if>
+            <if test="prcId != null">
+                PRC_ID,
+            </if>
+            <if test="parprcId != null">
+                PARPRC_ID,
+            </if>
+            <if test="goodsId != null">
+                GOODS_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+            <if test="developLogin != null">
+                DEVELOP_LOGIN,
+            </if>
+            <if test="goodsMainFlag != null">
+                GOODS_MAIN_FLAG,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="orderDate != null">
+                ORDER_DATE,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="dataOpsource != null">
+                DATA_OPSOURCE,
+            </if>
+            <if test="orderSource != null">
+                ORDER_SOURCE,
+            </if>
+            <if test="cancleSource != null">
+                CANCLE_SOURCE,
+            </if>
+            <if test="orderLoginno != null">
+                ORDER_LOGINNO,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="goodsinsId != null">
+                #{goodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="relgoodsinsId != null">
+                #{relgoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="trangoodsinsId != null">
+                #{trangoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="prcId != null">
+                #{prcId,jdbcType=VARCHAR},
+            </if>
+            <if test="parprcId != null">
+                #{parprcId,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="developLogin != null">
+                #{developLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsMainFlag != null">
+                #{goodsMainFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="orderDate != null">
+                #{orderDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="servOrderId != null">
+                #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dataOpsource != null">
+                #{dataOpsource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderSource != null">
+                #{orderSource,jdbcType=VARCHAR},
+            </if>
+            <if test="cancleSource != null">
+                #{cancleSource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderLoginno != null">
+                #{orderLoginno,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGoods">
+        update ur_usergoods_info
+        <set>
+            <if test="idNo != null">
+                ID_NO = #{idNo,jdbcType=DECIMAL},
+            </if>
+
+            <if test="relgoodsinsId != null">
+                RELGOODSINS_ID = #{relgoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="trangoodsinsId != null">
+                TRANGOODSINS_ID = #{trangoodsinsId,jdbcType=DECIMAL},
+            </if>
+            <if test="prcId != null">
+                PRC_ID = #{prcId,jdbcType=VARCHAR},
+            </if>
+            <if test="parprcId != null">
+                PARPRC_ID = #{parprcId,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsId != null">
+                GOODS_ID = #{goodsId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="developLogin != null">
+                DEVELOP_LOGIN = #{developLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsMainFlag != null">
+                GOODS_MAIN_FLAG = #{goodsMainFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="orderDate != null">
+                ORDER_DATE = #{orderDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="servOrderId != null">
+                SERV_ORDER_ID = #{servOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dataOpsource != null">
+                DATA_OPSOURCE = #{dataOpsource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderSource != null">
+                ORDER_SOURCE = #{orderSource,jdbcType=VARCHAR},
+            </if>
+            <if test="cancleSource != null">
+                CANCLE_SOURCE = #{cancleSource,jdbcType=VARCHAR},
+            </if>
+            <if test="orderLoginno != null">
+                ORDER_LOGINNO = #{orderLoginno,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where GOODSINS_ID = #{goodsinsId,jdbcType=DECIMAL}
+    </update>
+
+    <select id="qryUserGoodsList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergoods_info
+        <where>
+            <if test="params.goodsinsId != null and params.goodsinsId != ''">
+                GOODSINS_ID = #{params.goodsinsId}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.relgoodsinsId != null and params.relgoodsinsId != ''">
+                AND RELGOODSINS_ID = #{params.relgoodsinsId}
+            </if>
+            <if test="params.trangoodsinsId != null and params.trangoodsinsId != ''">
+                AND TRANGOODSINS_ID = #{params.trangoodsinsId}
+            </if>
+            <if test="params.prcId != null and params.prcId != ''">
+                AND PRC_ID = #{params.prcId}
+            </if>
+            <if test="params.parprcId != null and params.parprcId != ''">
+                AND PARPRC_ID = #{params.parprcId}
+            </if>
+            <if test="params.goodsId != null and params.goodsId != ''">
+                AND GOODS_ID = #{params.goodsId}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.state != null and params.state != ''">
+                AND STATE = #{params.state}
+            </if>
+            <if test="params.stateDate != null and params.stateDate != ''">
+                AND STATE_DATE = #{params.stateDate}
+            </if>
+            <if test="params.developLogin != null and params.developLogin != ''">
+                AND DEVELOP_LOGIN = #{params.developLogin}
+            </if>
+
+            <if test="params.goodsMainFlag != null and params.goodsMainFlag != ''">
+                AND GOODS_MAIN_FLAG = #{params.goodsMainFlag}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.orderDate != null and params.orderDate != ''">
+                AND ORDER_DATE = #{params.orderDate}
+            </if>
+            <if test="params.remark != null and params.remark != ''">
+                AND REMARK = #{params.remark}
+            </if>
+            <if test="params.servOrderId != null and params.servOrderId != ''">
+                AND SERV_ORDER_ID = #{params.servOrderId}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.dataOpsource != null and params.dataOpsource != ''">
+                AND DATA_OPSOURCE = #{params.dataOpsource}
+            </if>
+            <if test="params.orderSource != null and params.orderSource != ''">
+                AND ORDER_SOURCE = #{params.orderSource}
+            </if>
+            <if test="params.cancleSource != null and params.cancleSource != ''">
+                AND CANCLE_SOURCE = #{params.cancleSource}
+            </if>
+            <if test="params.orderLoginno != null and params.orderLoginno != ''">
+                AND ORDER_LOGINNO = #{params.orderLoginno}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserGoodsHisList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        GOODSINS_ID, ID_NO, RELGOODSINS_ID, TRANGOODSINS_ID, PRC_ID, PARPRC_ID, GOODS_ID, EFF_DATE, EXP_DATE,STATE,
+        STATE_DATE,
+        DEVELOP_LOGIN, GOODS_MAIN_FLAG, FINISH_FLAG, ORDER_DATE, REMARK, SERV_ORDER_ID, LOGIN_NO, OP_TIME, OP_CODE,
+        LOGIN_ACCEPT,
+        DATA_OPSOURCE, ORDER_SOURCE, CANCLE_SOURCE, ORDER_LOGINNO,UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from ur_usergoods_info_his
+        <where>
+            <if test="inparams.goodsinsId != null and inparams.goodsinsId != ''">
+                GOODSINS_ID = #{inparams.goodsinsId}
+            </if>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                AND ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.relgoodsinsId != null and inparams.relgoodsinsId != ''">
+                AND RELGOODSINS_ID = #{inparams.relgoodsinsId}
+            </if>
+            <if test="inparams.trangoodsinsId != null and inparams.trangoodsinsId != ''">
+                AND TRANGOODSINS_ID = #{inparams.trangoodsinsId}
+            </if>
+            <if test="inparams.prcId != null and inparams.prcId != ''">
+                AND PRC_ID = #{inparams.prcId}
+            </if>
+            <if test="inparams.parprcId != null and inparams.parprcId != ''">
+                AND PARPRC_ID = #{inparams.parprcId}
+            </if>
+            <if test="inparams.goodsId != null and inparams.goodsId != ''">
+                AND GOODS_ID = #{inparams.goodsId}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.state != null and inparams.state != ''">
+                AND STATE = #{inparams.state}
+            </if>
+            <if test="inparams.stateDate != null and inparams.stateDate != ''">
+                AND STATE_DATE = #{inparams.stateDate}
+            </if>
+            <if test="inparams.developLogin != null and inparams.developLogin != ''">
+                AND DEVELOP_LOGIN = #{inparams.developLogin}
+            </if>
+
+            <if test="inparams.goodsMainFlag != null and inparams.goodsMainFlag != ''">
+                AND GOODS_MAIN_FLAG = #{inparams.goodsMainFlag}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.orderDate != null and inparams.orderDate != ''">
+                AND ORDER_DATE = #{inparams.orderDate}
+            </if>
+            <if test="inparams.remark != null and inparams.remark != ''">
+                AND REMARK = #{inparams.remark}
+            </if>
+            <if test="inparams.servOrderId != null and inparams.servOrderId != ''">
+                AND SERV_ORDER_ID = #{inparams.servOrderId}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.dataOpsource != null and inparams.dataOpsource != ''">
+                AND DATA_OPSOURCE = #{inparams.dataOpsource}
+            </if>
+            <if test="inparams.orderSource != null and inparams.orderSource != ''">
+                AND ORDER_SOURCE = #{inparams.orderSource}
+            </if>
+            <if test="inparams.cancleSource != null and inparams.cancleSource != ''">
+                AND CANCLE_SOURCE = #{inparams.cancleSource}
+            </if>
+            <if test="inparams.orderLoginno != null and inparams.orderLoginno != ''">
+                AND ORDER_LOGINNO = #{inparams.orderLoginno}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGoods">
+        update ur_usergoods_info
+        <set>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE ID_NO = #{idNo,jdbcType=DECIMAL}
+    </update>
+
+</mapper>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserMapper">
+
+    <select id="query" resultMap="userMap">
+        select ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+      ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+      BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+      OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE
+       from ur_user_info where ID_NO = #{idNo};
+    </select>
+
+    <resultMap id="userMap" type="com.sitech.family.custqryservice.dto.mapperdto.User">
+        <id property="idNo" column="ID_NO"></id>
+        <result property="masterServId" column="MASTER_SERV_ID"></result>
+        <result property="phoneNo" column="PHONE_NO"></result>
+        <result property="contractNo" column="CONTRACT_NO"></result>
+        <result property="custId" column="CUST_ID"></result>
+        <result property="ownerType" column="OWNER_TYPE"></result>
+        <result property="billingCycleTypeId" column="BILLING_CYCLE_TYPE_ID"></result>
+        <result property="billType" column="BILL_TYPE"></result>
+        <result property="groupFlag" column="GROUP_FLAG"></result>
+        <result property="cmdRight" column="CMD_RIGHT"></result>
+        <result property="assureFlag" column="ASSURE_FLAG"></result>
+        <result property="createDate" column="CREATE_DATE"></result>
+        <result property="createLogin" column="CREATE_LOGIN"></result>
+        <result property="groupId" column="GROUP_ID"></result>
+        <result property="ownedChnlId" column="OWNED_CHNL_ID"></result>
+        <result property="serviceGroup" column="SERVICE_GROUP"></result>
+        <result property="completedDate" column="COMPLETED_DATE"></result>
+        <result property="openTime" column="OPEN_TIME"></result>
+        <result property="billStartTime" column="BILL_START_TIME"></result>
+        <result property="billEndTime" column="BILL_END_TIME"></result>
+        <result property="firstUsedate" column="FIRST_USEDATE"></result>
+        <result property="rentDate" column="RENT_DATE"></result>
+        <result property="stopRentDate" column="STOP_RENT_DATE"></result>
+        <result property="photoFlag" column="PHOTO_FLAG"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="bakField" column="BAK_FIELD"></result>
+        <result property="accessType" column="ACCESS_TYPE"></result>
+        <result property="bakField1" column="BAK_FIELD1"></result>
+        <result property="empId" column="EMP_ID"></result>
+        <result property="empGroup" column="EMP_GROUP"></result>
+        <result property="brandCreateType" column="BRAND_CREATE_TYPE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <collection property="goods" ofType="com.sitech.family.custqryservice.dto.mapperdto.UserGoods">
+            <id column="GOODSINS_ID" property="goodsinsId" jdbcType="DECIMAL"/>
+            <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+            <result column="RELGOODSINS_ID" property="relgoodsinsId" jdbcType="DECIMAL"/>
+            <result column="TRANGOODSINS_ID" property="trangoodsinsId" jdbcType="DECIMAL"/>
+            <result column="PRC_ID" property="prcId" jdbcType="VARCHAR"/>
+            <result column="PARPRC_ID" property="parprcId" jdbcType="VARCHAR"/>
+            <result column="GOODS_ID" property="goodsId" jdbcType="VARCHAR"/>
+            <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+            <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+            <result column="STATE" property="state" jdbcType="VARCHAR"/>
+            <result column="STATE_DATE" property="stateDate" jdbcType="TIMESTAMP"/>
+            <result column="DEVELOP_LOGIN" property="developLogin" jdbcType="VARCHAR"/>
+            <result column="GOODS_MAIN_FLAG" property="goodsMainFlag" jdbcType="VARCHAR"/>
+            <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+            <result column="ORDER_DATE" property="orderDate" jdbcType="TIMESTAMP"/>
+            <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+            <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+            <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+            <result column="SERV_ORDER_ID" property="servOrderId" jdbcType="VARCHAR"/>
+            <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+            <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+            <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+            <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+            <result column="DATA_OPSOURCE" property="dataOpsource" jdbcType="VARCHAR"/>
+            <result column="ORDER_SOURCE" property="orderSource" jdbcType="VARCHAR"/>
+            <result column="CANCLE_SOURCE" property="cancleSource" jdbcType="VARCHAR"/>
+            <result column="ORDER_LOGINNO" property="orderLoginno" jdbcType="VARCHAR"/>
+            <collection property="goodsattr" ofType="com.sitech.family.custqryservice.dto.mapperdto.UserGoodsAttr">
+                <id property="goodsinsId" column="GOODSINS_ID"></id>
+                <result property="attrId" column="ATTR_ID"></result>
+                <result property="attrNo" column="ATTR_NO"></result>
+                <result property="grpNo" column="GRP_NO"></result>
+                <result property="attrValue" column="ATTR_VALUE"></result>
+                <result property="prcId" column="PRC_ID"></result>
+                <result property="idNo" column="ID_NO"></result>
+                <result property="effDate" column="EFF_DATE"></result>
+                <result property="expDate" column="EXP_DATE"></result>
+                <result property="loginNo" column="LOGIN_NO"></result>
+                <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+                <result property="opTime" column="OP_TIME"></result>
+                <result property="opCode" column="OP_CODE"></result>
+                <result property="finishFlag" column="FINISH_FLAG"></result>
+                <result property="servOrderId" column="SERV_ORDER_ID"></result>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="qryUserList" parameterType="Map" resultMap="userMap">
+        select
+        ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE
+        from ur_user_info
+        <where>
+            <if test="params.idNo != null and params.idNo != ''">
+                ID_NO = #{params.idNo}
+            </if>
+            <if test="params.masterServId != null and params.masterServId != ''">
+                AND MASTER_SERV_ID = #{params.masterServId}
+            </if>
+            <if test="params.phoneNo != null and params.phoneNo != ''">
+                AND PHONE_NO = #{params.phoneNo}
+            </if>
+            <if test="params.contractNo != null and params.contractNo != ''">
+                AND CONTRACT_NO = #{params.contractNo}
+            </if>
+            <if test="params.custId != null and params.custId != ''">
+                AND CUST_ID = #{params.custId}
+            </if>
+            <if test="params.ownerType != null and params.ownerType != ''">
+                AND OWNER_TYPE = #{params.ownerType}
+            </if>
+            <if test="params.billingCycleTypeId != null and params.billingCycleTypeId != ''">
+                AND BILLING_CYCLE_TYPE_ID = #{params.billingCycleTypeId}
+            </if>
+            <if test="params.billType != null and params.billType != ''">
+                AND BILL_TYPE = #{params.billType}
+            </if>
+            <if test="params.groupFlag != null and params.groupFlag != ''">
+                AND GROUP_FLAG = #{params.groupFlag}
+            </if>
+            <if test="params.cmdRight != null and params.cmdRight != ''">
+                AND CMD_RIGHT = #{params.cmdRight}
+            </if>
+            <if test="params.assureFlag != null and params.assureFlag != ''">
+                AND ASSURE_FLAG = #{params.assureFlag}
+            </if>
+            <if test="params.createDate != null and params.createDate != ''">
+                AND CREATE_DATE = #{params.createDate}
+            </if>
+            <if test="params.createLogin != null and params.createLogin != ''">
+                AND CREATE_LOGIN = #{params.createLogin}
+            </if>
+            <if test="params.groupId != null and params.groupId != ''">
+                AND GROUP_ID = #{params.groupId}
+            </if>
+            <if test="params.ownedChnlId != null and params.ownedChnlId != ''">
+                AND OWNED_CHNL_ID = #{params.ownedChnlId}
+            </if>
+            <if test="params.serviceGroup != null and params.serviceGroup != ''">
+                AND SERVICE_GROUP = #{params.serviceGroup}
+            </if>
+            <if test="params.completedDate != null and params.completedDate != ''">
+                AND COMPLETED_DATE = #{params.completedDate}
+            </if>
+            <if test="params.openTime != null and params.openTime != ''">
+                AND OPEN_TIME = #{params.openTime}
+            </if>
+            <if test="params.billStartTime != null and params.billStartTime != ''">
+                AND BILL_START_TIME = #{params.billStartTime}
+            </if>
+            <if test="params.billEndTime != null and params.billEndTime != ''">
+                AND BILL_END_TIME = #{params.billEndTime}
+            </if>
+            <if test="params.firstUsedate != null and params.firstUsedate != ''">
+                AND FIRST_USEDATE = #{params.firstUsedate}
+            </if>
+            <if test="params.rentDate != null and params.rentDate != ''">
+                AND RENT_DATE = #{params.rentDate}
+            </if>
+            <if test="params.stopRentDate != null and params.stopRentDate != ''">
+                AND STOP_RENT_DATE = #{params.stopRentDate}
+            </if>
+            <if test="params.photoFlag != null and params.photoFlag != ''">
+                AND PHOTO_FLAG = #{params.photoFlag}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.bakField != null and params.bakField != ''">
+                AND BAK_FIELD = #{params.bakField}
+            </if>
+            <if test="params.accessType != null and params.accessType != ''">
+                AND ACCESS_TYPE = #{params.accessType}
+            </if>
+            <if test="params.bakField1 != null and params.bakField1 != ''">
+                AND BAK_FIELD1 = #{params.bakField1}
+            </if>
+            <if test="params.empId != null and params.empId != ''">
+                AND EMP_ID = #{params.empId}
+            </if>
+            <if test="params.empGroup != null and params.empGroup != ''">
+                AND EMP_GROUP = #{params.empGroup}
+            </if>
+            <if test="params.brandCreateType != null and params.brandCreateType != ''">
+                AND BRAND_CREATE_TYPE = #{params.brandCreateType}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="qryOrderFeeByPhoneNo" resultMap="userMap">
+        SELECT
+	        b.PRC_ID,b.GOODS_ID,b.EFF_DATE,b.EXP_DATE,c.ATTR_ID,c.ATTR_NO,c.ATTR_VALUE
+        FROM
+	        ur_user_info a
+	            LEFT JOIN ur_usergoods_info b ON a.ID_NO = b.ID_NO
+	            LEFT JOIN ur_usergoodsattr_info c ON b.GOODSINS_ID = c.GOODSINS_ID
+            WHERE
+	            a.PHONE_NO = #{phoneNo} AND b.GOODS_MAIN_FLAG = #{goodsMainFlag}
+    </select>
+
+</mapper>

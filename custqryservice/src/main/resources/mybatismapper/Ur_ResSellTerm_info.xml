@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.ResSellTermMapper" >
+    <resultMap id="resSellTermMap" type="com.sitech.family.custqryservice.dto.mapperdto.ResSellTerm">
+        <id property="opTime" column="OP_TIME"></id>
+        <result property="resourceNo" column="RESOURCE_NO"></result>
+        <result property="sellSerialNo" column="SELL_SERIAL_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="resourceType" column="RESOURCE_TYPE"></result>
+        <result property="resourceCode" column="RESOURCE_CODE"></result>
+        <result property="skuId" column="SKU_ID"></result>
+        <result property="resourceModel" column="RESOURCE_MODEL"></result>
+        <result property="receiveName" column="RECEIVE_NAME"></result>
+        <result property="receivePhone" column="RECEIVE_PHONE"></result>
+        <result property="sellType" column="SELL_TYPE"></result>
+        <result property="resCostPrice" column="RES_COST_PRICE"></result>
+        <result property="resSellPrice" column="RES_SELL_PRICE"></result>
+        <result property="resActPrice" column="RES_ACT_PRICE"></result>
+        <result property="sellNum" column="SELL_NUM"></result>
+        <result property="outterLoginNo" column="OUTTER_LOGIN_NO"></result>
+        <result property="outterTime" column="OUTTER_TIME"></result>
+        <result property="backFlag" column="BACK_FLAG"></result>
+        <result property="backAccept" column="BACK_ACCEPT"></result>
+        <result property="orgGroup" column="ORG_GROUP"></result>
+        <result property="usePhone" column="USE_PHONE"></result>
+        <result property="sellSolutionId" column="SELL_SOLUTION_ID"></result>
+        <result property="sellMeanId" column="SELL_MEAN_ID"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opNote" column="OP_NOTE"></result>
+        <result property="goodsinsId" column="GOODSINS_ID"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+       OP_TIME, RESOURCE_NO, SELL_SERIAL_NO, LOGIN_ACCEPT, ID_NO, RESOURCE_TYPE, RESOURCE_CODE, SKU_ID, RESOURCE_MODEL,
+       RECEIVE_NAME, RECEIVE_PHONE, SELL_TYPE, RES_COST_PRICE, RES_SELL_PRICE, RES_ACT_PRICE, SELL_NUM, OUTTER_LOGIN_NO,
+       OUTTER_TIME, BACK_FLAG, BACK_ACCEPT, ORG_GROUP, USE_PHONE, SELL_SOLUTION_ID, SELL_MEAN_ID, LOGIN_NO, OP_CODE,
+       OP_NOTE, GOODSINS_ID
+    </sql>
+
+    <select id="query" resultMap="resSellTermMap">
+        select
+        <include refid="Base_Column_List" />
+        from UR_RESSELLTERM_INFO where OP_TIME = #{opTime} and RESOURCE_NO = #{resourceNo} and SELL_SERIAL_NO = #{sellSerialNo} and GOODSINS_ID = #{goodsinsId};
+    </select>
+
+</mapper>

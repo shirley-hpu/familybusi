@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserGoodsRelMapper" >
+
+    <select id="query" resultMap="userGoodsRelMap">
+        select GOODSINS_ID,RELGOODSINS_ID,LOGIN_ACCEPT,ID_NO,EFF_DATE,EXP_DATE,RELOP_TYPE,RELATION_TYPE,SERV_ORDER_ID,LOGIN_NO,OP_TIME,REMARK
+        from ur_usergoodsrel_info where GOODSINS_ID = #{goodsinsId} AND RELGOODSINS_ID = #{relgoodsinsId} AND LOGIN_ACCEPT = #{loginAccept};
+    </select>
+
+    <resultMap id="userGoodsRelMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserGoodsRel">
+        <id property="goodsinsId" column="GOODSINS_ID"></id>
+        <result property="relgoodsinsId" column="RELGOODSINS_ID"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="relopType" column="RELOP_TYPE"></result>
+        <result property="relationType" column="RELATION_TYPE"></result>
+        <result property="servOrderId" column="SERV_ORDER_ID"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="remark" column="REMARK"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+</mapper>

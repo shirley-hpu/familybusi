@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.preservice.mapper.FmPreOrderMidMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.preservice.dto.FamilyPreOrderCfm">
+        <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR"/>
+        <result column="GOODS_NAME" property="goodsName" jdbcType="VARCHAR"/>
+        <result column="GOODS_DESC" property="goodsDesc" jdbcType="VARCHAR"/>
+        <result column="FREE_SUM" property="freeSum" jdbcType="VARCHAR"/>
+        <result column="USE_ADDRESS" property="useAddress" jdbcType="VARCHAR"/>
+        <result column="INSTALL_TIME" property="installTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <insert id="commit" parameterType="FamilyPreOrderCfm">
+        insert into fm_preorder_mid
+            (PHONE_NO, GOODS_NAME, GOODS_DESC, FREE_SUM, USE_ADDRESS, INSTALL_TIME, OP_TIME)
+        values
+            (#{phoneNo}, #{goodsName}, #{goodsDesc}, #{freeSum}, #{useAddress}, #{installTime}, #{opTime})
+    </insert>
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.ConUserRelMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.ConUserRel">
+        <id column="SERV_ACCT_ID" property="servAcctId" jdbcType="DECIMAL"/>
+        <result column="CONTRACT_NO" property="contractNo" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="PAY_TYPE" property="payType" jdbcType="VARCHAR"/>
+        <result column="PAY_VALUE" property="payValue" jdbcType="DECIMAL"/>
+        <result column="CHKOUT_PRI" property="chkoutPri" jdbcType="DECIMAL"/>
+        <result column="BILL_ORDER" property="billOrder" jdbcType="DECIMAL"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="DATE_CYCLE" property="dateCycle" jdbcType="DECIMAL"/>
+        <result column="RATE_FLAG" property="rateFlag" jdbcType="VARCHAR"/>
+        <result column="cycle_type" property="cycleType" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    SERV_ACCT_ID, CONTRACT_NO, ID_NO, PAY_TYPE, PAY_VALUE, CHKOUT_PRI, BILL_ORDER, EFF_DATE, 
+    EXP_DATE, FINISH_FLAG, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, DATE_CYCLE, 
+    RATE_FLAG, cycle_type
+  </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_conuserrel_info
+        where SERV_ACCT_ID = #{servAcctId,jdbcType=DECIMAL}
+    </select>
+
+</mapper>

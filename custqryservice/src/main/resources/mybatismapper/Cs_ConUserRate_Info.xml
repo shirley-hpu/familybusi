@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IConUserRateMapper" >
+
+    <select id="query" resultMap="userAcRateMap">
+        select SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE,DETAL_CODE, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, FEE_VALUE
+        from cs_conuserrate_info where SERV_ACCT_ID = #{servAcctId} AND FEE_CODE = #{feeCode} and DETAL_CODE = #{detalCode} AND EFF_DATE = #{effDate};
+    </select>
+    
+    <resultMap id="userAcRateMap" type="com.sitech.family.custqryservice.dto.mapperdto.ConUserRate">
+        <id property="servAcctId" column="SERV_ACCT_ID"></id>
+        <result property="contractNo" column="CONTRACT_NO"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="chkoutPri" column="CHKOUT_PRI"></result>
+        <result property="billOrder" column="BILL_ORDER"></result>
+        <result property="feeRate" column="FEE_RATE"></result>
+        <result property="feeCode" column="FEE_CODE"></result>
+        <result property="detalCode" column="DETAL_CODE"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="remark" column="REMARK"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="feeValue" column="CONTRACT_NO"></result>
+    </resultMap>
+
+</mapper>

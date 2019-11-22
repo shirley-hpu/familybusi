@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.IUserMapper" >
+
+    <insert id="create" parameterType="User">
+      insert into ur_user_info
+      ( ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE )
+       values
+       ( #{idNo}, #{masterServId}, #{phoneNo}, #{contractNo}, #{custId}, #{ownerType}, #{billingCycleTypeId},
+        #{billType}, #{groupFlag}, #{cmdRight}, #{assureFlag}, #{createDate}, #{createLogin}, #{groupId}, #{ownedChnlId}, #{serviceGroup},
+         #{completedDate},#{openTime},#{billStartTime},#{billEndTime},#{firstUsedate},#{rentDate},#{stopRentDate},#{photoFlag},
+         #{finishFlag},#{opCode},#{opTime},#{loginNo},#{loginAccept},#{bakField},#{accessType},#{bakField1},
+         #{empId},#{empGroup},#{brandCreateType} );
+    </insert>
+
+    <insert id="insert" parameterType="User">
+        insert into ur_user_info_his
+      ( ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE,UPDATE_TIME,
+        UPDATE_TYPE, UPDATE_CODE, UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE )
+          values
+        (#{idNo}, #{masterServId}, #{phoneNo}, #{contractNo}, #{custId}, #{ownerType}, #{billingCycleTypeId},
+        #{billType}, #{groupFlag}, #{cmdRight}, #{assureFlag}, #{createDate}, #{createLogin}, #{groupId}, #{ownedChnlId}, #{serviceGroup},
+         #{completedDate},#{openTime},#{billStartTime},#{billEndTime},#{firstUsedate},#{rentDate},#{stopRentDate},#{photoFlag},
+         #{finishFlag},#{opCode},#{opTime},#{loginNo},#{loginAccept},#{bakField},#{accessType},#{bakField1},
+         #{empId},#{empGroup},#{brandCreateType}, #{updateTime}, #{updateType}, #{updateCode}, #{updateLogin}, #{updateAccept}, #{updateDate} );
+    </insert>
+
+    <update id="modify" parameterType="User">
+        update ur_user_info
+        <trim prefix="set" suffixOverrides=",">
+            <if test="masterServId != null"> MASTER_SERV_ID = #{masterServId}, </if>
+            <if test="phoneNo != null"> PHONE_NO = #{phoneNo}, </if>
+            <if test="contractNo != null"> CONTRACT_NO = #{contractNo}, </if>
+            <if test="custId != null"> CUST_ID = #{custId}, </if>
+            <if test="ownerType != null"> OWNER_TYPE = #{ownerType}, </if>
+            <if test="billingCycleTypeId != null"> BILLING_CYCLE_TYPE_ID = #{billingCycleTypeId}, </if>
+            <if test="billType != null"> BILL_TYPE = #{billType}, </if>
+            <if test="groupFlag != null"> GROUP_FLAG = #{groupFlag}, </if>
+            <if test="cmdRight != null"> CMD_RIGHT = #{cmdRight}, </if>
+            <if test="assureFlag != null"> ASSURE_FLAG = #{assureFlag}, </if>
+            <if test="createDate != null"> CREATE_DATE = #{createDate}, </if>
+            <if test="createLogin != null"> CREATE_LOGIN = #{createLogin}, </if>
+            <if test="groupId != null"> GROUP_ID = #{groupId}, </if>
+            <if test="ownedChnlId != null"> OWNED_CHNL_ID = #{ownedChnlId}, </if>
+            <if test="serviceGroup != null"> SERVICE_GROUP = #{serviceGroup}, </if>
+            <if test="completedDate != null"> COMPLETED_DATE = #{completedDate}, </if>
+            <if test="openTime != null"> OPEN_TIME = #{openTime}, </if>
+            <if test="billStartTime != null"> BILL_START_TIME = #{billStartTime}, </if>
+            <if test="billEndTime != null"> BILL_END_TIME = #{billEndTime}, </if>
+            <if test="firstUsedate != null"> FIRST_USEDATE = #{firstUsedate}, </if>
+            <if test="rentDate != null"> RENT_DATE = #{rentDate}, </if>
+            <if test="stopRentDate != null"> STOP_RENT_DATE = #{stopRentDate}, </if>
+            <if test="photoFlag != null"> PHOTO_FLAG = #{photoFlag}, </if>
+            <if test="finishFlag != null"> FINISH_FLAG = #{finishFlag}, </if>
+            <if test="opCode != null"> OP_CODE = #{opCode}, </if>
+            <if test="opTime != null"> OP_TIME = #{opTime}, </if>
+            <if test="loginNo != null"> LOGIN_NO = #{loginNo}, </if>
+            <if test="loginAccept != null"> LOGIN_ACCEPT = #{loginAccept}, </if>
+            <if test="bakField != null"> BAK_FIELD = #{bakField}, </if>
+            <if test="accessType != null"> ACCESS_TYPE = #{accessType}, </if>
+            <if test="bakField1 != null"> BAK_FIELD1 = #{bakField1}, </if>
+            <if test="empId != null"> EMP_ID = #{empId}, </if>
+            <if test="empGroup != null"> EMP_GROUP = #{empGroup}, </if>
+            <if test="brandCreateType != null"> BRAND_CREATE_TYPE = #{brandCreateType}, </if>
+        </trim>
+        where ID_NO = #{idNo};
+    </update>
+
+    <delete id="drop" parameterType="User">
+        delete from ur_user_info  where ID_NO = #{idNo};
+    </delete>
+
+    <select id="query" resultMap="userMap">
+        select
+        ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE
+       from ur_user_info where ID_NO = #{idNo};
+    </select>
+
+    <select id="qryUserList" parameterType="Map" resultMap="userMap">
+        select
+        ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE
+        from ur_user_info
+        <where>
+            <if test="params.idNo != null and params.idNo != ''">
+                ID_NO = #{params.idNo}
+            </if>
+            <if test="params.masterServId != null and params.masterServId != ''">
+                AND MASTER_SERV_ID = #{params.masterServId}
+            </if>
+            <if test="params.phoneNo != null and params.phoneNo != ''">
+                AND PHONE_NO = #{params.phoneNo}
+            </if>
+            <if test="params.contractNo != null and params.contractNo != ''">
+                AND CONTRACT_NO = #{params.contractNo}
+            </if>
+            <if test="params.custId != null and params.custId != ''">
+                AND CUST_ID = #{params.custId}
+            </if>
+            <if test="params.ownerType != null and params.ownerType != ''">
+                AND OWNER_TYPE = #{params.ownerType}
+            </if>
+            <if test="params.billingCycleTypeId != null and params.billingCycleTypeId != ''">
+                AND BILLING_CYCLE_TYPE_ID = #{params.billingCycleTypeId}
+            </if>
+            <if test="params.billType != null and params.billType != ''">
+                AND BILL_TYPE = #{params.billType}
+            </if>
+            <if test="params.groupFlag != null and params.groupFlag != ''">
+                AND GROUP_FLAG = #{params.groupFlag}
+            </if>
+            <if test="params.cmdRight != null and params.cmdRight != ''">
+                AND CMD_RIGHT = #{params.cmdRight}
+            </if>
+            <if test="params.assureFlag != null and params.assureFlag != ''">
+                AND ASSURE_FLAG = #{params.assureFlag}
+            </if>
+            <if test="params.createDate != null and params.createDate != ''">
+                AND CREATE_DATE = #{params.createDate}
+            </if>
+            <if test="params.createLogin != null and params.createLogin != ''">
+                AND CREATE_LOGIN = #{params.createLogin}
+            </if>
+            <if test="params.groupId != null and params.groupId != ''">
+                AND GROUP_ID = #{params.groupId}
+            </if>
+            <if test="params.ownedChnlId != null and params.ownedChnlId != ''">
+                AND OWNED_CHNL_ID = #{params.ownedChnlId}
+            </if>
+            <if test="params.serviceGroup != null and params.serviceGroup != ''">
+                AND SERVICE_GROUP = #{params.serviceGroup}
+            </if>
+            <if test="params.completedDate != null and params.completedDate != ''">
+                AND COMPLETED_DATE = #{params.completedDate}
+            </if>
+            <if test="params.openTime != null and params.openTime != ''">
+                AND OPEN_TIME = #{params.openTime}
+            </if>
+            <if test="params.billStartTime != null and params.billStartTime != ''">
+                AND BILL_START_TIME = #{params.billStartTime}
+            </if>
+            <if test="params.billEndTime != null and params.billEndTime != ''">
+                AND BILL_END_TIME = #{params.billEndTime}
+            </if>
+            <if test="params.firstUsedate != null and params.firstUsedate != ''">
+                AND FIRST_USEDATE = #{params.firstUsedate}
+            </if>
+            <if test="params.rentDate != null and params.rentDate != ''">
+                AND RENT_DATE = #{params.rentDate}
+            </if>
+            <if test="params.stopRentDate != null and params.stopRentDate != ''">
+                AND STOP_RENT_DATE = #{params.stopRentDate}
+            </if>
+            <if test="params.photoFlag != null and params.photoFlag != ''">
+                AND PHOTO_FLAG = #{params.photoFlag}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.bakField != null and params.bakField != ''">
+                AND BAK_FIELD = #{params.bakField}
+            </if>
+            <if test="params.accessType != null and params.accessType != ''">
+                AND ACCESS_TYPE = #{params.accessType}
+            </if>
+            <if test="params.bakField1 != null and params.bakField1 != ''">
+                AND BAK_FIELD1 = #{params.bakField1}
+            </if>
+            <if test="params.empId != null and params.empId != ''">
+                AND EMP_ID = #{params.empId}
+            </if>
+            <if test="params.empGroup != null and params.empGroup != ''">
+                AND EMP_GROUP = #{params.empGroup}
+            </if>
+            <if test="params.brandCreateType != null and params.brandCreateType != ''">
+                AND BRAND_CREATE_TYPE = #{params.brandCreateType}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserHisList" parameterType="Map" resultMap="userMap">
+        select
+        ID_NO,MASTER_SERV_ID,PHONE_NO,CONTRACT_NO,CUST_ID,OWNER_TYPE,BILLING_CYCLE_TYPE_ID,BILL_TYPE,GROUP_FLAG,CMD_RIGHT,
+        ASSURE_FLAG,CREATE_DATE,CREATE_LOGIN,GROUP_ID,OWNED_CHNL_ID,SERVICE_GROUP,COMPLETED_DATE,OPEN_TIME,
+        BILL_START_TIME,BILL_END_TIME,FIRST_USEDATE,RENT_DATE,STOP_RENT_DATE,PHOTO_FLAG,FINISH_FLAG,OP_CODE,
+        OP_TIME,LOGIN_NO,LOGIN_ACCEPT,BAK_FIELD,ACCESS_TYPE,BAK_FIELD1,EMP_ID,EMP_GROUP,BRAND_CREATE_TYPE,
+        UPDATE_TIME,UPDATE_TYPE, UPDATE_CODE, UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from ur_user_info_his
+        <where>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.masterServId != null and inparams.masterServId != ''">
+                AND MASTER_SERV_ID = #{inparams.masterServId}
+            </if>
+            <if test="inparams.phoneNo != null and inparams.phoneNo != ''">
+                AND PHONE_NO = #{inparams.phoneNo}
+            </if>
+            <if test="inparams.contractNo != null and inparams.contractNo != ''">
+                AND CONTRACT_NO = #{inparams.contractNo}
+            </if>
+            <if test="inparams.custId != null and inparams.custId != ''">
+                AND CUST_ID = #{inparams.custId}
+            </if>
+            <if test="inparams.ownerType != null and inparams.ownerType != ''">
+                AND OWNER_TYPE = #{inparams.ownerType}
+            </if>
+            <if test="inparams.billingCycleTypeId != null and inparams.billingCycleTypeId != ''">
+                AND BILLING_CYCLE_TYPE_ID = #{inparams.billingCycleTypeId}
+            </if>
+            <if test="inparams.billType != null and inparams.billType != ''">
+                AND BILL_TYPE = #{inparams.billType}
+            </if>
+            <if test="inparams.groupFlag != null and inparams.groupFlag != ''">
+                AND GROUP_FLAG = #{inparams.groupFlag}
+            </if>
+            <if test="inparams.cmdRight != null and inparams.cmdRight != ''">
+                AND CMD_RIGHT = #{inparams.cmdRight}
+            </if>
+            <if test="inparams.assureFlag != null and inparams.assureFlag != ''">
+                AND ASSURE_FLAG = #{inparams.assureFlag}
+            </if>
+            <if test="inparams.createDate != null and inparams.createDate != ''">
+                AND CREATE_DATE = #{inparams.createDate}
+            </if>
+            <if test="inparams.createLogin != null and inparams.createLogin != ''">
+                AND CREATE_LOGIN = #{inparams.createLogin}
+            </if>
+            <if test="inparams.groupId != null and inparams.groupId != ''">
+                AND GROUP_ID = #{inparams.groupId}
+            </if>
+            <if test="inparams.ownedChnlId != null and inparams.ownedChnlId != ''">
+                AND OWNED_CHNL_ID = #{inparams.ownedChnlId}
+            </if>
+            <if test="inparams.serviceGroup != null and inparams.serviceGroup != ''">
+                AND SERVICE_GROUP = #{inparams.serviceGroup}
+            </if>
+            <if test="inparams.completedDate != null and inparams.completedDate != ''">
+                AND COMPLETED_DATE = #{inparams.completedDate}
+            </if>
+            <if test="inparams.openTime != null and inparams.openTime != ''">
+                AND OPEN_TIME = #{inparams.openTime}
+            </if>
+            <if test="inparams.billStartTime != null and inparams.billStartTime != ''">
+                AND BILL_START_TIME = #{inparams.billStartTime}
+            </if>
+            <if test="inparams.billEndTime != null and inparams.billEndTime != ''">
+                AND BILL_END_TIME = #{inparams.billEndTime}
+            </if>
+            <if test="inparams.firstUsedate != null and inparams.firstUsedate != ''">
+                AND FIRST_USEDATE = #{inparams.firstUsedate}
+            </if>
+            <if test="inparams.rentDate != null and inparams.rentDate != ''">
+                AND RENT_DATE = #{inparams.rentDate}
+            </if>
+            <if test="inparams.stopRentDate != null and inparams.stopRentDate != ''">
+                AND STOP_RENT_DATE = #{inparams.stopRentDate}
+            </if>
+            <if test="inparams.photoFlag != null and inparams.photoFlag != ''">
+                AND PHOTO_FLAG = #{inparams.photoFlag}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.bakField != null and inparams.bakField != ''">
+                AND BAK_FIELD = #{inparams.bakField}
+            </if>
+            <if test="inparams.accessType != null and inparams.accessType != ''">
+                AND ACCESS_TYPE = #{inparams.accessType}
+            </if>
+            <if test="inparams.bakField1 != null and inparams.bakField1 != ''">
+                AND BAK_FIELD1 = #{inparams.bakField1}
+            </if>
+            <if test="inparams.empId != null and inparams.empId != ''">
+                AND EMP_ID = #{inparams.empId}
+            </if>
+            <if test="inparams.empGroup != null and inparams.empGroup != ''">
+                AND EMP_GROUP = #{inparams.empGroup}
+            </if>
+            <if test="inparams.brandCreateType != null and inparams.brandCreateType != ''">
+                AND BRAND_CREATE_TYPE = #{inparams.brandCreateType}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.User">
+        update ur_user_info
+        <set>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE ID_NO = #{idNo,jdbcType=DECIMAL}
+    </update>
+
+    <resultMap id="userMap" type="com.sitech.family.custservice.dto.mapperdto.User">
+        <id property="idNo" column="ID_NO"></id>
+        <result property="masterServId" column="MASTER_SERV_ID"></result>
+        <result property="phoneNo" column="PHONE_NO"></result>
+        <result property="contractNo" column="CONTRACT_NO"></result>
+        <result property="custId" column="CUST_ID"></result>
+        <result property="ownerType" column="OWNER_TYPE"></result>
+        <result property="billingCycleTypeId" column="BILLING_CYCLE_TYPE_ID"></result>
+        <result property="billType" column="BILL_TYPE"></result>
+        <result property="groupFlag" column="GROUP_FLAG"></result>
+        <result property="cmdRight" column="CMD_RIGHT"></result>
+        <result property="assureFlag" column="ASSURE_FLAG"></result>
+        <result property="createDate" column="CREATE_DATE"></result>
+        <result property="createLogin" column="CREATE_LOGIN"></result>
+        <result property="groupId" column="GROUP_ID"></result>
+        <result property="ownedChnlId" column="OWNED_CHNL_ID"></result>
+        <result property="serviceGroup" column="SERVICE_GROUP"></result>
+        <result property="completedDate" column="COMPLETED_DATE"></result>
+        <result property="openTime" column="OPEN_TIME"></result>
+        <result property="billStartTime" column="BILL_START_TIME"></result>
+        <result property="billEndTime" column="BILL_END_TIME"></result>
+        <result property="firstUsedate" column="FIRST_USEDATE"></result>
+        <result property="rentDate" column="RENT_DATE"></result>
+        <result property="stopRentDate" column="STOP_RENT_DATE"></result>
+        <result property="photoFlag" column="PHOTO_FLAG"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="bakField" column="BAK_FIELD"></result>
+        <result property="accessType" column="ACCESS_TYPE"></result>
+        <result property="bakField1" column="BAK_FIELD1"></result>
+        <result property="empId" column="EMP_ID"></result>
+        <result property="empGroup" column="EMP_GROUP"></result>
+        <result property="brandCreateType" column="BRAND_CREATE_TYPE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+    </resultMap>
+
+</mapper>

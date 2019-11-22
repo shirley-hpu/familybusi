@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserDetailHisMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        <id column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="RUN_CODE" property="runCode" jdbcType="VARCHAR"/>
+        <result column="RUN_TIME" property="runTime" jdbcType="TIMESTAMP"/>
+        <result column="USER_GRADE_CODE" property="userGradeCode" jdbcType="VARCHAR"/>
+        <result column="STOP_FLAG" property="stopFlag" jdbcType="VARCHAR"/>
+        <result column="OWED_FLAG" property="owedFlag" jdbcType="VARCHAR"/>
+        <result column="USER_PASSWD" property="userPasswd" jdbcType="VARCHAR"/>
+        <result column="PASSWD_TYPE" property="passwdType" jdbcType="VARCHAR"/>
+        <result column="CARD_TYPE" property="cardType" jdbcType="DECIMAL"/>
+        <result column="VIP_CARD_NO" property="vipCardNo" jdbcType="VARCHAR"/>
+        <result column="VIP_CREATE_TYPE" property="vipCreateType" jdbcType="DECIMAL"/>
+        <result column="OLD_RUN" property="oldRun" jdbcType="VARCHAR"/>
+        <result column="QUERY_CDRFLAG" property="queryCdrflag" jdbcType="VARCHAR"/>
+        <result column="LMT_ADJUST_TYPE" property="lmtAdjustType" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="OP_NOTE" property="opNote" jdbcType="VARCHAR"/>
+        <result column="SYSTEM_NOTE" property="systemNote" jdbcType="VARCHAR"/>
+        <result column="BAK1" property="bak1" jdbcType="VARCHAR"/>
+        <result column="BAK2" property="bak2" jdbcType="VARCHAR"/>
+        <result column="UPDATE_ACCEPT" property="updateAccept" jdbcType="DECIMAL"/>
+        <result column="UPDATE_TYPE" property="updateType" jdbcType="VARCHAR"/>
+        <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="UPDATE_DATE" property="updateDate" jdbcType="DECIMAL"/>
+        <result column="UPDATE_LOGIN" property="updateLogin" jdbcType="VARCHAR"/>
+        <result column="UPDATE_CODE" property="updateCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID_NO, RUN_CODE, RUN_TIME, USER_GRADE_CODE, STOP_FLAG, OWED_FLAG, USER_PASSWD, PASSWD_TYPE, CARD_TYPE, VIP_CARD_NO, VIP_CREATE_TYPE, OLD_RUN,
+        QUERY_CDRFLAG, LMT_ADJUST_TYPE, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, OP_NOTE, SYSTEM_NOTE, BAK1, BAK2,
+        UPDATE_ACCEPT, UPDATE_TYPE, UPDATE_TIME, UPDATE_DATE, UPDATE_LOGIN, UPDATE_CODE
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_userdetail_info_his
+        where ID_NO = #{idNo,jdbcType=DECIMAL}
+    </select>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        insert into cs_userdetail_info_his
+                (ID_NO,RUN_CODE,RUN_TIME,USER_GRADE_CODE,STOP_FLAG,OWED_FLAG,USER_PASSWD,PASSWD_TYPE,CARD_TYPE,VIP_CARD_NO,VIP_CREATE_TYPE,OLD_RUN,QUERY_CDRFLAG,
+                LMT_ADJUST_TYPE,LOGIN_NO,LOGIN_ACCEPT,OP_TIME,OP_CODE,OP_NOTE,SYSTEM_NOTE,UPDATE_ACCEPT,UPDATE_TYPE,UPDATE_TIME,UPDATE_DATE,UPDATE_LOGIN,UPDATE_CODE)
+        values
+             (#{idNo,jdbcType=DECIMAL},#{runCode,jdbcType=VARCHAR},#{runTime,jdbcType=TIMESTAMP},#{userGradeCode,jdbcType=VARCHAR},#{stopFlag,jdbcType=VARCHAR},
+             #{owedFlag,jdbcType=VARCHAR},#{userPasswd,jdbcType=VARCHAR},#{passwdType,jdbcType=VARCHAR},#{cardType,jdbcType=DECIMAL},#{vipCardNo,jdbcType=VARCHAR},
+             #{vipCreateType,jdbcType=DECIMAL},#{oldRun,jdbcType=VARCHAR},#{queryCdrflag,jdbcType=VARCHAR},#{lmtAdjustType,jdbcType=VARCHAR},#{loginNo,jdbcType=VARCHAR},
+             #{loginAccept,jdbcType=DECIMAL},#{opTime,jdbcType=TIMESTAMP},#{opCode,jdbcType=VARCHAR},#{opNote,jdbcType=VARCHAR},#{systemNote,jdbcType=VARCHAR},
+             #{updateAccept,jdbcType=DECIMAL},#{updateType,jdbcType=VARCHAR},#{updateTime,jdbcType=TIMESTAMP},#{updateDate,jdbcType=DECIMAL},
+             #{updateLogin,jdbcType=VARCHAR},#{updateCode,jdbcType=VARCHAR})
+    </insert>
+</mapper>

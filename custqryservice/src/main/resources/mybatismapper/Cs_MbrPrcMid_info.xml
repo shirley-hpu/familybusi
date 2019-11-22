@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IMbrPrcMidMapper">
+    <resultMap id="mbrPrcMidMap" type="com.sitech.family.custqryservice.dto.mapperdto.MbrPrcMid">
+        <id property="insValue" column="INS_VALUE"></id>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="memberId" column="MEMBER_ID"></result>
+        <result property="insType" column="INS_TYPE"></result>
+        <result property="parinsId" column="PARINS_ID"></result>
+        <result property="otherinsId" column="OTHERINS_ID"></result>
+        <result property="relopType" column="RELOP_TYPE"></result>
+        <result property="relationType" column="RELATION_TYPE"></result>
+        <result property="relinsId" column="RELINS_ID"></result>
+        <result property="mainFlag" column="MAIN_FLAG"></result>
+        <result property="goodsId" column="GOODS_ID"></result>
+        <result property="prcId" column="PRC_ID"></result>
+        <result property="svcId" column="SVC_ID"></result>
+        <result property="prodId" column="PROD_ID"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="orderDate" column="ORDER_DATE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="outAccept" column="OUP_ACCEPT"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opNote" column="OP_NOTE"></result>
+        <result property="systemNote" column="SYSTEM_NOTE"></result>
+    </resultMap>
+
+
+    <select id="qryMbrPrcMidList" parameterType="Map" resultMap="mbrPrcMidMap">
+        select
+        ID_NO, MEMBER_ID, INS_TYPE, INS_VALUE, PARINS_ID, OTHERINS_ID, RELOP_TYPE, RELATION_TYPE, RELINS_ID,
+        MAIN_FLAG,GOODS_ID,PRC_ID, SVC_ID, PROD_ID, EFF_DATE, EXP_DATE, ORDER_DATE, OP_TIME, OP_CODE,
+        LOGIN_NO, OUP_ACCEPT, LOGIN_ACCEPT,OP_NOTE, SYSTEM_NOTE
+        from cs_mbrprcmid_info
+        <where>
+            <if test="params.idNo != null and params.idNo != ''">
+                ID_NO = #{params.idNo}
+            </if>
+            <if test="params.memberId != null and params.memberId != ''">
+                AND MEMBER_ID = #{params.memberId}
+            </if>
+            <if test="params.insType != null and params.insType != ''">
+                AND INS_TYPE = #{params.insType}
+            </if>
+            <if test="params.insValue != null and params.insValue != ''">
+                AND INS_VALUE = #{params.insValue}
+            </if>
+            <if test="params.parinsId != null and params.parinsId != ''">
+                AND PARINS_ID = #{params.parinsId}
+            </if>
+            <if test="params.otherinsId != null and params.otherinsId != ''">
+                AND OTHERINS_ID = #{params.otherinsId}
+            </if>
+            <if test="params.relopType != null and params.relopType != ''">
+                AND RELOP_TYPE = #{params.relopType}
+            </if>
+            <if test="params.relationType != null and params.relationType != ''">
+                AND RELATION_TYPE = #{params.relationType}
+            </if>
+            <if test="params.relinsId != null and params.relinsId != ''">
+                AND RELINS_ID = #{params.relinsId}
+            </if>
+            <if test="params.mainFlag != null and params.mainFlag != ''">
+                AND MAIN_FLAG = #{params.mainFlag}
+            </if>
+            <if test="params.goodsId != null and params.goodsId != ''">
+                AND GOODS_ID = #{params.goodsId}
+            </if>
+            <if test="params.prcId != null and params.prcId != ''">
+                AND PRC_ID = #{params.prcId}
+            </if>
+            <if test="params.svcId != null and params.svcId != ''">
+                AND SVC_ID = #{params.svcId}
+            </if>
+            <if test="params.prodId != null and params.prodId != ''">
+                AND PROD_ID = #{params.prodId}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.orderDate != null and params.orderDate != ''">
+                AND ORDER_DATE = #{params.orderDate}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.outAccept != null and params.outAccept != ''">
+                AND OUP_ACCEPT = #{params.outAccept}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.LOGIN_ACCEPT}
+            </if>
+            <if test="params.opNote != null and params.opNote != ''">
+                AND OP_NOTE = #{params.opNote}
+            </if>
+            <if test="params.systemNote != null and params.systemNote != ''">
+                AND SYSTEM_NOTE = #{params.systemNote}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

@@ -1,0 +1,23 @@
+{
+    "ROOT": {
+        "HEADER": {
+            "ROUTING": {
+                "ROUTE_KEY": "11",
+                "ROUTE_VALUE": "230181000000010815"
+            }
+        },
+        "BODY": {
+            "OUT_DATA": {
+                "USER_INFO":{
+                    "USER_NAME":"张**",
+                    "PHONE_NO":"18509234567",
+                    "CRAD_TYPE":"一星",
+                    "BRAND_NAME":"全球通（金）",
+                    "FEE":"88.00",
+                    "OPEN_PHONE_NUM":"4",
+                    "OPEN_BROADBAND_NUM":"2",
+                }
+            }
+        }
+    }
+}

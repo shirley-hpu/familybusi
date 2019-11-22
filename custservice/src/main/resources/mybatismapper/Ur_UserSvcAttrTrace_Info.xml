@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.IUserSvcAttrTraceMapper" >
+    <resultMap id="UserSvcAttrTraceMap" type="com.sitech.family.custservice.dto.mapperdto.UserSvcAttrTrace">
+        <id property="svcinsId" column="SVCINS_ID"></id>
+        <id property="attrId" column="ATTR_ID"></id>
+        <id property="attrNo" column="ATTR_NO"></id>
+        <id property="effDate" column="EFF_DATE"></id>
+        <result property="svcId" column="SVC_ID"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="attrValue" column="ATTR_VALUE"></result>
+        <result property="grpNo" column="GRP_NO"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="servOrderId" column="SERV_ORDER_ID"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+    </resultMap>
+
+    <insert id="create" parameterType="UserSvcAttrTrace">
+      insert into ur_usersvcattrtrace_info
+      ( SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO,EFF_DATE,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO,LOGIN_ACCEPT,OP_TIME,OP_CODE,SERV_ORDER_ID,FINISH_FLAG )
+       values
+       ( #{svcinsId}, #{svcId},#{attrId}, #{attrNo}, #{effDate}, #{idNo}, #{attrValue}, #{grpNo}, #{expDate}, #{loginNo}, #{loginAccept}, #{opTime}, #{opCode}, #{servOrderId}, #{finishFlag} );
+    </insert>
+
+    <insert id="insert" parameterType="UserSvcAttrTrace">
+        insert into ur_usersvcattrtrace_info_his
+             ( SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO, EFF_DATE , UPDATE_TYPE,UPDATE_ACCEPT,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO, LOGIN_ACCEPT, OP_TIME, OP_CODE, SERV_ORDER_ID,FINISH_FLAG,UPDATE_LOGIN,UPDATE_TIME,UPDATE_DATE,UPDATE_CODE)
+        values
+               ( #{svcinsId}, #{svcId}, #{attrId}, #{attrNo}, #{effDate}, #{updateType}, #{updateAccept}, #{idNo}, #{attrValue}, #{grpNo}, #{expDate}, #{loginNo}, #{loginAccept}, #{opTime}, #{opCode}, #{servOrderId}, #{finishFlag}, #{updateLogin}, #{updateTime}, #{updateDate},#{updateCode} );
+    </insert>
+
+    <update id="modify" parameterType="UserSvcAttrTrace">
+        update ur_usersvcattrtrace_info
+        <trim prefix="set" suffixOverrides=",">
+            <if test="svcId != null"> SVC_ID = #{svcId}, </if>
+            <if test="attrValue != null"> ATTR_VALUE = #{attrValue}, </if>
+            <if test="grpNo != null"> GRP_NO = #{grpNo}, </if>
+            <if test="expDate != null"> EXP_DATE = #{expDate}, </if>
+            <if test="loginNo != null"> LOGIN_NO = #{loginNo}, </if>
+            <if test="loginAccept != null"> LOGIN_ACCEPT = #{loginAccept}, </if>
+            <if test="opTime != null"> OP_TIME = #{opTime}, </if>
+            <if test="opCode != null"> OP_CODE = #{opCode}, </if>
+            <if test="servOrderId != null"> SERV_ORDER_ID = #{servOrderId}, </if>
+            <if test="finishFlag != null"> FINISH_FLAG = #{finishFlag}, </if>
+        </trim>
+        where SVCINS_ID = #{svcinsId} AND ATTR_ID = #{attrId} AND ATTR_NO = #{attrNo} AND EFF_DATE = #{effDate};
+    </update>
+
+    <delete id="drop" parameterType="UserSvcAttrTrace">
+        delete from ur_usersvcattrtrace_info where SVCINS_ID = #{svcinsId} AND ATTR_ID = #{attrId} AND ATTR_NO = #{attrNo} AND EFF_DATE = #{effDate};
+    </delete>
+
+    <select id="query" resultMap="UserSvcAttrTraceMap">
+        select SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO,EFF_DATE,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO,LOGIN_ACCEPT,OP_TIME,OP_CODE,SERV_ORDER_ID,FINISH_FLAG
+        from ur_usersvcattrtrace_info where SVCINS_ID = #{svcinsId} AND ATTR_ID = #{attrId} AND ATTR_NO = #{attrNo} AND EFF_DATE = #{effDate};
+    </select>
+
+    <select id="qryUserSvcAttrTraceList" parameterType="Map" resultMap="UserSvcAttrTraceMap">
+        select SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO,EFF_DATE,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO, LOGIN_ACCEPT, OP_TIME, OP_CODE,
+        SERV_ORDER_ID,FINISH_FLAG
+        from ur_usersvcattrtrace_info
+        <where>
+            <if test="params.svcinsId != null and params.svcinsId != ''">
+                SVCINS_ID = #{params.svcinsId}
+            </if>
+            <if test="params.svcId != null and params.svcId != ''">
+                AND SVC_ID = #{params.svcId}
+            </if>
+            <if test="params.attrId != null and params.attrId != ''">
+                AND ATTR_ID = #{params.attrId}
+            </if>
+            <if test="params.attrNo != null and params.attrNo != ''">
+                AND ATTR_NO = #{params.attrNo}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.attrValue != null and params.attrValue != ''">
+                AND ATTR_VALUE = #{params.attrValue}
+            </if>
+            <if test="params.grpNo != null and params.grpNo != ''">
+                AND GRP_NO = #{params.grpNo}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND REMARK = #{params.opCode}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.servOrderId != null and params.servOrderId != ''">
+                AND SERV_ORDER_ID = #{params.servOrderId}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserSvcAttrTraceHisList" parameterType="Map" resultMap="UserSvcAttrTraceMap">
+        select SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO,EFF_DATE,
+        UPDATE_TYPE,UPDATE_ACCEPT,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO, LOGIN_ACCEPT, OP_TIME, OP_CODE,
+        SERV_ORDER_ID,FINISH_FLAG,UPDATE_LOGIN,UPDATE_TIME,UPDATE_DATE,UPDATE_CODE
+        from ur_usersvcattrtrace_info_his
+        <where>
+            <if test="inparams.svcinsId != null and inparams.svcinsId != ''">
+                SVCINS_ID = #{inparams.svcinsId}
+            </if>
+            <if test="inparams.svcId != null and inparams.svcId != ''">
+                AND SVC_ID = #{inparams.svcId}
+            </if>
+            <if test="inparams.attrId != null and inparams.attrId != ''">
+                AND ATTR_ID = #{inparams.attrId}
+            </if>
+            <if test="inparams.attrNo != null and inparams.attrNo != ''">
+                AND ATTR_NO = #{inparams.attrNo}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                AND ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.attrValue != null and inparams.attrValue != ''">
+                AND ATTR_VALUE = #{inparams.attrValue}
+            </if>
+            <if test="inparams.grpNo != null and inparams.grpNo != ''">
+                AND GRP_NO = #{inparams.grpNo}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND REMARK = #{inparams.opCode}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.servOrderId != null and inparams.servOrderId != ''">
+                AND SERV_ORDER_ID = #{inparams.servOrderId}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.UserSvcAttrTrace">
+        update ur_usersvcattrtrace_info
+        <set>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE ID_NO = #{idNo,jdbcType=DECIMAL}
+    </update>
+</mapper>

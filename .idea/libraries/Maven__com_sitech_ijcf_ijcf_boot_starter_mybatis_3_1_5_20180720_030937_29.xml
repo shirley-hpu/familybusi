@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sitech.ijcf:ijcf-boot-starter-mybatis:3.1.5.20180720.030937-29">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-mybatis/3.1.5.20180720.030937-29/ijcf-boot-starter-mybatis-3.1.5.20180720.030937-29.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-mybatis/3.1.5.20180720.030937-29/ijcf-boot-starter-mybatis-3.1.5.20180720.030937-29-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-mybatis/3.1.5.20180720.030937-29/ijcf-boot-starter-mybatis-3.1.5.20180720.030937-29-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

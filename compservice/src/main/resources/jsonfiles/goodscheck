@@ -1,0 +1,37 @@
+{
+    "ROOT": {
+        "HEADER": {
+            "OP_CODE": "1106",
+            "DB_ID": "A1",
+            "ROUTING": {
+                "ROUTE_KEY": "11",
+                "ROUTE_VALUE": "230181000000010815"
+            },
+            "KEEP_LIVE": "10.109.222.35",
+            "TRACE_ID": "11*20171017163532*1106*aan70W*782587",
+            "CHANNEL_ID": "11",
+            "SERVICE_ROUTECALL": "1",
+            "PARENT_CALL_ID": "EFE8D1411621936C159A170FC89C191B",
+            "USERNAME": "aan70W",
+            "PROVINCE_GROUP": "HLJ",
+            "POOL_ID": "2"
+        },
+        "BODY": {
+            "OUT_DATA": {
+                "LIMIT_FLAG": "Y",
+                "EFF_DATE": "20171017163035",
+                "EXP_DATE": "20500101000000",
+                "GOODS_ID": "G06634",
+                "PRC_ID": "M054582",
+                "NOTE": "[物联卡闲时流量套餐资费-40元（匹配大流量资费）][M054582][G06634]可订购",
+                "RELATION_TYPE": "2"
+            },
+            "RETURN_CODE": "0",
+            "RETURN_MSG": "OK",
+            "USER_MSG": "OK",
+            "DETAIL_MSG": "OK",
+            "PROMPT_MSG": "OK",
+            "RUN_IP": "172.21.3.101"
+        }
+    }
+}

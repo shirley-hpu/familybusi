@@ -1,0 +1,31 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.21.11.188:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+  healthcheck:
+    enabled: true
+server:
+  port: 8764
+spring:
+  application:
+    name: familybusi_configservcie
+  cloud:
+      config:
+        enabled: false
+  boot:
+    admin:
+      url: http://localhost
+    jackson:
+      date-format: YYYY-MM
+      default-property-inclusion: non_null
+
+
+info: #定义各种额外的详情给服务端显示
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"

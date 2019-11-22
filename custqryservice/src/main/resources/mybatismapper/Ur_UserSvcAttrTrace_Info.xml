@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserSvcAttrTraceMapper" >
+
+    <resultMap id="UserSvcAttrTraceMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserSvcAttrTrace">
+        <id property="svcinsId" column="SVCINS_ID"></id>
+        <result property="svcId" column="SVC_ID"></result>
+        <result property="attrId" column="ATTR_ID"></result>
+        <result property="attrNo" column="ATTR_NO"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="attrValue" column="ATTR_VALUE"></result>
+        <result property="grpNo" column="GRP_NO"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="servOrderId" column="SERV_ORDER_ID"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+    </resultMap>
+
+    <select id="query" resultMap="UserSvcAttrTraceMap">
+        select SVCINS_ID,SVC_ID,ATTR_ID,ATTR_NO,EFF_DATE,ID_NO,ATTR_VALUE,GRP_NO,EXP_DATE,LOGIN_NO,LOGIN_ACCEPT,OP_TIME,OP_CODE,SERV_ORDER_ID,FINISH_FLAG
+        from ur_usersvcattrtrace_info where SVCINS_ID = #{svcinsId} AND ATTR_ID = #{attrId} AND ATTR_NO = #{attrNo} AND EFF_DATE = #{effDate};
+    </select>
+
+</mapper>

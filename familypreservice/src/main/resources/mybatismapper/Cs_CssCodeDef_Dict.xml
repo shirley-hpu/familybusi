@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.preservice.mapper.CssCodeDefMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.preservice.dto.CssCodeDef">
+        <id column="CODE_CLASS" property="codeClass" jdbcType="VARCHAR"/>
+        <id column="CODE_ID" property="codeId" jdbcType="VARCHAR"/>
+        <id column="GROUP_ID" property="groupId" jdbcType="VARCHAR"/>
+        <result column="CLASS_DESC" property="classDesc" jdbcType="VARCHAR"/>
+        <result column="CLASS_LEVEL" property="classLevel" jdbcType="VARCHAR"/>
+        <result column="VALUE_ID" property="valueId" jdbcType="VARCHAR"/>
+        <result column="ID_DESC" property="idDesc" jdbcType="VARCHAR"/>
+        <result column="ID_TYPE" property="idType" jdbcType="VARCHAR"/>
+        <result column="BEGIN_VALUE" property="beginValue" jdbcType="VARCHAR"/>
+        <result column="BEGIN_VALUE_DESC" property="beginValueDesc" jdbcType="VARCHAR"/>
+        <result column="END_VALUE" property="endValue" jdbcType="VARCHAR"/>
+        <result column="END_VALUE_DESC" property="endValueDesc" jdbcType="VARCHAR"/>
+        <result column="OTHER_VALUE" property="otherValue" jdbcType="VARCHAR"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="REMARK" property="remark" jdbcType="VARCHAR"/>
+        <result column="BAK" property="bak" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        CODE_CLASS, CLASS_DESC,CLASS_LEVEL, CODE_ID,
+        VALUE_ID, ID_DESC,ID_TYPE, BEGIN_VALUE,BEGIN_VALUE_DESC, END_VALUE,
+        END_VALUE_DESC, OTHER_VALUE,GROUP_ID, EFF_DATE,EXP_DATE, REMARK,BAK
+    </sql>
+    <!--对于cs_csscodedef_dict 这个表的后续操作最好在实体冲传入group_id 0为五省统一数据  22000为吉林省数据  -->
+    <!-- 如果存在地市数据配置的情况，配置在OTHER_VALUE 这个字段  对于这个表的使用如还有问题  请联系anxh  haoxz cencm-->
+
+    <select id="qryByCondAll" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_csscodedef_dict
+        <where>
+            <if test="params.CODE_CLASS != null and params.CODE_CLASS != ''">
+                CODE_CLASS = #{params.CODE_CLASS}
+            </if>
+            <if test="params.VALUE_ID != null and params.VALUE_ID != ''">
+                AND (VALUE_ID = #{params.VALUE_ID} OR VALUE_ID ='Z')
+            </if>
+            <if test="params.GROUP_ID != null and params.GROUP_ID != ''">
+                AND (GROUP_ID = #{params.GROUP_ID} OR GROUP_ID ='0')
+            </if>
+            <if test="params.CLASS_LEVEL != null and params.CLASS_LEVEL != ''">
+                AND (CLASS_LEVEL = #{params.CLASS_LEVEL} OR CLASS_LEVEL ='Z')
+            </if>
+            <if test="params.CODE_ID != null and params.CODE_ID != ''">
+                AND (CODE_ID = #{params.CODE_ID} OR CODE_ID ='Z')
+            </if>
+            <if test="params.ID_TYPE != null and params.ID_TYPE != ''">
+                AND (ID_TYPE = #{params.ID_TYPE} OR ID_TYPE ='Z')
+            </if>
+            <if test="params.BEGIN_VALUE != null and params.BEGIN_VALUE != ''">
+                AND (BEGIN_VALUE = #{params.BEGIN_VALUE} OR BEGIN_VALUE ='Z')
+            </if>
+            <if test="params.BEGIN_VALUE_DESC != null and params.BEGIN_VALUE_DESC != ''">
+                AND (BEGIN_VALUE_DESC = #{params.BEGIN_VALUE_DESC} OR BEGIN_VALUE_DESC ='Z')
+            </if>
+            <if test="params.END_VALUE != null and params.END_VALUE != ''">
+                AND (END_VALUE = #{params.END_VALUE} OR END_VALUE ='Z')
+            </if>
+            <if test="params.END_VALUE_DESC != null and params.END_VALUE_DESC != ''">
+                AND (END_VALUE_DESC = #{params.END_VALUE_DESC} OR END_VALUE_DESC ='Z')
+            </if>
+            <if test="params.OTHER_VALUE != null and params.OTHER_VALUE != ''">
+                AND (OTHER_VALUE = #{params.OTHER_VALUE} OR OTHER_VALUE = 'Z')
+            </if>
+        </where>
+        ORDER BY END_VALUE DESC
+    </select>
+
+
+</mapper>

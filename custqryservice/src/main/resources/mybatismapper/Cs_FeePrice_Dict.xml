@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.FeePriceMapper">
+
+    <resultMap id="feePriceMap" type="com.sitech.family.custqryservice.dto.mapperdto.FeePrice">
+        <id property="feeId" column="FEE_ID"></id>
+        <result property="groupId" column="GROUP_ID"></result>
+        <result property="svcId" column="SVC_ID"></result>
+        <result property="actionId" column="ACTION_ID"></result>
+        <result property="busiMode" column="BUSI_MODE"></result>
+        <result property="feeCode" column="FEE_CODE"></result>
+        <result property="feeType" column="FEE_TYPE"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="dataType" column="DATA_TYPE"></result>
+        <result property="feeValue" column="FEE_VALUE"></result>
+        <result property="feeUnit" column="FEE_UNIT"></result>
+        <result property="calType" column="CAL_TYPE"></result>
+        <result property="printFlag" column="print_flag"></result>
+        <result property="payType" column="pay_type"></result>
+    </resultMap>
+
+    <select id="query" resultMap="feePriceMap">
+        select FEE_ID, GROUP_ID, SVC_ID, ACTION_ID, BUSI_MODE, FEE_CODE, FEE_TYPE, EFF_DATE, EXP_DATE, DATA_TYPE,
+       FEE_VALUE, FEE_UNIT, CAL_TYPE, print_flag, pay_type
+        from CS_FEEPRICE_DICT where GROUP_ID = #{groupId} and SVC_ID = #{svcId}
+         and ACTION_ID = #{actionId} and BUSI_MODE = #{busiMode} and FEE_CODE = #{feeCode}
+        and FEE_TYPE = #{feeType} and EFF_DATE = #{effDate};
+    </select>
+
+</mapper>

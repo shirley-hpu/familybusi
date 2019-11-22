@@ -1,0 +1,34 @@
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://172.18.232.68:8761/eureka/
+#    #register-with-eureka: false
+#    #fetch-registry: false
+#  instance:
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+#    prefer-ip-address: true
+
+server:
+  port: 8765
+
+spring:
+  application:
+    name: familybusi-compservice
+  cloud:
+    #配置注册中心
+    zookeeper:
+      connect-string: 172.18.232.196:2281,172.18.232.197:2281,172.18.232.198:2281
+      discovery:
+        enabled: true
+        register: true
+        prefer-ip-address: true
+  jackson:
+    date-format: YYYY-MM
+    default-property-inclusion: non_null
+
+info:
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"

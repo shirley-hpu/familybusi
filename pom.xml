@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sitech</groupId>
+    <artifactId>familybusi</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>familybusi</name>
+    <description>家客运营平台</description>
+    <url>http://maven.apache.org</url>
+
+    <parent>
+        <groupId>com.sitech.ijcf</groupId>
+        <artifactId>ijcf-boot-dependencies</artifactId>
+        <version>3.2.0.SNAPSHOT</version>
+    </parent>
+
+    <!-- 统一管理项目的版本信息 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <springcloud.version>Finchley.SR2</springcloud.version>
+        <jcfboot.version>3.2.0.SNAPSHOT</jcfboot.version>
+    </properties>
+
+    <modules>
+        <module>custservice</module>
+        <module>compservice</module>
+        <module>custqryservice</module>
+        <module>familydll</module>
+        <module>familypreservice</module>
+        <module>familyservice</module>
+    </modules>
+
+    <dependencies>
+        <!--宝兰德依赖-->
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-bes-lite</artifactId>
+        </dependency>
+
+        <!-- zk服务组件 -->
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.13</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- swagger相关 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!-- swagger-bootstrap-ui -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter</artifactId>
+        </dependency>
+
+        <!--数据库连接相关 -->
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-message6</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-hsf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <version>2.1.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-jackjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-springcloud</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.41</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sitech.ijcf</groupId>
+                <artifactId>ijcf-boot-dependencies</artifactId>
+                <version>${jcfboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

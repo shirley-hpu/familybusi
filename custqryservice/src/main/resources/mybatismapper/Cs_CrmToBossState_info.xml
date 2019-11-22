@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.CrmToBossStateMapper" >
+
+    <resultMap id="crmToBossStateMap" type="com.sitech.family.custqryservice.dto.mapperdto.CrmToBossState">
+        <id property="idNo" column="ID_NO"></id>
+        <result property="crmRunCode" column="CRM_RUN_CODE"></result>
+        <result property="crmRunTime" column="CRM_RUN_TIME"></result>
+        <result property="bossRunCode" column="BOSS_RUN_CODE"></result>
+        <result property="bossRunTime" column="BOSS_RUN_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="bakField" column="BAK_FIELD"></result>
+        <result property="runCode" column="RUN_CODE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+
+    <select id="query" resultMap="crmToBossStateMap">
+        select ID_NO, CRM_RUN_CODE, CRM_RUN_TIME, BOSS_RUN_CODE, BOSS_RUN_TIME, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, BAK_FIELD, RUN_CODE
+        from CS_CRMTOBOSSSTATE_INFO where ID_NO = #{idNo};
+    </select>
+
+</mapper>

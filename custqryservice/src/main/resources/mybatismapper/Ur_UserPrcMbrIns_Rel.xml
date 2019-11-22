@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.UserPrcMbrInsMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserPrcMbrIns">
+        <id column="MEMBER_ID" property="memberId" jdbcType="DECIMAL"/>
+        <id column="PRODPRCINS_ID" property="prodPrcInsId" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        MEMBER_ID, PRODPRCINS_ID, ID_NO, EXP_DATE, LOGIN_NO, LOGIN_ACCEPT, OP_TIME, OP_CODE
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_userprcmbrins_rel
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+        and PRODPRCINS_ID = #{prodPrcInsId,jdbcType=DECIMAL}
+    </select>
+
+</mapper>

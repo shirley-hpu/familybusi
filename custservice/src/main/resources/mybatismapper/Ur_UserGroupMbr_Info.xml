@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserGroupMbrMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserGroupMbr">
+        <id column="MEMBER_ID" property="mbrRole" jdbcType="DECIMAL"/>
+        <result column="GROUP_ID" property="groupId" jdbcType="DECIMAL"/>
+        <result column="MBR_ROLE" property="memberRole" jdbcType="DECIMAL"/>
+        <result column="MBR_TYPE" property="mbrType" jdbcType="VARCHAR"/>
+        <result column="ELEMENT_ID" property="elementId" jdbcType="VARCHAR"/>
+        <result column="OBJECT_TYPE" property="objectType" jdbcType="VARCHAR"/>
+        <result column="OBJECT_ID" property="objectId" jdbcType="VARCHAR"/>
+        <result column="SHORT_NUM" property="shortNum" jdbcType="VARCHAR"/>
+        <result column="LOCK_FLAG" property="lockFlag" jdbcType="VARCHAR"/>
+        <result column="STATE" property="state" jdbcType="VARCHAR"/>
+        <result column="STATE_DATE" property="stateDate" jdbcType="TIMESTAMP"/>
+        <result column="MEMBER_DESC" property="memberDesc" jdbcType="VARCHAR"/>
+        <result column="MEMBER_NAME" property="memberName" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        MEMBER_ID, GROUP_ID, MBR_ROLE, MBR_TYPE, ELEMENT_ID, OBJECT_TYPE, OBJECT_ID, SHORT_NUM, LOCK_FLAG, STATE, STATE_DATE, MEMBER_DESC,
+        MEMBER_NAME, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, PHONE_NO
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbr_info
+        where MEMBER_ID = #{mbrRole,jdbcType=DECIMAL}
+    </select>
+
+    <delete id="drop" parameterType="map">
+        delete from ur_usergroupmbr_info
+        where MEMBER_ID = #{mbrRole,jdbcType=DECIMAL}
+    </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbr">
+        insert into ur_usergroupmbr_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="mbrRole != null">
+                MEMBER_ID,
+            </if>
+            <if test="groupId != null">
+                GROUP_ID,
+            </if>
+            <if test="memberRole != null">
+                MBR_ROLE,
+            </if>
+            <if test="mbrType != null">
+                MBR_TYPE,
+            </if>
+            <if test="elementId != null">
+                ELEMENT_ID,
+            </if>
+            <if test="objectType != null">
+                OBJECT_TYPE,
+            </if>
+            <if test="objectId != null">
+                OBJECT_ID,
+            </if>
+            <if test="shortNum != null">
+                SHORT_NUM,
+            </if>
+            <if test="lockFlag != null">
+                LOCK_FLAG,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+            <if test="memberDesc != null">
+                MEMBER_DESC,
+            </if>
+            <if test="memberName != null">
+                MEMBER_NAME,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="phoneNo != null">
+                PHONE_NO,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="mbrRole != null">
+                #{mbrRole,jdbcType=DECIMAL},
+            </if>
+            <if test="groupId != null">
+                #{groupId,jdbcType=DECIMAL},
+            </if>
+            <if test="memberRole != null">
+                #{memberRole,jdbcType=DECIMAL},
+            </if>
+            <if test="mbrType != null">
+                #{mbrType,jdbcType=VARCHAR},
+            </if>
+            <if test="elementId != null">
+                #{elementId,jdbcType=VARCHAR},
+            </if>
+            <if test="objectType != null">
+                #{objectType,jdbcType=VARCHAR},
+            </if>
+            <if test="objectId != null">
+                #{objectId,jdbcType=VARCHAR},
+            </if>
+            <if test="shortNum != null">
+                #{shortNum,jdbcType=VARCHAR},
+            </if>
+            <if test="lockFlag != null">
+                #{lockFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="memberDesc != null">
+                #{memberDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="memberName != null">
+                #{memberName,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="phoneNo != null">
+                #{phoneNo,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbr">
+        insert into ur_usergroupmbr_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="mbrRole != null">
+                MEMBER_ID,
+            </if>
+            <if test="groupId != null">
+                GROUP_ID,
+            </if>
+            <if test="memberRole != null">
+                MBR_ROLE,
+            </if>
+            <if test="mbrType != null">
+                MBR_TYPE,
+            </if>
+            <if test="elementId != null">
+                ELEMENT_ID,
+            </if>
+            <if test="objectType != null">
+                OBJECT_TYPE,
+            </if>
+            <if test="objectId != null">
+                OBJECT_ID,
+            </if>
+            <if test="shortNum != null">
+                SHORT_NUM,
+            </if>
+            <if test="lockFlag != null">
+                LOCK_FLAG,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+            <if test="memberDesc != null">
+                MEMBER_DESC,
+            </if>
+            <if test="memberName != null">
+                MEMBER_NAME,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="phoneNo != null">
+                PHONE_NO,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="mbrRole != null">
+                #{mbrRole,jdbcType=DECIMAL},
+            </if>
+            <if test="groupId != null">
+                #{groupId,jdbcType=DECIMAL},
+            </if>
+            <if test="memberRole != null">
+                #{memberRole,jdbcType=DECIMAL},
+            </if>
+            <if test="mbrType != null">
+                #{mbrType,jdbcType=VARCHAR},
+            </if>
+            <if test="elementId != null">
+                #{elementId,jdbcType=VARCHAR},
+            </if>
+            <if test="objectType != null">
+                #{objectType,jdbcType=VARCHAR},
+            </if>
+            <if test="objectId != null">
+                #{objectId,jdbcType=VARCHAR},
+            </if>
+            <if test="shortNum != null">
+                #{shortNum,jdbcType=VARCHAR},
+            </if>
+            <if test="lockFlag != null">
+                #{lockFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="memberDesc != null">
+                #{memberDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="memberName != null">
+                #{memberName,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="phoneNo != null">
+                #{phoneNo,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbr">
+        update ur_usergroupmbr_info
+        <set>
+            <if test="groupId != null">
+                GROUP_ID = #{groupId,jdbcType=DECIMAL},
+            </if>
+            <if test="memberRole != null">
+                MBR_ROLE = #{memberRole,jdbcType=DECIMAL},
+            </if>
+            <if test="mbrType != null">
+                OBJECT_TYPE = #{mbrType,jdbcType=VARCHAR},
+            </if>
+            <if test="elementId != null">
+                ELEMENT_ID = #{elementId,jdbcType=VARCHAR},
+            </if>
+            <if test="objectType != null">
+                OBJECT_TYPE = #{objectType,jdbcType=VARCHAR},
+            </if>
+            <if test="objectId != null">
+                OBJECT_ID = #{objectId,jdbcType=VARCHAR},
+            </if>
+            <if test="shortNum != null">
+                SHORT_NUM = #{shortNum,jdbcType=VARCHAR},
+            </if>
+            <if test="lockFlag != null">
+                LOCK_FLAG = #{lockFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="memberDesc != null">
+                MEMBER_DESC = #{memberDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="memberName != null">
+                MEMBER_NAME = #{memberName,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNo != null">
+                PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where MEMBER_ID = #{mbrRole,jdbcType=DECIMAL}
+    </update>
+
+    <select id="qryUserGroupMbrList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbr_info
+        <where>
+            <if test="params.mbrRole != null and params.mbrRole != ''">
+                MEMBER_ID = #{params.mbrRole}
+            </if>
+            <if test="params.groupId != null and params.groupId != ''">
+                AND GROUP_ID = #{params.groupId}
+            </if>
+            <if test="params.memberRole != null and params.memberRole != ''">
+                AND MBR_ROLE = #{params.memberRole}
+            </if>
+            <if test="params.mbrType != null and params.mbrType != ''">
+                AND MBR_TYPE = #{params.mbrType}
+            </if>
+            <if test="params.elementId != null and params.elementId != ''">
+                AND ELEMENT_ID = #{params.elementId}
+            </if>
+            <if test="params.objectType != null and params.objectType != ''">
+                AND OBJECT_TYPE = #{params.objectType}
+            </if>
+            <if test="params.objectId != null and params.objectId != ''">
+                AND OBJECT_ID = #{params.objectId}
+            </if>
+            <if test="params.shortNum != null and params.shortNum != ''">
+                AND SHORT_NUM = #{params.shortNum}
+            </if>
+            <if test="params.lockFlag != null and params.lockFlag != ''">
+                AND LOCK_FLAG = #{params.lockFlag}
+            </if>
+            <if test="params.state != null and params.state != ''">
+                AND STATE = #{params.state}
+            </if>
+            <if test="params.stateDate != null and params.stateDate != ''">
+                AND STATE_DATE = #{params.stateDate}
+            </if>
+            <if test="params.memberDesc != null and params.memberDesc != ''">
+                AND MEMBER_DESC = #{params.memberDesc}
+            </if>
+            <if test="params.memberName != null and params.memberName != ''">
+                AND MEMBER_NAME = #{params.memberName}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND LOGIN_NO = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND OP_TIME = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.phoneNo != null and params.phoneNo != ''">
+                AND PHONE_NO = #{params.phoneNo}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserGroupMbrHisList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        MEMBER_ID, GROUP_ID, MBR_ROLE, MBR_TYPE, ELEMENT_ID, OBJECT_TYPE, OBJECT_ID, SHORT_NUM, LOCK_FLAG, STATE, STATE_DATE,
+        MEMBER_DESC,
+        MEMBER_NAME, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, PHONE_NO, UPDATE_TIME,
+        UPDATE_TYPE,
+        UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from ur_usergroupmbr_info_his
+        <where>
+            <if test="inparams.mbrRole != null and inparams.mbrRole != ''">
+                MEMBER_ID = #{inparams.mbrRole}
+            </if>
+            <if test="inparams.groupId != null and inparams.groupId != ''">
+                AND GROUP_ID = #{inparams.groupId}
+            </if>
+            <if test="inparams.memberRole != null and inparams.memberRole != ''">
+                AND MBR_ROLE = #{inparams.memberRole}
+            </if>
+            <if test="inparams.mbrType != null and inparams.mbrType != ''">
+                AND MBR_TYPE = #{inparams.mbrType}
+            </if>
+            <if test="inparams.elementId != null and inparams.elementId != ''">
+                AND ELEMENT_ID = #{inparams.elementId}
+            </if>
+            <if test="inparams.objectType != null and inparams.objectType != ''">
+                AND OBJECT_TYPE = #{inparams.objectType}
+            </if>
+            <if test="inparams.objectId != null and inparams.objectId != ''">
+                AND OBJECT_ID = #{inparams.objectId}
+            </if>
+            <if test="inparams.shortNum != null and inparams.shortNum != ''">
+                AND SHORT_NUM = #{inparams.shortNum}
+            </if>
+            <if test="inparams.lockFlag != null and inparams.lockFlag != ''">
+                AND LOCK_FLAG = #{inparams.lockFlag}
+            </if>
+            <if test="inparams.state != null and inparams.state != ''">
+                AND STATE = #{inparams.state}
+            </if>
+            <if test="inparams.stateDate != null and inparams.stateDate != ''">
+                AND STATE_DATE = #{inparams.stateDate}
+            </if>
+            <if test="inparams.memberDesc != null and inparams.memberDesc != ''">
+                AND MEMBER_DESC = #{inparams.memberDesc}
+            </if>
+            <if test="inparams.memberName != null and inparams.memberName != ''">
+                AND MEMBER_NAME = #{inparams.memberName}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND LOGIN_NO = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND OP_TIME = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.phoneNo != null and inparams.phoneNo != ''">
+                AND PHONE_NO = #{inparams.phoneNo}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbr">
+        update ur_usergroupmbr_info
+        <set>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE OBJECT_ID = #{objectId,jdbcType=VARCHAR}
+    </update>
+
+    <select id="qryShortProcessList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbr_info
+        <where>
+            <if test="params.mbrRole != null and params.mbrRole != ''">
+                MEMBER_ID = #{params.mbrRole}
+            </if>
+            <if test="params.groupId != null and params.groupId != ''">
+                AND GROUP_ID = #{params.groupId}
+            </if>
+            <if test="params.memberRole != null and params.memberRole != ''">
+                AND MBR_ROLE = #{params.memberRole}
+            </if>
+            <if test="params.mbrType != null and params.mbrType != ''">
+                AND MBR_TYPE = (#{params.mbrType})
+            </if>
+            <if test="params.elementId != null and params.elementId != ''">
+                AND ELEMENT_ID = (#{params.elementId})
+            </if>
+            <if test="params.objectType != null and params.objectType != ''">
+                AND OBJECT_TYPE = #{params.objectType}
+            </if>
+            <if test="params.objectId != null and params.objectId != ''">
+                AND OBJECT_ID = #{params.objectId}
+            </if>
+            <if test="params.shortNum != null and params.shortNum != ''">
+                AND SHORT_NUM = #{params.shortNum}
+            </if>
+            <if test="params.lockFlag != null and params.lockFlag != ''">
+                AND LOCK_FLAG = #{params.lockFlag}
+            </if>
+            <if test="params.state != null and params.state != ''">
+                AND STATE = #{params.state}
+            </if>
+            <if test="params.stateDate != null and params.stateDate != ''">
+                AND STATE_DATE = #{params.stateDate}
+            </if>
+            <if test="params.memberDesc != null and params.memberDesc != ''">
+                AND MEMBER_DESC = #{params.memberDesc}
+            </if>
+            <if test="params.memberName != null and params.memberName != ''">
+                AND MEMBER_NAME = #{params.memberName}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND LOGIN_NO = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND OP_TIME = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.phoneNo != null and params.phoneNo != ''">
+                AND PHONE_NO = #{params.phoneNo}
+            </if>
+        </where>
+    </select>
+
+</mapper>

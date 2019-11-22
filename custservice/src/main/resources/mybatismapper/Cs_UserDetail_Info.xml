@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserDetailMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        <id column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="RUN_CODE" property="runCode" jdbcType="VARCHAR"/>
+        <result column="RUN_TIME" property="runTime" jdbcType="TIMESTAMP"/>
+        <result column="USER_GRADE_CODE" property="userGradeCode" jdbcType="VARCHAR"/>
+        <result column="STOP_FLAG" property="stopFlag" jdbcType="VARCHAR"/>
+        <result column="OWED_FLAG" property="owedFlag" jdbcType="VARCHAR"/>
+        <result column="USER_PASSWD" property="userPasswd" jdbcType="VARCHAR"/>
+        <result column="PASSWD_TYPE" property="passwdType" jdbcType="VARCHAR"/>
+        <result column="CARD_TYPE" property="cardType" jdbcType="DECIMAL"/>
+        <result column="VIP_CARD_NO" property="vipCardNo" jdbcType="VARCHAR"/>
+        <result column="VIP_CREATE_TYPE" property="vipCreateType" jdbcType="DECIMAL"/>
+        <result column="OLD_RUN" property="oldRun" jdbcType="VARCHAR"/>
+        <result column="QUERY_CDRFLAG" property="queryCdrflag" jdbcType="VARCHAR"/>
+        <result column="LMT_ADJUST_TYPE" property="lmtAdjustType" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="OP_NOTE" property="opNote" jdbcType="VARCHAR"/>
+        <result column="SYSTEM_NOTE" property="systemNote" jdbcType="VARCHAR"/>
+        <result column="BAK1" property="bak1" jdbcType="VARCHAR"/>
+        <result column="BAK2" property="bak2" jdbcType="VARCHAR"/>
+        <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="UPDATE_ACCEPT" property="updateAccept" jdbcType="DECIMAL"/>
+        <result column="UPDATE_TYPE" property="updateType" jdbcType="VARCHAR"/>
+        <result column="UPDATE_DATE" property="updateDate" jdbcType="DECIMAL"/>
+        <result column="UPDATE_LOGIN" property="updateLogin" jdbcType="VARCHAR"/>
+        <result column="UPDATE_CODE" property="updateCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID_NO, RUN_CODE, RUN_TIME, USER_GRADE_CODE, STOP_FLAG, OWED_FLAG, USER_PASSWD, PASSWD_TYPE, CARD_TYPE, VIP_CARD_NO, VIP_CREATE_TYPE, OLD_RUN,
+        QUERY_CDRFLAG, LMT_ADJUST_TYPE, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, OP_NOTE, SYSTEM_NOTE, BAK1, BAK2
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_userdetail_info
+        where ID_NO = #{idNo,jdbcType=DECIMAL}
+    </select>
+
+    <delete id="drop" parameterType="map">
+        delete from cs_userdetail_info
+        where ID_NO = #{idNo,jdbcType=DECIMAL}
+    </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        insert into cs_userdetail_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="runCode != null">
+                RUN_CODE,
+            </if>
+            <if test="runTime != null">
+                RUN_TIME,
+            </if>
+            <if test="userGradeCode != null">
+                USER_GRADE_CODE,
+            </if>
+            <if test="stopFlag != null">
+                STOP_FLAG,
+            </if>
+            <if test="owedFlag != null">
+                OWED_FLAG,
+            </if>
+            <if test="userPasswd != null">
+                USER_PASSWD,
+            </if>
+            <if test="passwdType != null">
+                PASSWD_TYPE,
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE,
+            </if>
+            <if test="vipCardNo != null">
+                VIP_CARD_NO,
+            </if>
+            <if test="vipCreateType != null">
+                VIP_CREATE_TYPE,
+            </if>
+            <if test="oldRun != null">
+                OLD_RUN,
+            </if>
+            <if test="queryCdrflag != null">
+                QUERY_CDRFLAG,
+            </if>
+            <if test="lmtAdjustType != null">
+                LMT_ADJUST_TYPE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="opNote != null">
+                OP_NOTE,
+            </if>
+            <if test="systemNote != null">
+                SYSTEM_NOTE,
+            </if>
+            <if test="bak1 != null">
+                BAK1,
+            </if>
+            <if test="bak2 != null">
+                BAK2,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="runCode != null">
+                #{runCode,jdbcType=VARCHAR},
+            </if>
+            <if test="runTime != null">
+                #{runTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userGradeCode != null">
+                #{userGradeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="stopFlag != null">
+                #{stopFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="owedFlag != null">
+                #{owedFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="userPasswd != null">
+                #{userPasswd,jdbcType=VARCHAR},
+            </if>
+            <if test="passwdType != null">
+                #{passwdType,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                #{cardType,jdbcType=DECIMAL},
+            </if>
+            <if test="vipCardNo != null">
+                #{vipCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="vipCreateType != null">
+                #{vipCreateType,jdbcType=DECIMAL},
+            </if>
+            <if test="oldRun != null">
+                #{oldRun,jdbcType=VARCHAR},
+            </if>
+            <if test="queryCdrflag != null">
+                #{queryCdrflag,jdbcType=VARCHAR},
+            </if>
+            <if test="lmtAdjustType != null">
+                #{lmtAdjustType,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opNote != null">
+                #{opNote,jdbcType=VARCHAR},
+            </if>
+            <if test="systemNote != null">
+                #{systemNote,jdbcType=VARCHAR},
+            </if>
+            <if test="bak1 != null">
+                #{bak1,jdbcType=VARCHAR},
+            </if>
+            <if test="bak2 != null">
+                #{bak2,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        insert into cs_userdetail_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="idNo != null">
+                ID_NO,
+            </if>
+            <if test="runCode != null">
+                RUN_CODE,
+            </if>
+            <if test="runTime != null">
+                RUN_TIME,
+            </if>
+            <if test="userGradeCode != null">
+                USER_GRADE_CODE,
+            </if>
+            <if test="stopFlag != null">
+                STOP_FLAG,
+            </if>
+            <if test="owedFlag != null">
+                OWED_FLAG,
+            </if>
+            <if test="userPasswd != null">
+                USER_PASSWD,
+            </if>
+            <if test="passwdType != null">
+                PASSWD_TYPE,
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE,
+            </if>
+            <if test="vipCardNo != null">
+                VIP_CARD_NO,
+            </if>
+            <if test="vipCreateType != null">
+                VIP_CREATE_TYPE,
+            </if>
+            <if test="oldRun != null">
+                OLD_RUN,
+            </if>
+            <if test="queryCdrflag != null">
+                QUERY_CDRFLAG,
+            </if>
+            <if test="lmtAdjustType != null">
+                LMT_ADJUST_TYPE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="opNote != null">
+                OP_NOTE,
+            </if>
+            <if test="systemNote != null">
+                SYSTEM_NOTE,
+            </if>
+            <if test="bak1 != null">
+                BAK1,
+            </if>
+            <if test="bak2 != null">
+                BAK2,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="idNo != null">
+                #{idNo,jdbcType=DECIMAL},
+            </if>
+            <if test="runCode != null">
+                #{runCode,jdbcType=VARCHAR},
+            </if>
+            <if test="runTime != null">
+                #{runTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userGradeCode != null">
+                #{userGradeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="stopFlag != null">
+                #{stopFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="owedFlag != null">
+                #{owedFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="userPasswd != null">
+                #{userPasswd,jdbcType=VARCHAR},
+            </if>
+            <if test="passwdType != null">
+                #{passwdType,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                #{cardType,jdbcType=DECIMAL},
+            </if>
+            <if test="vipCardNo != null">
+                #{vipCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="vipCreateType != null">
+                #{vipCreateType,jdbcType=DECIMAL},
+            </if>
+            <if test="oldRun != null">
+                #{oldRun,jdbcType=VARCHAR},
+            </if>
+            <if test="queryCdrflag != null">
+                #{queryCdrflag,jdbcType=VARCHAR},
+            </if>
+            <if test="lmtAdjustType != null">
+                #{lmtAdjustType,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opNote != null">
+                #{opNote,jdbcType=VARCHAR},
+            </if>
+            <if test="systemNote != null">
+                #{systemNote,jdbcType=VARCHAR},
+            </if>
+            <if test="bak1 != null">
+                #{bak1,jdbcType=VARCHAR},
+            </if>
+            <if test="bak2 != null">
+                #{bak2,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.UserDetail">
+        update cs_userdetail_info
+        <set>
+            <if test="runCode != null">
+                RUN_CODE = #{runCode,jdbcType=VARCHAR},
+            </if>
+            <if test="runTime != null">
+                RUN_TIME = #{runTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userGradeCode != null">
+                USER_GRADE_CODE = #{userGradeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="stopFlag != null">
+                STOP_FLAG = #{stopFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="owedFlag != null">
+                OWED_FLAG = #{owedFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="userPasswd != null">
+                USER_PASSWD = #{userPasswd,jdbcType=VARCHAR},
+            </if>
+            <if test="passwdType != null">
+                PASSWD_TYPE = #{passwdType,jdbcType=VARCHAR},
+            </if>
+            <if test="cardType != null">
+                CARD_TYPE = #{cardType,jdbcType=DECIMAL},
+            </if>
+            <if test="vipCardNo != null">
+                VIP_CARD_NO = #{vipCardNo,jdbcType=VARCHAR},
+            </if>
+            <if test="vipCreateType != null">
+                VIP_CREATE_TYPE = #{vipCreateType,jdbcType=DECIMAL},
+            </if>
+            <if test="oldRun != null">
+                OLD_RUN = #{oldRun,jdbcType=VARCHAR},
+            </if>
+            <if test="queryCdrflag != null">
+                QUERY_CDRFLAG = #{queryCdrflag,jdbcType=VARCHAR},
+            </if>
+            <if test="lmtAdjustType != null">
+                LMT_ADJUST_TYPE = #{lmtAdjustType,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opNote != null">
+                OP_NOTE = #{opNote,jdbcType=VARCHAR},
+            </if>
+            <if test="systemNote != null">
+                SYSTEM_NOTE = #{systemNote,jdbcType=VARCHAR},
+            </if>
+            <if test="bak1 != null">
+                BAK1 = #{bak1,jdbcType=VARCHAR},
+            </if>
+            <if test="bak2 != null">
+                BAK2 = #{bak2,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID_NO = #{idNo,jdbcType=DECIMAL}
+    </update>
+
+    <select id="qryUserDetailList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from cs_userdetail_info
+        <where>
+            <if test="params.idNo != null and params.idNo != ''">
+                ID_NO = #{params.idNo}
+            </if>
+            <if test="params.runCode != null and params.runCode != ''">
+                AND RUN_CODE = #{params.runCode}
+            </if>
+            <if test="params.runTime != null and params.runTime != ''">
+                AND RUN_TIME = #{params.runTime}
+            </if>
+            <if test="params.userGradeCode != null and params.userGradeCode != ''">
+                AND USER_GRADE_CODE = #{params.userGradeCode}
+            </if>
+            <if test="params.stopFlag != null and params.stopFlag != ''">
+                AND STOP_FLAG = #{params.stopFlag}
+            </if>
+            <if test="params.owedFlag != null and params.owedFlag != ''">
+                AND OWED_FLAG = #{params.owedFlag}
+            </if>
+            <if test="params.userPasswd != null and params.userPasswd != ''">
+                AND USER_PASSWD = #{params.userPasswd}
+            </if>
+            <if test="params.passwdType != null and params.passwdType != ''">
+                AND PASSWD_TYPE = #{params.passwdType}
+            </if>
+            <if test="params.cardType != null and params.cardType != ''">
+                AND CARD_TYPE = #{params.cardType}
+            </if>
+            <if test="params.vipCardNo != null and params.vipCardNo != ''">
+                AND VIP_CARD_NO = #{params.vipCardNo}
+            </if>
+            <if test="params.vipCreateType != null and params.vipCreateType != ''">
+                AND VIP_CREATE_TYPE = #{params.vipCreateType}
+            </if>
+            <if test="params.oldRun != null and params.oldRun != ''">
+                AND OLD_RUN = #{params.oldRun}
+            </if>
+            <if test="params.queryCdrflag != null and params.queryCdrflag != ''">
+                AND QUERY_CDRFLAG = #{params.queryCdrflag}
+            </if>
+            <if test="params.lmtAdjustType != null and params.lmtAdjustType != ''">
+                AND LMT_ADJUST_TYPE = #{params.lmtAdjustType}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opNote != null and params.opNote != ''">
+                AND OP_NOTE = #{params.opNote}
+            </if>
+            <if test="params.systemNote != null and params.systemNote != ''">
+                AND SYSTEM_NOTE = #{params.systemNote}
+            </if>
+            <if test="params.bak1 != null and params.bak1 != ''">
+                AND BAK1 = #{params.bak1}
+            </if>
+            <if test="params.bak2 != null and params.bak2 != ''">
+                AND BAK2 = #{params.bak2}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserDetailHisList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        ID_NO, RUN_CODE, RUN_TIME, USER_GRADE_CODE, STOP_FLAG, OWED_FLAG, USER_PASSWD, PASSWD_TYPE, CARD_TYPE,
+        VIP_CARD_NO, VIP_CREATE_TYPE, OLD_RUN,
+        QUERY_CDRFLAG, LMT_ADJUST_TYPE, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, OP_NOTE, SYSTEM_NOTE, BAK1, BAK2,
+        UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from cs_userdetail_info_his
+        <where>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.runCode != null and inparams.runCode != ''">
+                AND RUN_CODE = #{inparams.runCode}
+            </if>
+            <if test="inparams.runTime != null and inparams.runTime != ''">
+                AND RUN_TIME = #{inparams.runTime}
+            </if>
+            <if test="inparams.userGradeCode != null and inparams.userGradeCode != ''">
+                AND USER_GRADE_CODE = #{inparams.userGradeCode}
+            </if>
+            <if test="inparams.stopFlag != null and inparams.stopFlag != ''">
+                AND STOP_FLAG = #{inparams.stopFlag}
+            </if>
+            <if test="inparams.owedFlag != null and inparams.owedFlag != ''">
+                AND OWED_FLAG = #{inparams.owedFlag}
+            </if>
+            <if test="inparams.userPasswd != null and inparams.userPasswd != ''">
+                AND USER_PASSWD = #{inparams.userPasswd}
+            </if>
+            <if test="inparams.passwdType != null and inparams.passwdType != ''">
+                AND PASSWD_TYPE = #{inparams.passwdType}
+            </if>
+            <if test="inparams.cardType != null and inparams.cardType != ''">
+                AND CARD_TYPE = #{inparams.cardType}
+            </if>
+            <if test="inparams.vipCardNo != null and inparams.vipCardNo != ''">
+                AND VIP_CARD_NO = #{inparams.vipCardNo}
+            </if>
+            <if test="inparams.vipCreateType != null and inparams.vipCreateType != ''">
+                AND VIP_CREATE_TYPE = #{inparams.vipCreateType}
+            </if>
+            <if test="inparams.oldRun != null and inparams.oldRun != ''">
+                AND OLD_RUN = #{inparams.oldRun}
+            </if>
+            <if test="inparams.queryCdrflag != null and inparams.queryCdrflag != ''">
+                AND QUERY_CDRFLAG = #{inparams.queryCdrflag}
+            </if>
+            <if test="inparams.lmtAdjustType != null and inparams.lmtAdjustType != ''">
+                AND LMT_ADJUST_TYPE = #{inparams.lmtAdjustType}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opNote != null and inparams.opNote != ''">
+                AND OP_NOTE = #{inparams.opNote}
+            </if>
+            <if test="inparams.systemNote != null and inparams.systemNote != ''">
+                AND SYSTEM_NOTE = #{inparams.systemNote}
+            </if>
+            <if test="inparams.bak1 != null and inparams.bak1 != ''">
+                AND BAK1 = #{inparams.bak1}
+            </if>
+            <if test="inparams.bak2 != null and inparams.bak2 != ''">
+                AND BAK2 = #{inparams.bak2}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

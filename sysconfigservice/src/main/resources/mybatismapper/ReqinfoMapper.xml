@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sitech.family.configservice.mapper.ReqInfoMapper">
+    <resultMap type="com.sitech.family.configservice.dll.dto.CsMenuConfigDto" id="menuConfig">
+        <!-- 指定主键列封装规则 -->
+        <id column="menu_id" property="menuId"/>
+        <!-- 普通列 -->
+        <result column="menu_name" property="menuName"/>
+        <result column="menu_icon" property="menuIcon"/>
+        <!-- 其它不写的列，会自动封装，但是为了以后检查方便，最好都写出来 -->
+        <result column="parent_menu_id" property="parentMenuId"/>
+        <result column="owner_bottom" property="ownerBottom"/>
+        <result column="menu_position" property="menuPosition"/>
+        <result column="menu_url" property="menuUrl"/>
+        <result column="url_parameter" property="urlParameter"/>
+        <result column="sort_num" property="sortNum"/>
+        <result column="is_enable" property="isEnable"/>
+        <result column="menu_class" property="menuClass"/>
+        <result column="menu_style" property="menuStyle"/>
+        <result column="unit" property="unit"/>
+        <result column="memo" property="memo"/>
+    </resultMap>
+    <select id="qryMenuList" parameterType="string"  resultMap="menuConfig" >
+        select
+        menu_id,menu_name,menu_icon,parent_menu_id,owner_bottom,menu_position,menu_url,
+        url_parameter,sort_num,is_enable,menu_class,menu_style,unit,memo
+        from cs_menu_config
+        where owner_bottom= #{ownerBottom} and is_enable = 1
+    </select>
+    <select id="qryMenuListChild" resultMap="menuConfig">
+        select menu_id,menu_name,menu_icon,parent_menu_id,owner_bottom,menu_url,sort_num,is_enable from cs_menu_config where parent_menu_id in
+        <foreach collection="ids" item="item_id" separator="," open="(" close=")">
+            #{item_id}
+        </foreach>
+    </select>
+</mapper>

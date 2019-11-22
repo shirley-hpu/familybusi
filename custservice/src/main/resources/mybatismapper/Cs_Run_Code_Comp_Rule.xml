@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.RunCodeCompRuleMapper" >
+    <resultMap id="RunCodeCompRuleDict" type="com.sitech.family.custservice.dto.mapperdto.RunCodeCompRulePhysical">
+        <id column="RUN_CODE" property="runCode"></id>
+        <result column="CRM_RUN_CODE" property="crmRunCode" jdbcType="VARCHAR"></result>
+        <result column="BOSS_RUN_CODE" property="bossRunCode" jdbcType="VARCHAR"></result>
+        <result column="TIME_PRIORITY" property="timePriority" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <select id="query" resultMap="RunCodeCompRuleDict">
+        select CRM_RUN_CODE,BOSS_RUN_CODE,TIME_PRIORITY,RUN_CODE
+        from CS_RUNCODE_COMPRULE_DICT
+        where BOSS_RUN_CODE = #{bossRunCode}
+        and CRM_RUN_CODE = #{crmRunCode}
+    </select>
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.RunCodeCompRulePhysical">
+        insert into CS_RUNCODE_COMPRULE_DICT
+        (CRM_RUN_CODE,BOSS_RUN_CODE,TIME_PRIORITY,RUN_CODE)
+        values
+        (#{crmRunCode},#{bossRunCode},#{timePriority},#{runCode})
+    </insert>
+</mapper>

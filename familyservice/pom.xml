@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>familybusi</artifactId>
+        <groupId>com.sitech</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>familyservice</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>familyservice</name>
+    <description>familyservice for Spring Boot</description>
+
+    <dependencies>
+        <!-- zk服务组件 -->
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.13</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!--数据库连接相关
+                | Jenkins环境下，就必须要配置子模块的pom.xml里jar包的引用
+                | Jenkins环境、IDE环境两者的识别jar引用的机制还是不一样
+                -->
+        <dependency>
+            <groupId>com.sitech.ijcf</groupId>
+            <artifactId>ijcf-boot-starter-mybatis</artifactId>
+        </dependency>
+        <!-- swagger相关 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!-- swagger-bootstrap-ui 替代了原有丑陋的ui -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sitech.sequence</groupId>
+            <artifactId>spring-boot-starter-idss-client</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- 公共dll -->
+        <dependency>
+            <groupId>com.sitech</groupId>
+            <artifactId>familydll</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+
+            <!--跳过测试-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+        <!--用于排除或包含某些资源文件-->
+        <resources>
+            <!-- maven项目中src源代码下的xml等资源文件编译进classes文件夹，
+            | 注意：如果没有这个，它会自动搜索resources下是否有mapper.xml文件，
+            | 如果没有就会报org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.pet.mapper.PetMapper.selectByPrimaryKey
+            -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.UserGroupMbrAttrMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserGroupMbrAttr">
+        <id column="MEMBER_ID" property="memberId" jdbcType="DECIMAL"/>
+        <id column="ATTR_ID" property="attrId" jdbcType="VARCHAR"/>
+        <id column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <id column="ATTR_NO" property="attrNo" jdbcType="VARCHAR"/>
+        <result column="ATTR_VALUE" property="attrValue" jdbcType="VARCHAR"/>
+        <result column="GRP_NO" property="grpNo" jdbcType="VARCHAR"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        MEMBER_ID, ATTR_ID, EFF_DATE, ATTR_NO, ATTR_VALUE, GRP_NO,
+        EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbrattr_info
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+        and ATTR_NO = #{attrNo,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

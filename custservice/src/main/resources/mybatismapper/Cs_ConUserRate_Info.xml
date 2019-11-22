@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.IConUserRateMapper" >
+
+    <insert id="create" parameterType="ConUserRate">
+      insert into cs_conuserrate_info
+      ( SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE, DETAL_CODE, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, fee_value )
+       values
+      ( #{servAcctId}, #{contractNo}, #{idNo}, #{chkoutPri}, #{billOrder}, #{feeRate}, #{feeCode}, #{detalCode}, #{opCode}, #{opTime}, #{loginNo}, #{loginAccept}, #{remark}, #{effDate}, #{expDate}, #{feeValue} );
+    </insert>
+
+    <insert id="insert" parameterType="ConUserRate">
+        insert into cs_conuserrate_info_his
+                ( SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE, DETAL_CODE, OP_CODE, OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, fee_value, UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE, UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE)
+        values
+               ( #{servAcctId}, #{contractNo}, #{idNo}, #{chkoutPri}, #{billOrder}, #{feeRate}, #{feeCode}, #{detalCode}, #{opCode}, #{opTime}, #{loginNo}, #{loginAccept}, #{remark}, #{effDate}, #{expDate}, #{feeValue}, #{updateTime}, #{updateType}, #{updateCode}, #{updateLogin}, #{updateAccept}, #{updateDate} );
+    </insert>
+
+    <update id="modify" parameterType="ConUserRate">
+        update cs_conuserrate_info
+          <trim prefix="set" suffixOverrides=",">
+              <if test="contractNo != null"> CONTRACT_NO = #{contractNo}, </if>
+              <if test="chkoutPri != null"> CHKOUT_PRI = #{chkoutPri}, </if>
+              <if test="billOrder != null"> BILL_ORDER = #{billOrder}, </if>
+              <if test="feeRate != null"> FEE_RATE = #{feeRate}, </if>
+              <if test="opCode != null"> OP_CODE = #{opCode}, </if>
+              <if test="opTime != null"> OP_TIME = #{opTime}, </if>
+              <if test="loginNo != null"> LOGIN_NO = #{loginNo}, </if>
+              <if test="loginAccept != null"> LOGIN_ACCEPT = #{loginAccept}, </if>
+              <if test="remark != null"> REMARK = #{remark}, </if>
+              <if test="expDate != null"> EXP_DATE = #{expDate}, </if>
+              <if test="feeValue != null"> fee_value = #{feeValue}, </if>
+          </trim>
+         where SERV_ACCT_ID = #{servAcctId} AND FEE_CODE = #{feeCode} and DETAL_CODE = #{detalCode} AND EFF_DATE = #{effDate} ;
+    </update>
+
+    <delete id="drop" parameterType="ConUserRate">
+        delete from cs_conuserrate_info where SERV_ACCT_ID = #{servAcctId} AND FEE_CODE = #{feeCode} and DETAL_CODE = #{detalCode} AND EFF_DATE = #{effDate};
+    </delete>
+
+    <select id="query" resultMap="conUserRateMap">
+        select SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE,DETAL_CODE, OP_CODE,
+        OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, fee_value
+        from cs_conuserrate_info
+        where SERV_ACCT_ID = #{arg0} AND EFF_DATE = #{arg1} AND FEE_CODE = #{arg2} and DETAL_CODE = #{arg3} ;
+    </select>
+
+    <select id="qryConUserRateList" parameterType="Map" resultMap="conUserRateMap">
+        select SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE,DETAL_CODE, OP_CODE,
+        OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, fee_value
+        from cs_conuserrate_info
+        <where>
+            <if test="params.servAcctId != null and params.servAcctId != ''">
+                SERV_ACCT_ID = #{params.servAcctId}
+            </if>
+            <if test="params.contractNo != null and params.contractNo != ''">
+                AND CONTRACT_NO = #{params.contractNo}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.chkoutPri != null and params.chkoutPri != ''">
+                AND CHKOUT_PRI = #{params.chkoutPri}
+            </if>
+            <if test="params.billOrder != null and params.billOrder != ''">
+                AND BILL_ORDER = #{params.billOrder}
+            </if>
+            <if test="params.feeRate != null and params.feeRate != ''">
+                AND FEE_RATE = #{params.feeRate}
+            </if>
+            <if test="params.feeCode != null and params.feeCode != ''">
+                AND EXP_DATE = #{params.feeCode}
+            </if>
+            <if test="params.detalCode != null and params.detalCode != ''">
+                AND DETAL_CODE = #{params.detalCode}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.remark != null and params.remark != ''">
+                AND REMARK = #{params.remark}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.feeValue != null and params.feeValue != ''">
+                AND fee_value = #{params.feeValue}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryConUserRateHisList" parameterType="Map" resultMap="conUserRateMap">
+        select SERV_ACCT_ID, CONTRACT_NO, ID_NO, CHKOUT_PRI, BILL_ORDER, FEE_RATE, FEE_CODE,DETAL_CODE, OP_CODE,
+        OP_TIME, LOGIN_NO, LOGIN_ACCEPT, REMARK, EFF_DATE, EXP_DATE, FEE_VALUE, UPDATE_TIME, UPDATE_TYPE, UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from cs_conuserrate_info_his
+        <where>
+            <if test="inparams.servAcctId != null and inparams.servAcctId != ''">
+                SERV_ACCT_ID = #{inparams.servAcctId}
+            </if>
+            <if test="inparams.contractNo != null and inparams.contractNo != ''">
+                AND CONTRACT_NO = #{inparams.contractNo}
+            </if>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                AND ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.chkoutPri != null and inparams.chkoutPri != ''">
+                AND CHKOUT_PRI = #{inparams.chkoutPri}
+            </if>
+            <if test="inparams.billOrder != null and inparams.billOrder != ''">
+                AND BILL_ORDER = #{inparams.billOrder}
+            </if>
+            <if test="inparams.feeRate != null and inparams.feeRate != ''">
+                AND FEE_RATE = #{inparams.feeRate}
+            </if>
+            <if test="inparams.feeCode != null and inparams.feeCode != ''">
+                AND EXP_DATE = #{inparams.feeCode}
+            </if>
+            <if test="inparams.detalCode != null and inparams.detalCode != ''">
+                AND DETAL_CODE = #{inparams.detalCode}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.remark != null and inparams.remark != ''">
+                AND REMARK = #{inparams.remark}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.feeValue != null and inparams.feeValue != ''">
+                AND fee_value = #{inparams.feeValue}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <resultMap id="conUserRateMap" type="com.sitech.family.custservice.dto.mapperdto.ConUserRate">
+        <id property="servAcctId" column="SERV_ACCT_ID"></id>
+        <id property="feeCode" column="FEE_CODE"></id>
+        <id property="detalCode" column="DETAL_CODE"></id>
+        <id property="effDate" column="EFF_DATE"></id>
+        <result property="contractNo" column="CONTRACT_NO"></result>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="chkoutPri" column="CHKOUT_PRI"></result>
+        <result property="billOrder" column="BILL_ORDER"></result>
+        <result property="feeRate" column="FEE_RATE"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="remark" column="REMARK"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="feeValue" column="fee_value"></result>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,74 @@
+{
+  "ROOT": {
+    "HEADER": {
+      "OP_CODE": "1090",
+      "DB_ID": "B1",
+      "ROUTING": {
+        "ROUTE_KEY": "11",
+        "ROUTE_VALUE": "230310003019759138"
+      },
+      "KEEP_LIVE": "10.109.224.26",
+      "TRACE_ID": "11*20171016185034*1090*csgj08*725442",
+      "CHANNEL_ID": "11",
+      "PARENT_CALL_ID": "3EE4D453A45B67C813BC7B3F33B6EA6D",
+      "USERNAME": "csgj08",
+      "PASSWORD": "FfqsUBQoDkHrcO7VrRWfNXUFoprP9vLhe",
+      "POOL_ID": "2"
+    },
+    "BODY": {
+      "OUT_DATA": {
+        "GOODS_PRC_INFO": {
+          "FREE_SUM": "588",
+          "CANCEL_RULE_ID": "1001",
+          "OFFSET_CYCLE": "",
+          "NEGOT_PRICE": "N",
+          "OUT_RATEPLAN_ID": "",
+          "SEL_FLAG_NAME": "",
+          "MASTER_SERV_ID": "1000",
+          "USE_RANGE": "0100000100000234200",
+          "PRC_DESC": "月费3元含40条国内（不含港澳台）手机终端到手机终端短信；超过部分按标准资费收取。",
+          "EXP_RULE_OFFSET": "",
+          "GOODS_TYPE": "",
+          "STAR_LEVEL": "",
+          "EFF_RULE_ID": "1001",
+          "TIMELIMIT": "",
+          "PRC_ID": "M038311",
+          "GOODS_NAME": "家庭融合套餐",
+          "EFF_DATE": "20180709160530",
+          "EFF_TYPE_FLAG": "",
+          "PRC_GEAR_DEFAULT": "",
+          "EXP_RULE_ID": "1108",
+          "STATE": "",
+          "EFF_RULE_NAME": "",
+          "TEAM_TYPE": "0",
+          "BILLING_MODE": "B",
+          "AVAIL_DAY": "0",
+          "GROUP_TYPE": "01",
+          "PRC_TYPE": "1",
+          "EXP_DATE": "20500101000000",
+          "SEL_FLAG": "",
+          "EXP_TYPE_FLAG": "",
+          "EFF_DATE_FLAG": "0",
+          "OLD_EXP_DATE": "",
+          "GOODS_ID": "G01611",
+          "OUT_YTHFLAG": "",
+          "CHINESE_INDEX": "JWBLLB（7T20G）",
+          "OUT_PRODPRC_ID": "",
+          "PRC_GEAR": "",
+          "GOODS_USE_RANGE": "",
+          "EXP_DATE_FLAG": "0",
+          "PRC_CLASS_NAME": "",
+          "PRC_NAME": "新爱家588(融合版)",
+          "PAY_TYPE": "",
+          "DEFAULT_VALUE": "",
+          "PRC_DESC": "",
+          "PRC_CLASS": "YnE640",
+          "EXPIRE_TYPE": "0",
+          "SVC_ID": "G01611",
+          "PROD_ID": "G01611",
+          "PICTURE_URL": "http://eip.teamshub.com/t/3819040"
+        }
+      }
+    }
+  }
+}

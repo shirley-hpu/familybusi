@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.CustCheckCodeMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.CustCheckCode">
+        <result column="check_code" property="checkCode"/>
+        <result column="effective_time" property="effectiveTime"/>
+        <result column="phone_NO" property="phoneNo"/>
+        <result column="OP_TIME" property="opTime"/>
+    </resultMap>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.CustCheckCode">
+        insert into bs_custcheckcode_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="checkCode != null">
+                check_code,
+            </if>
+            <if test="effectiveTime != null">
+                effective_time,
+            </if>
+            <if test="phoneNo != null">
+                phone_NO,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="checkCode != null">
+                #{checkCode},
+            </if>
+            <if test="effectiveTime != null">
+                #{effectiveTime},
+            </if>
+            <if test="phoneNo != null">
+                #{phoneNo},
+            </if>
+            <if test="opTime != null">
+                #{opTime},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="query"  parameterType="map" resultMap="BaseResultMap">
+        select check_code,effective_time,phone_NO,OP_TIME
+        from bs_custcheckcode_info
+        where phone_NO = #{phoneNo,jdbcType=VARCHAR}
+        order by OP_TIME DESC
+        limit 0,1 ;
+    </select>
+
+</mapper>

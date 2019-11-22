@@ -1,0 +1,95 @@
+spring:
+  profiles:
+    active: dev
+  boot:
+    admin:
+      url: http://localhost
+  #  jackson:
+  #    date-format: YYYY-MM
+  #    default-property-inclusion: non_null
+  #整合mybatis数据源
+  datasource:
+    password: dbfamilyadm
+    username: dbfamilyadm
+    url: jdbc:mysql://172.18.231.40:8066/family_center?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #datasource:
+    #  password: 123456
+    #  username: root
+    #  url: jdbc:mysql://localhost:3306/family_center?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #  driver-class-name: com.mysql.jdbc.Driver
+    #  type: com.alibaba.druid.pool.DruidDataSource
+  main:
+    allow-bean-definition-overriding: true
+#mybatis配置  独立节点
+mybatis:
+  #实体类对应的包
+  type-aliases-package: com.sitech.family.familyservice.dto.mapperdto
+  #mapper文件的位置 mapperLocations指的路径是src/main/resources
+  mapper-locations: classpath:mybatismapper/*.xml
+
+#日志级别
+logging:
+  level:
+    com.sitech.family.custservice: debug
+    com:
+      bes:
+        enterprise:
+          web:
+            crane:
+              http11: debug
+
+
+jcf:
+  hsf:
+    application:
+      consumer-app-name: jcf30Test
+    registry:
+      address: 172.21.3.92:2180,172.21.3.99:2181,172.21.3.100:2182
+    protocol:
+      name: dubbo
+      port: 33350
+      threads: 2
+    usedforclient: true
+    #route:
+    #defaultLabel: A
+    #name: com.sitech.ijcf.message6.route.DbRouteUseProxyAndHsfImplroxy-lable
+    #proxy-lable: A
+  core:
+    databind-json-type: fastjson
+    bean:
+    bean-scan-packages: com.sitech.**
+
+management:
+  #  port: 54001  #指定监听端口，不指定则与server端口一致
+  security:
+    enabled: false  #指定访问信息不进行用户验证
+  health:
+    db:
+      enabled: true
+    mail:
+      enabled: true
+  address: 127.0.0.1
+
+#####分布式序列配置#######
+idss:
+  zookeeper-servers: 172.18.234.240:2181
+  zookeeper-session-timeout: 5000
+  tenant: /Y11241
+  allow-auth: true
+  client-max-try-times: 5
+  distributed-model: fixed
+  root-path: /sequence-server
+  auth-type: digest
+
+
+
+endpoints:
+  shutdown:
+    enabled: false  #POST请求，用来关闭应用，由于操作比较敏感，默认情况下该请求是被禁止的
+
+
+######################################################################################
+
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.FeePriceMapper">
+
+    <resultMap id="feePriceMap" type="com.sitech.family.custservice.dto.mapperdto.FeePrice">
+        <id property="groupId" column="GROUP_ID"></id>
+        <id property="svcId" column="SVC_ID"></id>
+        <id property="actionId" column="ACTION_ID"></id>
+        <id property="busiMode" column="BUSI_MODE"></id>
+        <id property="feeCode" column="FEE_CODE"></id>
+        <id property="feeType" column="FEE_TYPE"></id>
+        <id property="effDate" column="EFF_DATE"></id>
+        <result property="feeId" column="FEE_ID"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="dataType" column="DATA_TYPE"></result>
+        <result property="feeValue" column="FEE_VALUE"></result>
+        <result property="feeUnit" column="FEE_UNIT"></result>
+        <result property="calType" column="CAL_TYPE"></result>
+        <result property="printFlag" column="print_flag"></result>
+        <result property="payType" column="pay_type"></result>
+    </resultMap>
+
+    <insert id="create" parameterType="FeePrice">
+      insert into CS_FEEPRICE_DICT
+      ( FEE_ID, GROUP_ID, SVC_ID, ACTION_ID, BUSI_MODE, FEE_CODE, FEE_TYPE, EFF_DATE, EXP_DATE, DATA_TYPE,
+       FEE_VALUE, FEE_UNIT, CAL_TYPE, print_flag, pay_type)
+       values
+       ( #{feeId}, #{groupId}, #{svcId}, #{actionId}, #{busiMode}, #{feeCode}, #{feeType}, #{effDate}, #{expDate},
+         #{dataType}, #{feeValue}, #{feeUnit}, #{calType}, #{printFlag}, #{payType});
+    </insert>
+
+    <update id="modify" parameterType="FeePrice">
+        update CS_FEEPRICE_DICT
+        <trim prefix="set" suffixOverrides=",">
+            <if test="feeId != null">FEE_ID = #{feeId},</if>
+            <if test="groupId != null">GROUP_ID = #{groupId},</if>
+            <if test="svcId != null">SVC_ID = #{svcId},</if>
+            <if test="actionId != null">ACTION_ID = #{actionId},</if>
+            <if test="busiMode != null">BUSI_MODE = #{busiMode},</if>
+            <if test="feeCode != null">FEE_CODE = #{feeCode},</if>
+            <if test="feeType != null">FEE_TYPE = #{feeType},</if>
+            <if test="effDate != null">EFF_DATE = #{effDate},</if>
+            <if test="expDate != null">EXP_DATE = #{expDate},</if>
+            <if test="dataType != null">DATA_TYPE = #{dataType},</if>
+            <if test="feeValue != null">FEE_VALUE = #{feeValue},</if>
+            <if test="feeUnit != null">FEE_UNIT = #{feeUnit},</if>
+            <if test="calType != null">CAL_TYPE = #{calType},</if>
+            <if test="printFlag != null">print_flag = #{printFlag},</if>
+            <if test="payType != null">pay_type = #{payType},</if>
+        </trim>
+        where GROUP_ID = #{groupId} and SVC_ID = #{svcId} and ACTION_ID = #{actionId} and BUSI_MODE = #{busiMode} and
+        FEE_CODE = #{feeCode}
+        and FEE_TYPE = #{feeType} and EFF_DATE = #{effDate};
+    </update>
+
+    <delete id="drop" parameterType="FeePrice">
+        delete from CS_FEEPRICE_DICT where GROUP_ID = #{groupId} and SVC_ID = #{svcId} and ACTION_ID = #{actionId} and BUSI_MODE = #{busiMode} and FEE_CODE = #{feeCode}
+        and FEE_TYPE = #{feeType} and EFF_DATE = #{effDate};
+    </delete>
+
+    <select id="query" resultMap="feePriceMap">
+        select FEE_ID, GROUP_ID, SVC_ID, ACTION_ID, BUSI_MODE, FEE_CODE, FEE_TYPE, EFF_DATE, EXP_DATE, DATA_TYPE,
+       FEE_VALUE, FEE_UNIT, CAL_TYPE, print_flag, pay_type
+        from CS_FEEPRICE_DICT where GROUP_ID = #{groupId} and SVC_ID = #{svcId}
+         and ACTION_ID = #{actionId} and BUSI_MODE = #{busiMode} and FEE_CODE = #{feeCode}
+        and FEE_TYPE = #{feeType} and EFF_DATE = #{effDate};
+    </select>
+
+
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.GoodsSaleMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.GoodsSale">
+        <id column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="GOODSINS_ID" property="goodsinsId" jdbcType="DECIMAL"/>
+        <result column="ID_NO" property="idNo" jdbcType="DECIMAL"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="GOODS_TYPE" property="goodsType" jdbcType="VARCHAR"/>
+        <result column="OP_TYPE" property="opType" jdbcType="VARCHAR"/>
+        <result column="SELL_SERIAL_NO" property="sellSerialNo" jdbcType="DECIMAL"/>
+        <result column="GOODS_ID" property="goodsId" jdbcType="VARCHAR"/>
+        <result column="PRC_ID" property="prcId" jdbcType="VARCHAR"/>
+        <result column="SKU_ID" property="skuId" jdbcType="VARCHAR"/>
+        <result column="RESOURCE_NO" property="resourceNo" jdbcType="VARCHAR"/>
+        <result column="OLD_PRODPRCINS_ID" property="oldProdprcinsId" jdbcType="DECIMAL"/>
+        <result column="OLD_SELL_SERIAL_NO" property="oldSellSerialNo" jdbcType="DECIMAL"/>
+        <result column="OLD_GOODS_ID" property="oldGoodsId" jdbcType="VARCHAR"/>
+        <result column="OLD_PRC_ID" property="oldPrcId" jdbcType="VARCHAR"/>
+        <result column="OLD_SKU_ID" property="oldSkuId" jdbcType="VARCHAR"/>
+        <result column="OLD_RESOURCE_NO" property="oldResourceNo" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="DEVELOP_LOGIN" property="developLogin" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="OP_NOTE" property="opNote" jdbcType="VARCHAR"/>
+        <result column="BUY_NAME" property="buyName" jdbcType="VARCHAR"/>
+        <result column="BUY_ICCID" property="buyIccid" jdbcType="VARCHAR"/>
+        <result column="CONTACT_ID" property="contactId" jdbcType="VARCHAR"/>
+        <result column="SUB_ORDER_ID" property="subOrderId" jdbcType="VARCHAR"/>
+        <result column="SUB_ORDER_ACCEPT" property="subOrderAccept" jdbcType="DECIMAL"/>
+        <result column="ORDLINE_ID" property="ordlineId" jdbcType="VARCHAR"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="BACK_FLAG" property="backFlag" jdbcType="VARCHAR"/>
+        <result column="BACK_ACCEPT_ID" property="backAcceptId" jdbcType="VARCHAR"/>
+        <result column="SHOULD_PAY" property="shouldPay" jdbcType="DECIMAL"/>
+        <result column="REAL_PAY" property="realPay" jdbcType="DECIMAL"/>
+        <result column="FAV_FEE" property="favFee" jdbcType="DECIMAL"/>
+        <result column="CHANTYPE_ID" property="chantypeId" jdbcType="VARCHAR"/>
+        <result column="OP_SOURCE" property="opSource" jdbcType="VARCHAR"/>
+        <result column="OUT_ORDER_ID" property="outOrderId" jdbcType="VARCHAR"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    LOGIN_ACCEPT, GOODSINS_ID, ID_NO, OP_CODE, GOODS_TYPE, OP_TYPE, SELL_SERIAL_NO, GOODS_ID, 
+    PRC_ID, SKU_ID, RESOURCE_NO, OLD_PRODPRCINS_ID, OLD_SELL_SERIAL_NO, OLD_GOODS_ID, 
+    OLD_PRC_ID, OLD_SKU_ID, OLD_RESOURCE_NO, EFF_DATE, EXP_DATE, DEVELOP_LOGIN, LOGIN_NO, 
+    OP_NOTE, BUY_NAME, BUY_ICCID, CONTACT_ID, SUB_ORDER_ID, SUB_ORDER_ACCEPT, ORDLINE_ID, 
+    OP_TIME, BACK_FLAG, BACK_ACCEPT_ID, SHOULD_PAY, REAL_PAY, FAV_FEE, CHANTYPE_ID, OP_SOURCE, 
+    OUT_ORDER_ID, FINISH_FLAG
+  </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_goodssale_rd
+        where LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL}
+    </select>
+
+</mapper>

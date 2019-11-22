@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0558c5e0-76fa-4dff-8fb1-993806360995" name="Default" comment="优惠相关信息">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_statistics_0_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_apache_client4_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_contexts_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxnetty_servo_0_4_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_3_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_base_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_base_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_core_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_core_1_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_extra_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_extra_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_autoconfigure_2_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_autoconfigure_2_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_starter_2_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_starter_2_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_weekend_1_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_weekend_1_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/compservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/compservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/CompserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/CompserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/atombiz/impl/FamilyOpenAoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/atombiz/impl/FamilyOpenAoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/atombiz/impl/FamilyRoleGoodsDetailQryAo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/atombiz/impl/FamilyRoleGoodsDetailQryAo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyAddFeeInfoQryCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyAddFeeInfoQryCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyGoodsPrcAttrQryCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyGoodsPrcAttrQryCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyMbrCfmCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyMbrCfmCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyMbrPrcChgCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/compbiz/impl/FamilyMbrPrcChgCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/dto/indto/FamilyAddFeeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/dto/indto/FamilyAddFeeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/service/FamilyMbrCfmCoSvc.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/service/FamilyMbrCfmCoSvc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/service/FamilyMbrPrcChgCoSvc.java" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/java/com/sitech/family/compservice/service/FamilyMbrPrcChgCoSvc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compservice/src/main/resources/goods" beforeDir="false" afterPath="$PROJECT_DIR$/compservice/src/main/resources/goods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custqryservice/custqryservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/custqryservice/custqryservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custqryservice/src/main/java/com/sitech/family/custqryservice/service/FamilyOrderAddGoodsSvc.java" beforeDir="false" afterPath="$PROJECT_DIR$/custqryservice/src/main/java/com/sitech/family/custqryservice/service/FamilyOrderAddGoodsSvc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custqryservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/custqryservice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/custservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/custservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/src/main/java/com/sitech/family/custservice/compbusi/impl/FamilyAccountCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/src/main/java/com/sitech/family/custservice/compbusi/impl/FamilyAccountCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/src/main/java/com/sitech/family/custservice/compbusi/impl/FamilyMbrPrcMidCo.java" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/src/main/java/com/sitech/family/custservice/compbusi/impl/FamilyMbrPrcMidCo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/src/test/java/com/sitech/family/custservice/mapper/UserPrcMbrInsImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/src/test/java/com/sitech/family/custservice/mapper/UserPrcMbrInsImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/target/classes/com/sitech/CustServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/target/classes/com/sitech/CustServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/custservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familybusi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/familybusi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/familyservice/familyservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/familyservice/familyservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="familybusi" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../repositories" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../apache-maven-3.6.1/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1SMMlTibSJOpb89HqtASVAuVZio" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="1" id="Remove" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="BasicConfigurator&#9;PSI&#9;JAVA://ch.qos.logback.classic.BasicConfigurator&#10;GenericTypeResolver&#9;PSI&#9;JAVA://org.springframework.core.GenericTypeResolver&#10;GenericTypeAwarePropertyDescriptor&#9;FILE&#9;jar:///Users/xuwei/Desktop/git/maven/Repositories/org/springframework/spring-beans/4.3.10.RELEASE/spring-beans-4.3.10.RELEASE.jar!/org/springframework/beans/GenericTypeAwarePropertyDescriptor.class&#10;GenericTypeResolver.class&#9;FILE&#9;jar:///Users/xuwei/Desktop/git/maven/Repositories/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar!/org/springframework/core/GenericTypeResolver.class" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/familybusi" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sitech.family.custservice.busi" />
+      <recent name="com.sitech.family.custservice.dll" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CompserviceApplication">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sitech.family.common.Test" />
+      <module name="compservice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sitech.family.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sitech.family.compservice.service.Test" />
+      <module name="compservice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sitech.family.compservice.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sitech.family.common.Test" />
+      <module name="custservice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sitech.family.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MbrPrcMidImplTest.qryMbrPrcMidList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="custservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sitech.family.custservice.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sitech.family.custservice.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.sitech.family.custservice.mapper.MbrPrcMidImplTest" />
+      <option name="METHOD_NAME" value="qryMbrPrcMidList" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.sitech.family.compservice.service in compservice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="compservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sitech.family.compservice.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sitech.family.compservice.service" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="compservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.CompserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="custservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.CustServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustqryserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="custqryservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.CustqryserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FamilyServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="familyservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.FamilyServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OtherserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="otherservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.OtherserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PreServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="familypreservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sitech.PreServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Test (1)" />
+      <item itemvalue="Application.Test (2)" />
+      <item itemvalue="JUnit.MbrPrcMidImplTest.qryMbrPrcMidList" />
+      <item itemvalue="JUnit.com.sitech.family.compservice.service in compservice" />
+      <item itemvalue="Spring Boot.CustServiceApplication" />
+      <item itemvalue="Spring Boot.OtherserviceApplication" />
+      <item itemvalue="Spring Boot.CompserviceApplication" />
+      <item itemvalue="Spring Boot.CustqryserviceApplication" />
+      <item itemvalue="Spring Boot.FamilyServiceApplication" />
+      <item itemvalue="Spring Boot.PreServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test (2)" />
+        <item itemvalue="JUnit.com.sitech.family.compservice.service in compservice" />
+        <item itemvalue="JUnit.MbrPrcMidImplTest.qryMbrPrcMidList" />
+        <item itemvalue="Application.Test (1)" />
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <option name="contentProportion" value="0.099342585" />
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e70a5b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e70a5b4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ea419d90" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="showInfrastructureBeans" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+    <option name="FORCE_UPDATE" value="true" />
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0558c5e0-76fa-4dff-8fb1-993806360995" name="Default" comment="" />
+      <created>1531106192945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531106192945</updated>
+      <workItem from="1531106194512" duration="404000" />
+      <workItem from="1531114775002" duration="495000" />
+      <workItem from="1531115665609" duration="1866000" />
+      <workItem from="1531117648584" duration="122000" />
+      <workItem from="1531117774074" duration="323000" />
+      <workItem from="1531118149734" duration="614000" />
+      <workItem from="1531118789571" duration="948000" />
+      <workItem from="1531122218255" duration="68000" />
+      <workItem from="1531122426551" duration="298000" />
+      <workItem from="1531122749547" duration="216000" />
+      <workItem from="1531123411601" duration="1206000" />
+      <workItem from="1531124940441" duration="3670000" />
+      <workItem from="1531186392503" duration="828000" />
+      <workItem from="1531188566657" duration="1680000" />
+      <workItem from="1531190736180" duration="664000" />
+      <workItem from="1531191785307" duration="2091000" />
+      <workItem from="1531194175001" duration="6363000" />
+      <workItem from="1531273300297" duration="701000" />
+      <workItem from="1531277696897" duration="3288000" />
+      <workItem from="1531359759663" duration="4709000" />
+      <workItem from="1531382140153" duration="1125000" />
+      <workItem from="1531384442531" duration="1244000" />
+      <workItem from="1531386021673" duration="84000" />
+      <workItem from="1531386141981" duration="481000" />
+      <workItem from="1531444964165" duration="2947000" />
+      <workItem from="1531712644654" duration="1549000" />
+      <workItem from="1531805957589" duration="578000" />
+      <workItem from="1531850071146" duration="124000" />
+      <workItem from="1531854327944" duration="752000" />
+      <workItem from="1531963274821" duration="3835000" />
+      <workItem from="1532046810642" duration="1867000" />
+      <workItem from="1532051220944" duration="1745000" />
+      <workItem from="1532064198897" duration="10266000" />
+      <workItem from="1532307366255" duration="5784000" />
+      <workItem from="1532328362610" duration="64000" />
+      <workItem from="1532331598567" duration="5378000" />
+      <workItem from="1532345088956" duration="797000" />
+      <workItem from="1532346275433" duration="6180000" />
+      <workItem from="1532392822459" duration="13834000" />
+      <workItem from="1532422097410" duration="537000" />
+      <workItem from="1532422662957" duration="2642000" />
+      <workItem from="1532432148028" duration="2761000" />
+      <workItem from="1532480487252" duration="1897000" />
+      <workItem from="1532496325940" duration="9056000" />
+      <workItem from="1532506255516" duration="13131000" />
+      <workItem from="1532567264725" duration="1773000" />
+      <workItem from="1532653539966" duration="62000" />
+      <workItem from="1532999624931" duration="1675000" />
+      <workItem from="1533086546764" duration="2888000" />
+      <workItem from="1533090151121" duration="3946000" />
+      <workItem from="1533262157288" duration="1764000" />
+      <workItem from="1533522768672" duration="3151000" />
+      <workItem from="1533547009300" duration="735000" />
+      <workItem from="1533604390958" duration="711000" />
+      <workItem from="1533607077681" duration="2223000" />
+      <workItem from="1533778514663" duration="1224000" />
+      <workItem from="1533866833574" duration="648000" />
+      <workItem from="1533955098214" duration="267000" />
+      <workItem from="1534041008053" duration="228000" />
+      <workItem from="1560478042098" duration="4071000" />
+      <workItem from="1560492484333" duration="1883000" />
+      <workItem from="1560733284347" duration="333000" />
+      <workItem from="1560733682950" duration="1129000" />
+      <workItem from="1560748669381" duration="599000" />
+      <workItem from="1560828438676" duration="887000" />
+      <workItem from="1560909557215" duration="609000" />
+      <workItem from="1561079125604" duration="4523000" />
+      <workItem from="1561166641122" duration="1389000" />
+      <workItem from="1561193392047" duration="3289000" />
+      <workItem from="1561338208447" duration="4661000" />
+      <workItem from="1561366285911" duration="1075000" />
+      <workItem from="1561380970488" duration="829000" />
+      <workItem from="1561424381021" duration="27684000" />
+      <workItem from="1561510787333" duration="16546000" />
+      <workItem from="1561597142136" duration="9745000" />
+      <workItem from="1561941379331" duration="293000" />
+      <workItem from="1561946102766" duration="1795000" />
+      <workItem from="1562029242767" duration="254000" />
+      <workItem from="1562030048879" duration="2333000" />
+      <workItem from="1562114507197" duration="347000" />
+      <workItem from="1562201329102" duration="5582000" />
+      <workItem from="1562286912843" duration="8938000" />
+      <workItem from="1562312161987" duration="146000" />
+      <workItem from="1562546301715" duration="11291000" />
+      <workItem from="1562587464676" duration="255000" />
+      <workItem from="1562632971309" duration="11439000" />
+      <workItem from="1562662888666" duration="3938000" />
+      <workItem from="1562676158455" duration="26000" />
+      <workItem from="1562720382662" duration="10314000" />
+      <workItem from="1562805559338" duration="12073000" />
+      <workItem from="1562891828964" duration="1148000" />
+      <workItem from="1563151172064" duration="2465000" />
+      <workItem from="1563233589562" duration="141000" />
+      <workItem from="1563496872895" duration="662000" />
+      <workItem from="1563756582787" duration="4640000" />
+      <workItem from="1563842949951" duration="2198000" />
+      <workItem from="1563929319376" duration="3809000" />
+      <workItem from="1564016044549" duration="1825000" />
+      <workItem from="1564101921811" duration="516000" />
+      <workItem from="1564191480960" duration="1646000" />
+      <workItem from="1564361898788" duration="1145000" />
+      <workItem from="1564401346053" duration="1050000" />
+      <workItem from="1564447564369" duration="2096000" />
+      <workItem from="1564534014751" duration="14217000" />
+      <workItem from="1564620687008" duration="11262000" />
+      <workItem from="1564639007839" duration="10328000" />
+      <workItem from="1564711909643" duration="2377000" />
+      <workItem from="1564967562114" duration="41000" />
+      <workItem from="1564967660452" duration="1432000" />
+      <workItem from="1565052449045" duration="1385000" />
+      <workItem from="1565072156407" duration="642000" />
+      <workItem from="1565139400322" duration="1163000" />
+      <workItem from="1565224699874" duration="1223000" />
+      <workItem from="1565311240393" duration="1237000" />
+      <workItem from="1565573090272" duration="14582000" />
+      <workItem from="1565662511020" duration="11867000" />
+      <workItem from="1565744355826" duration="27670000" />
+      <workItem from="1565831222246" duration="15753000" />
+      <workItem from="1565917791266" duration="10824000" />
+      <workItem from="1566176123435" duration="543000" />
+      <workItem from="1566206812524" duration="440000" />
+      <workItem from="1566265604722" duration="737000" />
+      <workItem from="1566371501378" duration="2556000" />
+      <workItem from="1566435392671" duration="1148000" />
+      <workItem from="1566550131742" duration="2023000" />
+      <workItem from="1566781935127" duration="2350000" />
+      <workItem from="1566874303066" duration="367000" />
+      <workItem from="1566978046458" duration="227000" />
+      <workItem from="1567040722261" duration="661000" />
+      <workItem from="1567393852924" duration="3926000" />
+      <workItem from="1567475850760" duration="7147000" />
+      <workItem from="1567557682992" duration="843000" />
+      <workItem from="1568000469045" duration="5326000" />
+      <workItem from="1568078069485" duration="6253000" />
+      <workItem from="1568167449045" duration="3844000" />
+      <workItem from="1568249588034" duration="3077000" />
+      <workItem from="1568595619135" duration="2056000" />
+      <workItem from="1568717675536" duration="979000" />
+      <workItem from="1568804859682" duration="377000" />
+      <workItem from="1568862651772" duration="15228000" />
+      <workItem from="1568940958616" duration="2658000" />
+      <workItem from="1568947070422" duration="1532000" />
+      <workItem from="1568961586264" duration="68000" />
+      <workItem from="1568962131787" duration="445000" />
+      <workItem from="1568965575392" duration="5098000" />
+      <workItem from="1569030456926" duration="1628000" />
+      <workItem from="1569205768536" duration="5939000" />
+      <workItem from="1569246982665" duration="280000" />
+      <workItem from="1569287091639" duration="7083000" />
+      <workItem from="1569295882677" duration="184000" />
+      <workItem from="1569379273451" duration="3315000" />
+      <workItem from="1569389629591" duration="12926000" />
+      <workItem from="1569465683333" duration="913000" />
+      <workItem from="1569552597732" duration="1419000" />
+      <workItem from="1570602985608" duration="1613000" />
+      <workItem from="1570761900737" duration="2012000" />
+      <workItem from="1571283184634" duration="17000" />
+      <workItem from="1571364149145" duration="107000" />
+      <workItem from="1571365926468" duration="298000" />
+      <workItem from="1571366232023" duration="2372000" />
+      <workItem from="1571369170415" duration="1144000" />
+      <workItem from="1571629320962" duration="10160000" />
+      <workItem from="1571706967205" duration="253000" />
+      <workItem from="1571710312970" duration="6000" />
+      <workItem from="1571715175599" duration="8379000" />
+      <workItem from="1571793700444" duration="752000" />
+      <workItem from="1571906824719" duration="4930000" />
+      <workItem from="1571965388027" duration="4456000" />
+      <workItem from="1572051872365" duration="5305000" />
+      <workItem from="1572330540713" duration="1078000" />
+      <workItem from="1572400136850" duration="9285000" />
+      <workItem from="1572483676333" duration="3521000" />
+      <workItem from="1572584924986" duration="1558000" />
+      <workItem from="1572916371234" duration="9000" />
+      <workItem from="1572934720288" duration="324000" />
+      <workItem from="1572935139218" duration="40000" />
+      <workItem from="1572935256984" duration="382000" />
+      <workItem from="1572939437961" duration="12000" />
+      <workItem from="1572939657124" duration="23000" />
+      <workItem from="1572942618133" duration="71000" />
+      <workItem from="1572944451327" duration="1010000" />
+    </task>
+    <task id="LOCAL-00001" summary="null==&gt;new ArrayList&lt;&gt;()">
+      <created>1561463484030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561463484030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="成员资费变更">
+      <created>1561467493029</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561467493029</updated>
+    </task>
+    <task id="LOCAL-00003" summary="成员资费变更实体类">
+      <created>1561467762031</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561467762031</updated>
+    </task>
+    <task id="LOCAL-00004" summary="成员资费变更代码修改">
+      <created>1561633560029</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561633560029</updated>
+    </task>
+    <task id="LOCAL-00005" summary="成员添加">
+      <created>1562570582032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562570582032</updated>
+    </task>
+    <task id="LOCAL-00006" summary="成员资费变更">
+      <created>1562925887033</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562925887033</updated>
+    </task>
+    <task id="LOCAL-00007" summary="成员资费变更实体类">
+      <created>1563766289026</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563766289027</updated>
+    </task>
+    <task id="LOCAL-00008" summary="附加资费全量信息">
+      <created>1564659955032</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564659955032</updated>
+    </task>
+    <task id="LOCAL-00009" summary="附加资费全量信息">
+      <created>1564712308033</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564712308033</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改字段">
+      <created>1565767263030</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565767263031</updated>
+    </task>
+    <task id="LOCAL-00011" summary="修改字段">
+      <created>1565767406030</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565767406030</updated>
+    </task>
+    <task id="LOCAL-00012" summary="附加资费已订购信息">
+      <created>1565785008029</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565785008029</updated>
+    </task>
+    <task id="LOCAL-00013" summary="附加资费已订购信息">
+      <created>1565785475028</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565785475028</updated>
+    </task>
+    <task id="LOCAL-00014" summary="附加资费已订购信息">
+      <created>1565785857029</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565785857029</updated>
+    </task>
+    <task id="LOCAL-00015" summary="附加资费已订购信息">
+      <created>1565785966028</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1565785966028</updated>
+    </task>
+    <task id="LOCAL-00016" summary="附加资费已订购信息">
+      <created>1565786394031</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1565786394031</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修改返回信息">
+      <created>1565787287031</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1565787287031</updated>
+    </task>
+    <task id="LOCAL-00018" summary="套餐查询增加分组ROLE_ID">
+      <created>1565868245038</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1565868245038</updated>
+    </task>
+    <task id="LOCAL-00019" summary="测试数据方便测试">
+      <created>1566266684036</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1566266684037</updated>
+    </task>
+    <task id="LOCAL-00020" summary="测试数据">
+      <created>1566443156033</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1566443156033</updated>
+    </task>
+    <task id="LOCAL-00021" summary="优惠规则">
+      <created>1567419564034</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1567419564034</updated>
+    </task>
+    <task id="LOCAL-00022" summary="商品资费优惠信息">
+      <created>1567494687036</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1567494687036</updated>
+    </task>
+    <task id="LOCAL-00023" summary="角色商品构成信息查询">
+      <created>1568019560031</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1568019560031</updated>
+    </task>
+    <task id="LOCAL-00024" summary="角色商品构成信息查询">
+      <created>1568019706030</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568019706030</updated>
+    </task>
+    <task id="LOCAL-00025" summary="角色商品构成信息查询">
+      <created>1568083148034</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1568083148034</updated>
+    </task>
+    <task id="LOCAL-00026" summary="修改PRC_ID的值">
+      <created>1568086857028</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1568086857029</updated>
+    </task>
+    <task id="LOCAL-00027" summary="去除注解校验参数">
+      <created>1568717925033</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1568717925033</updated>
+    </task>
+    <task id="LOCAL-00028" summary="家庭已订购附加商品信息查询">
+      <created>1568896895035</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1568896895035</updated>
+    </task>
+    <task id="LOCAL-00029" summary="家庭已订购附加商品信息查询">
+      <created>1568897069032</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1568897069032</updated>
+    </task>
+    <task id="LOCAL-00030" summary="家庭已订购附加商品信息查询">
+      <created>1568947231031</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1568947231031</updated>
+    </task>
+    <task id="LOCAL-00031" summary="套餐查询修改">
+      <created>1568988456033</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1568988456033</updated>
+    </task>
+    <task id="LOCAL-00032" summary="套餐查询修改">
+      <created>1569030549080</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1569030549081</updated>
+    </task>
+    <task id="LOCAL-00033" summary="属性查询接口返回数据修改">
+      <created>1569209931036</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1569209931036</updated>
+    </task>
+    <task id="LOCAL-00034" summary="属性查询接口返回出参">
+      <created>1569230839026</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1569230839026</updated>
+    </task>
+    <task id="LOCAL-00035" summary="属性查询接口下标修改">
+      <created>1569231098027</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1569231098027</updated>
+    </task>
+    <task id="LOCAL-00036" summary="家庭套餐基本信息查询">
+      <created>1569294817034</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1569294817034</updated>
+    </task>
+    <task id="LOCAL-00037" summary="家庭套餐基本信息查询">
+      <created>1569294933028</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569294933028</updated>
+    </task>
+    <task id="LOCAL-00038" summary="增加返回参数PRC_ID">
+      <created>1569394222027</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569394222027</updated>
+    </task>
+    <task id="LOCAL-00039" summary="删除返回参数PRC_ID">
+      <created>1569394350028</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1569394350029</updated>
+    </task>
+    <task id="LOCAL-00040" summary="查询资费属性信息">
+      <created>1569401057031</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1569401057031</updated>
+    </task>
+    <task id="LOCAL-00041" summary="查询资费属性信息">
+      <created>1569401137030</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1569401137030</updated>
+    </task>
+    <task id="LOCAL-00042" summary="查询资费属性信息">
+      <created>1569401576030</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1569401576030</updated>
+    </task>
+    <task id="LOCAL-00043" summary="删除无关代码">
+      <created>1571369690029</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1571369690029</updated>
+    </task>
+    <task id="LOCAL-00044" summary="商品标签查询">
+      <created>1571647156035</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1571647156035</updated>
+    </task>
+    <task id="LOCAL-00045" summary="家庭套餐基本信息查询">
+      <created>1571732060027</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1571732060027</updated>
+    </task>
+    <task id="LOCAL-00046" summary="家庭套餐基本信息查询">
+      <created>1572075983033</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1572075983033</updated>
+    </task>
+    <task id="LOCAL-00047" summary="手机成员个数">
+      <created>1572400318027</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1572400318027</updated>
+    </task>
+    <task id="LOCAL-00048" summary="优惠相关信息">
+      <created>1572486767032</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1572486767032</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="附加资费全量信息" />
+    <MESSAGE value="修改字段" />
+    <MESSAGE value="附加资费已订购信息" />
+    <MESSAGE value="修改返回信息" />
+    <MESSAGE value="套餐查询增加分组ROLE_ID" />
+    <MESSAGE value="测试数据方便测试" />
+    <MESSAGE value="测试数据" />
+    <MESSAGE value="优惠规则" />
+    <MESSAGE value="商品资费优惠信息" />
+    <MESSAGE value="角色商品构成信息查询" />
+    <MESSAGE value="修改PRC_ID的值" />
+    <MESSAGE value="去除注解校验参数" />
+    <MESSAGE value="家庭已订购附加商品信息查询" />
+    <MESSAGE value="套餐查询修改" />
+    <MESSAGE value="属性查询接口返回数据修改" />
+    <MESSAGE value="属性查询接口返回出参" />
+    <MESSAGE value="属性查询接口下标修改" />
+    <MESSAGE value="增加返回参数PRC_ID" />
+    <MESSAGE value="删除返回参数PRC_ID" />
+    <MESSAGE value="查询资费属性信息" />
+    <MESSAGE value="删除无关代码" />
+    <MESSAGE value="商品标签查询" />
+    <MESSAGE value="家庭套餐基本信息查询" />
+    <MESSAGE value="手机成员个数" />
+    <MESSAGE value="优惠相关信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="优惠相关信息" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../maven/Repositories/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar!/org/springframework/core/io/ResourceLoader.class</url>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../maven/Repositories/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar!/org/springframework/util/Assert.class</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot/3.1.5/ijcf-boot-3.1.5.jar!/com/sitech/ijcf/boot/core/service/ArchitectureType.class</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/custservice/src/main/java/com/sitech/common/pubdto/LoginInfo.java</url>
+          <line>339</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/custservice/src/main/java/com/sitech/common/LocalEntity.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot/3.1.5/ijcf-boot-3.1.5.jar!/com/sitech/ijcf/boot/core/db/dao/BaseDaoDelegating.class</url>
+          <line>17</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="list1" />
+        <watch expression="mapOutDTO" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>compservice</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserAddMapper" >
+
+    <select id="query" resultMap="userAddMap">
+        select ID_NO,FIELD_CODE,BUSI_TYPE,FIELD_ORDER,FIELD_VALUE,OTHER_VALUE,FINISH_FLAG,OP_TIME,LOGIN_NO,LOGIN_ACCEPT,OP_CODE,OP_NOTE,SYSTEM_NOTE
+        from cs_useradd_info where ID_NO = #{idNo} AND FIELD_CODE = #{fieldCode};
+    </select>
+
+    <resultMap id="userAddMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserAdd">
+        <id property="idNo" column="ID_NO"></id>
+        <result property="fieldCode" column="FIELD_CODE"></result>
+        <result property="busiType" column="BUSI_TYPE"></result>
+        <result property="fieldOrder" column="FIELD_ORDER"></result>
+        <result property="fieldValue" column="FIELD_VALUE"></result>
+        <result property="otherValue" column="OTHER_VALUE"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opNote" column="OP_NOTE"></result>
+        <result property="systemNote" column="SYSTEM_NOTE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+</mapper>

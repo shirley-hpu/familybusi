@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/compservice/compservice.iml" filepath="$PROJECT_DIR$/compservice/compservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custqryservice/custqryservice.iml" filepath="$PROJECT_DIR$/custqryservice/custqryservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custservice/custservice.iml" filepath="$PROJECT_DIR$/custservice/custservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familybusi.iml" filepath="$PROJECT_DIR$/familybusi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familydll/familydll.iml" filepath="$PROJECT_DIR$/familydll/familydll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familypreservice/familypreservice.iml" filepath="$PROJECT_DIR$/familypreservice/familypreservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familyservice/familyservice.iml" filepath="$PROJECT_DIR$/familyservice/familyservice.iml" />
+    </modules>
+  </component>
+</project>

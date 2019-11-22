@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.UserGroupMbrMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserGroupMbr">
+        <id column="MEMBER_ID" property="memberId" jdbcType="DECIMAL"/>
+        <result column="GROUP_ID" property="groupId" jdbcType="DECIMAL"/>
+        <result column="MBR_ROLE" property="mbrRole" jdbcType="DECIMAL"/>
+        <result column="MBR_TYPE" property="mbrType" jdbcType="VARCHAR"/>
+        <result column="ELEMENT_ID" property="elementId" jdbcType="VARCHAR"/>
+        <result column="OBJECT_TYPE" property="objectType" jdbcType="VARCHAR"/>
+        <result column="OBJECT_ID" property="objectId" jdbcType="VARCHAR"/>
+        <result column="SHORT_NUM" property="shortNum" jdbcType="VARCHAR"/>
+        <result column="LOCK_FLAG" property="lockFlag" jdbcType="VARCHAR"/>
+        <result column="STATE" property="state" jdbcType="VARCHAR"/>
+        <result column="STATE_DATE" property="stateDate" jdbcType="TIMESTAMP"/>
+        <result column="MEMBER_DESC" property="memberDesc" jdbcType="VARCHAR"/>
+        <result column="MEMBER_NAME" property="memberName" jdbcType="VARCHAR"/>
+        <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        MEMBER_ID, GROUP_ID, MBR_ROLE, MBR_TYPE, ELEMENT_ID, OBJECT_TYPE, OBJECT_ID, SHORT_NUM, LOCK_FLAG, STATE, STATE_DATE, MEMBER_DESC,
+        MEMBER_NAME, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, PHONE_NO
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbr_info
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+    </select>
+
+    <select id="queryFamilyGroupMbr" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbr_info
+        <where>
+            <if test="groupId !=null and groupId !=''">
+                and GROUP_ID = #{groupId}
+            </if>
+            <if test="(groupId == null or groupId =='')">
+                and 1=2
+            </if>
+        </where>
+    </select>
+</mapper>

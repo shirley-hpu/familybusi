@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sitech.ijcf:ijcf-boot-starter-springcloud:3.1.5.20180716.030655-27">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-springcloud/3.1.5.20180716.030655-27/ijcf-boot-starter-springcloud-3.1.5.20180716.030655-27.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-springcloud/3.1.5.20180716.030655-27/ijcf-boot-starter-springcloud-3.1.5.20180716.030655-27-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../maven/Repositories/com/sitech/ijcf/ijcf-boot-starter-springcloud/3.1.5.20180716.030655-27/ijcf-boot-starter-springcloud-3.1.5.20180716.030655-27-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

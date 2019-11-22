@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IPdGoodsDictMapper">
+    <resultMap id="goodsPrcMap" type="com.sitech.family.custqryservice.dto.outdto.GoodsPrcInfo">
+        <result property="prcId" column="PRC_ID"></result>
+        <result property="goodsId" column="GOODS_ID"></result>
+        <result property="goodsName" column="GOODS_NAME"></result>
+        <result property="goodsType" column="GOODS_TYPE"></result>
+        <result property="prcName" column="PRC_NAME"></result>
+        <result property="prcDesc" column="PRC_DESC"></result>
+        <result property="svcId" column="SVC_ID"></result>
+        <result property="prodId" column="PROD_ID"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="masterServId" column="MASTER_SERV_ID"></result>
+        <result property="useRange" column="USE_RANGE"></result>
+        <result property="groupType" column="GROUP_TYPE"></result>
+        <result property="pictureUrl" column="PICTURE_URL"></result>
+        <result property="freeSum" column="FREE_SUM"></result>
+    </resultMap>
+
+
+    <select id="qryGoodsDict" parameterType="Map" resultMap="goodsPrcMap">
+        SELECT DISTINCT
+        b.PRC_ID,
+        a.GOODS_ID,
+        a.GOODS_NAME,
+        a.GOODS_TYPE,
+        b.PRC_NAME,
+        d.PROD_PRC_DESC AS PRC_DESC,
+        c.SVC_ID,
+        f.PROD_ID,
+        a.EFF_DATE,
+        a.EXP_DATE,
+        c.MASTER_SERV_ID,
+        a.USE_RANGE,
+        e.GROUP_TYPE
+        FROM
+        pd_goods_dict a,
+        pd_goodsprc_dict b,
+        pd_svc_dict c,
+        pd_prc_dict d,
+        pd_prod_dict e,
+        pd_goodsprod_rel f,
+        pd_prodsvc_rel g
+        <where>
+            <if test="params.PRC_ID != null and params.PRC_ID != '' and params.GOODS_ID != null and params.GOODS_ID != ''">
+                a.GOODS_ID = b.GOODS_ID = f.GOODS_ID = #{params.GOODS_ID}
+                AND b.PRC_ID IN (SELECT l.PRC_ID FROM pd_goodsprc_dict l WHERE l.GOODS_ID = #{params.GOODS_ID} AND
+                l.PRC_ID = #{params.PRC_ID})
+                AND f.PROD_ID IN (SELECT h.PROD_ID FROM pd_goodsprod_rel h WHERE h.GOODS_ID = #{params.GOODS_ID})
+                AND c.SVC_ID IN ( SELECT j.SVC_ID FROM pd_prodsvc_rel j WHERE j.PROD_ID =
+                (SELECT k.PROD_ID FROM pd_goodsprod_rel k WHERE k.GOODS_ID = #{params.GOODS_ID}))
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

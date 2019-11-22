@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserGroupMbrAttrMapper">
+    <resultMap id="BaseResultMap" type="com.sitech.family.custservice.dto.mapperdto.UserGroupMbrAttr">
+        <id column="MEMBER_ID" property="memberId" jdbcType="DECIMAL"/>
+        <id column="ATTR_ID" property="attrId" jdbcType="VARCHAR"/>
+        <id column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP"/>
+        <id column="ATTR_NO" property="attrNo" jdbcType="VARCHAR"/>
+        <result column="ATTR_VALUE" property="attrValue" jdbcType="VARCHAR"/>
+        <result column="GRP_NO" property="grpNo" jdbcType="VARCHAR"/>
+        <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP"/>
+        <result column="FINISH_FLAG" property="finishFlag" jdbcType="VARCHAR"/>
+        <result column="LOGIN_NO" property="loginNo" jdbcType="VARCHAR"/>
+        <result column="LOGIN_ACCEPT" property="loginAccept" jdbcType="DECIMAL"/>
+        <result column="OP_TIME" property="opTime" jdbcType="TIMESTAMP"/>
+        <result column="OP_CODE" property="opCode" jdbcType="VARCHAR"/>
+        <result column="STATE" property="state" jdbcType="VARCHAR"/>
+        <result column="STATE_DATE" property="stateDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        MEMBER_ID, ATTR_ID, EFF_DATE, ATTR_NO, ATTR_VALUE, GRP_NO,
+        EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT,STATE,STATE_DATE
+    </sql>
+
+    <select id="query" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbrattr_info
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+        and ATTR_NO = #{attrNo,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="drop" parameterType="map">
+        delete from ur_usergroupmbrattr_info
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+        and ATTR_NO = #{attrNo,jdbcType=VARCHAR}
+    </delete>
+
+    <insert id="create" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbrAttr">
+        insert into ur_usergroupmbrattr_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="memberId != null">
+                MEMBER_ID,
+            </if>
+            <if test="attrId != null">
+                ATTR_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="attrNo != null">
+                ATTR_NO,
+            </if>
+            <if test="attrValue != null">
+                ATTR_VALUE,
+            </if>
+            <if test="grpNo != null">
+                GRP_NO,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="memberId != null">
+                #{memberId,jdbcType=DECIMAL},
+            </if>
+            <if test="attrId != null">
+                #{attrId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attrNo != null">
+                #{attrNo,jdbcType=VARCHAR},
+            </if>
+            <if test="attrValue != null">
+                #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="grpNo != null">
+                #{grpNo,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insert" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbrAttr">
+        insert into ur_usergroupmbrattr_info_his
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="memberId != null">
+                MEMBER_ID,
+            </if>
+            <if test="attrId != null">
+                ATTR_ID,
+            </if>
+            <if test="effDate != null">
+                EFF_DATE,
+            </if>
+            <if test="attrNo != null">
+                ATTR_NO,
+            </if>
+            <if test="attrValue != null">
+                ATTR_VALUE,
+            </if>
+            <if test="grpNo != null">
+                GRP_NO,
+            </if>
+            <if test="expDate != null">
+                EXP_DATE,
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG,
+            </if>
+            <if test="opTime != null">
+                OP_TIME,
+            </if>
+            <if test="opCode != null">
+                OP_CODE,
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO,
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="updateAccept != null">
+                UPDATE_ACCEPT,
+            </if>
+            <if test="updateType != null">
+                UPDATE_TYPE,
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE,
+            </if>
+            <if test="updateLogin != null">
+                UPDATE_LOGIN,
+            </if>
+            <if test="updateCode != null">
+                UPDATE_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="memberId != null">
+                #{memberId,jdbcType=DECIMAL},
+            </if>
+            <if test="attrId != null">
+                #{attrId,jdbcType=VARCHAR},
+            </if>
+            <if test="effDate != null">
+                #{effDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="attrNo != null">
+                #{attrNo,jdbcType=VARCHAR},
+            </if>
+            <if test="attrValue != null">
+                #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="grpNo != null">
+                #{grpNo,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateAccept != null">
+                #{updateAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="updateType != null">
+                #{updateType,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null">
+                #{updateDate,jdbcType=DECIMAL},
+            </if>
+            <if test="updateLogin != null">
+                #{updateLogin,jdbcType=VARCHAR},
+            </if>
+            <if test="updateCode != null">
+                #{updateCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="modify" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbrAttr">
+        update ur_usergroupmbrattr_info
+        <set>
+            <if test="attrValue != null">
+                ATTR_VALUE = #{attrValue,jdbcType=VARCHAR},
+            </if>
+            <if test="grpNo != null">
+                GRP_NO = #{grpNo,jdbcType=VARCHAR},
+            </if>
+            <if test="expDate != null">
+                EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+        and ATTR_ID = #{attrId,jdbcType=VARCHAR}
+        and EFF_DATE = #{effDate,jdbcType=TIMESTAMP}
+        and ATTR_NO = #{attrNo,jdbcType=VARCHAR}
+    </update>
+
+    <select id="qryUserGroupMbrAttrList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from ur_usergroupmbrattr_info
+        <where>
+            <if test="params.memberId != null and params.memberId != ''">
+                MEMBER_ID = #{params.memberId}
+            </if>
+            <if test="params.attrId != null and params.attrId != ''">
+                AND ATTR_ID = #{params.attrId}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.attrNo != null and params.attrNo != ''">
+                AND ATTR_NO = #{params.attrNo}
+            </if>
+            <if test="params.attrValue != null and params.attrValue != ''">
+                AND ATTR_VALUE = #{params.attrValue}
+            </if>
+            <if test="params.grpNo != null and params.grpNo != ''">
+                AND GRP_NO = #{params.grpNo}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.state != null and params.state != ''">
+                AND STATE = #{params.state}
+            </if>
+            <if test="params.stateDate != null and params.stateDate != ''">
+                AND STATE_DATE = #{params.stateDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserGroupMbrAttrHisList" parameterType="Map" resultMap="BaseResultMap">
+        select
+        MEMBER_ID, ATTR_ID, EFF_DATE, ATTR_NO, ATTR_VALUE, GRP_NO,
+        EXP_DATE, FINISH_FLAG, LOGIN_NO, OP_TIME, OP_CODE, LOGIN_ACCEPT, STATE, STATE_DATE, UPDATE_TIME,
+        UPDATE_TYPE,
+        UPDATE_CODE,
+        UPDATE_LOGIN, UPDATE_ACCEPT, UPDATE_DATE
+        from ur_usergroupmbrattr_info_his
+        <where>
+            <if test="inparams.memberId != null and inparams.memberId != ''">
+                MEMBER_ID = #{inparams.memberId}
+            </if>
+            <if test="inparams.attrId != null and inparams.attrId != ''">
+                AND ATTR_ID = #{inparams.attrId}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.attrNo != null and inparams.attrNo != ''">
+                AND ATTR_NO = #{inparams.attrNo}
+            </if>
+            <if test="inparams.attrValue != null and inparams.attrValue != ''">
+                AND ATTR_VALUE = #{inparams.attrValue}
+            </if>
+            <if test="inparams.grpNo != null and inparams.grpNo != ''">
+                AND GRP_NO = #{inparams.grpNo}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.state != null and inparams.state != ''">
+                AND STATE = #{inparams.state}
+            </if>
+            <if test="inparams.stateDate != null and inparams.stateDate != ''">
+                AND STATE_DATE = #{inparams.stateDate}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinishState" parameterType="com.sitech.family.custservice.dto.mapperdto.UserGroupMbrAttr">
+        update ur_usergroupmbrattr_info
+        <set>
+            <if test="state != null">
+                STATE = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="stateDate != null">
+                STATE_DATE = #{stateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishFlag != null">
+                FINISH_FLAG = #{finishFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="opCode != null">
+                OP_CODE = #{opCode,jdbcType=VARCHAR},
+            </if>
+            <if test="opTime != null">
+                OP_TIME = #{opTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginNo != null">
+                LOGIN_NO = #{loginNo,jdbcType=VARCHAR},
+            </if>
+            <if test="loginAccept != null">
+                LOGIN_ACCEPT = #{loginAccept,jdbcType=DECIMAL},
+            </if>
+        </set>
+        WHERE MEMBER_ID = #{memberId,jdbcType=DECIMAL}
+    </update>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IBillDayMapper" >
+
+    <select id="query" resultMap="billDayMap">
+        select
+        CONTRACT_NO,EFF_DATE,ID_NO,MASTER_SERV_ID,PHONE_NO,BILL_DAY,EXP_DATE,DUR_FLAG,LOGIN_NO,OP_TIME,OP_CODE,LOGIN_ACCEPT
+        from ur_billday_info
+         where ID_NO = #{arg0} AND EFF_DATE = #{arg1} AND CONTRACT_NO = #{arg2} AND  BILL_DAY = #{arg3};
+    </select>
+
+    <resultMap id="billDayMap" type="com.sitech.family.custqryservice.dto.mapperdto.BillDay">
+        <id property="idNo" column="ID_NO"></id>
+        <result property="contractNo" column="CONTRACT_NO"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="masterServId" column="MASTER_SERV_ID"></result>
+        <result property="phoneNo" column="PHONE_NO"></result>
+        <result property="billDay" column="BILL_DAY"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="durFlag" column="DUR_FLAG"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+</mapper>

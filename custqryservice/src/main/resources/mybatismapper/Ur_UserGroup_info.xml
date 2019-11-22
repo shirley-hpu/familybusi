@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custqryservice.mapper.IUserGroupMapper" >
+
+    <resultMap id="userGroupMap" type="com.sitech.family.custqryservice.dto.mapperdto.UserGroup">
+        <id property="groupId" column="GROUP_ID"></id>
+        <result property="idNo" column="ID_NO"></result>
+        <result property="groupCode" column="GROUP_CODE"></result>
+        <result property="groupType" column="GROUP_TYPE"></result>
+        <result property="groupName" column="GROUP_NAME"></result>
+        <result property="groupDesc" column="GROUP_DESC"></result>
+        <result property="state" column="STATE"></result>
+        <result property="stateDate" column="STATE_DATE"></result>
+        <result property="effDate" column="EFF_DATE"></result>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="lockFlag" column="LOCK_FLAG"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+    </resultMap>
+
+
+
+
+    <select id="query" resultMap="userGroupMap">
+        select GROUP_ID,ID_NO,GROUP_CODE,GROUP_TYPE,GROUP_NAME,GROUP_DESC,LOCK_FLAG,STATE,STATE_DATE,EFF_DATE,EXP_DATE,FINISH_FLAG,LOGIN_ACCEPT,LOGIN_NO,OP_TIME,OP_CODE
+        from ur_usergroup_info where GROUP_ID = #{groupId};
+    </select>
+
+    <select id="qryUserGroupList" parameterType="Map" resultMap="userGroupMap">
+        select
+        GROUP_ID,ID_NO,GROUP_CODE,GROUP_TYPE,GROUP_NAME,GROUP_DESC,LOCK_FLAG,STATE,STATE_DATE,EFF_DATE,EXP_DATE,FINISH_FLAG,LOGIN_ACCEPT,LOGIN_NO,OP_TIME,OP_CODE
+        from ur_usergroup_info
+        <where>
+            <if test="params.groupId != null and params.groupId != ''">
+                GROUP_ID = #{params.groupId}
+            </if>
+            <if test="params.idNo != null and params.idNo != ''">
+                AND ID_NO = #{params.idNo}
+            </if>
+            <if test="params.groupCode != null and params.groupCode != ''">
+                AND GROUP_CODE = #{params.groupCode}
+            </if>
+            <if test="params.groupType != null and params.groupType != ''">
+                AND GROUP_TYPE = #{params.groupType}
+            </if>
+            <if test="params.groupName != null and params.groupName != ''">
+                AND GROUP_NAME = #{params.groupName}
+            </if>
+            <if test="params.groupDesc != null and params.groupDesc != ''">
+                AND GROUP_DESC = #{params.groupDesc}
+            </if>
+            <if test="params.state != null and params.state != ''">
+                AND STATE = #{params.state}
+            </if>
+            <if test="params.stateDate != null and params.stateDate != ''">
+                AND STATE_DATE = #{params.stateDate}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+
+            <if test="params.lockFlag != null and params.lockFlag != ''">
+                AND LOCK_FLAG = #{params.lockFlag}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+        </where>
+    </select>
+
+</mapper>

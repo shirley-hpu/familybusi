@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitech.family.custservice.mapper.UserBrandMapper">
+
+    <resultMap id="userBrandMap" type="com.sitech.family.custservice.dto.mapperdto.UserBrand">
+        <id property="idNo" column="ID_NO"></id>
+        <id property="brandId" column="BRAND_ID"></id>
+        <id property="effDate" column="EFF_DATE"></id>
+        <result property="expDate" column="EXP_DATE"></result>
+        <result property="finishFlag" column="FINISH_FLAG"></result>
+        <result property="loginNo" column="LOGIN_NO"></result>
+        <result property="loginAccept" column="LOGIN_ACCEPT"></result>
+        <result property="opCode" column="OP_CODE"></result>
+        <result property="opTime" column="OP_TIME"></result>
+        <result property="updateAccept" column="UPDATE_ACCEPT"></result>
+        <result property="updateType" column="UPDATE_TYPE"></result>
+        <result property="updateDate" column="UPDATE_DATE"></result>
+        <result property="updateCode" column="UPDATE_CODE"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
+        <result property="updateLogin" column="UPDATE_LOGIN"></result>
+    </resultMap>
+
+    <insert id="create" parameterType="UserBrand">
+      insert into ur_userbrand_rel
+      ( ID_NO, BRAND_ID, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, LOGIN_ACCEPT, OP_CODE, OP_TIME )
+       values
+       ( #{idNo}, #{brandId}, #{effDate}, #{expDate}, #{finishFlag}, #{loginNo}, #{loginAccept}, #{opCode}, #{opTime} );
+    </insert>
+
+    <insert id="insert" parameterType="UserBrand">
+        insert into ur_userbrand_rel_his
+                ( ID_NO, BRAND_ID, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, LOGIN_ACCEPT, OP_CODE, OP_TIME, UPDATE_ACCEPT, UPDATE_TYPE, UPDATE_DATE, UPDATE_CODE, UPDATE_TIME, UPDATE_LOGIN)
+        values
+               ( #{idNo}, #{brandId}, #{effDate}, #{expDate}, #{finishFlag}, #{loginNo}, #{loginAccept}, #{opCode}, #{opTime}, #{updateAccept}, #{updateType}, #{updateDate}, #{updateCode}, #{updateTime}, #{updateLogin} );
+    </insert>
+
+    <select id="query" resultMap="userBrandMap">
+        select ID_NO, BRAND_ID, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, LOGIN_ACCEPT, OP_CODE, OP_TIME
+        from ur_userbrand_rel where ID_NO = #{idNo} and BRAND_ID = #{brandId} and EFF_DATE = #{effDate};
+    </select>
+
+    <update id="modify" parameterType="UserBrand">
+        update ur_userbrand_rel
+        <trim prefix="set" suffixOverrides=",">
+            <if test="brandId != null">BRAND_ID = #{brandId},</if>
+            <if test="effDate != null">EFF_DATE = #{effDate},</if>
+            <if test="expDate != null">EXP_DATE = #{expDate},</if>
+            <if test="finishFlag != null">FINISH_FLAG = #{finishFlag},</if>
+            <if test="loginNo != null">LOGIN_NO = #{loginNo},</if>
+            <if test="loginAccept != null">LOGIN_ACCEPT = #{loginAccept},</if>
+            <if test="opCode != null">OP_CODE = #{opCode},</if>
+            <if test="opTime != null">OP_TIME = #{opTime},</if>
+        </trim>
+        where ID_NO = #{idNo} and BRAND_ID = #{brandId} and EFF_DATE = #{effDate};
+    </update>
+
+    <delete id="drop" parameterType="UserBrand">
+        delete from ur_userbrand_rel where ID_NO = #{idNo} and BRAND_ID = #{brandId} and EFF_DATE = #{effDate};
+    </delete>
+
+    <select id="qryUserBrandRelList" parameterType="Map" resultMap="userBrandMap">
+        select ID_NO, BRAND_ID, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, LOGIN_ACCEPT, OP_CODE, OP_TIME
+        from ur_userbrand_rel
+        <where>
+            <if test="params.idNo != null and params.idNo != ''">
+                ID_NO = #{params.idNo}
+            </if>
+            <if test="params.brandId != null and params.brandId != ''">
+                AND BRAND_ID = #{params.brandId}
+            </if>
+            <if test="params.effDate != null and params.effDate != ''">
+                AND EFF_DATE = #{params.effDate}
+            </if>
+            <if test="params.expDate != null and params.expDate != ''">
+                AND EXP_DATE = #{params.expDate}
+            </if>
+            <if test="params.finishFlag != null and params.finishFlag != ''">
+                AND FINISH_FLAG = #{params.finishFlag}
+            </if>
+            <if test="params.loginNo != null and params.loginNo != ''">
+                AND LOGIN_NO = #{params.loginNo}
+            </if>
+            <if test="params.loginAccept != null and params.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{params.loginAccept}
+            </if>
+            <if test="params.opCode != null and params.opCode != ''">
+                AND OP_CODE = #{params.opCode}
+            </if>
+            <if test="params.opTime != null and params.opTime != ''">
+                AND OP_TIME = #{params.opTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="qryUserBrandRelHisList" parameterType="Map" resultMap="userBrandMap">
+        select ID_NO, BRAND_ID, EFF_DATE, EXP_DATE, FINISH_FLAG, LOGIN_NO, LOGIN_ACCEPT, OP_CODE, OP_TIME,
+        UPDATE_ACCEPT, UPDATE_TYPE, UPDATE_DATE, UPDATE_CODE, UPDATE_TIME, UPDATE_LOGIN
+        from ur_userbrand_rel_his
+        <where>
+            <if test="inparams.idNo != null and inparams.idNo != ''">
+                ID_NO = #{inparams.idNo}
+            </if>
+            <if test="inparams.brandId != null and inparams.brandId != ''">
+                AND BRAND_ID = #{inparams.brandId}
+            </if>
+            <if test="inparams.effDate != null and inparams.effDate != ''">
+                AND EFF_DATE = #{inparams.effDate}
+            </if>
+            <if test="inparams.expDate != null and inparams.expDate != ''">
+                AND EXP_DATE = #{inparams.expDate}
+            </if>
+            <if test="inparams.finishFlag != null and inparams.finishFlag != ''">
+                AND FINISH_FLAG = #{inparams.finishFlag}
+            </if>
+            <if test="inparams.loginNo != null and inparams.loginNo != ''">
+                AND LOGIN_NO = #{inparams.loginNo}
+            </if>
+            <if test="inparams.loginAccept != null and inparams.loginAccept != ''">
+                AND LOGIN_ACCEPT = #{inparams.loginAccept}
+            </if>
+            <if test="inparams.opCode != null and inparams.opCode != ''">
+                AND OP_CODE = #{inparams.opCode}
+            </if>
+            <if test="inparams.opTime != null and inparams.opTime != ''">
+                AND OP_TIME = #{inparams.opTime}
+            </if>
+            <if test="inparams.updateAccept != null and inparams.updateAccept != ''">
+                AND UPDATE_ACCEPT = #{inparams.updateAccept}
+            </if>
+            <if test="inparams.updateType != null and inparams.updateType != ''">
+                AND UPDATE_TYPE = #{inparams.updateType}
+            </if>
+            <if test="inparams.updateDate != null and inparams.updateDate != ''">
+                AND UPDATE_DATE = #{inparams.updateDate}
+            </if>
+            <if test="inparams.updateCode != null and inparams.updateCode != ''">
+                AND UPDATE_CODE = #{inparams.updateCode}
+            </if>
+            <if test="inparams.updateTime != null and inparams.updateTime != ''">
+                AND UPDATE_TIME = #{inparams.updateTime}
+            </if>
+            <if test="inparams.updateLogin != null and inparams.updateLogin != ''">
+                AND UPDATE_LOGIN = #{inparams.updateLogin}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>

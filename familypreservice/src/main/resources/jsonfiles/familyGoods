@@ -1,0 +1,41 @@
+{
+    "ROOT": {
+        "BODY": {
+            "DETAIL_MSG": "OK",
+            "OUT_DATA": {
+                "FAMPRC_LIST": [
+                    {
+                        "FAMPRC_ID": "BMAG4657",
+                        "FAMPRC_PRICE": "8",
+                        "FAMPRC_NAME": "和家计划套餐和8元",
+                        "FAMPRC_DESC": "权益包含：30元100M宽带+20元IPTV等"
+                    },
+                    {
+                        "FAMPRC_ID": "BMAG4622",
+                        "FAMPRC_PRICE": "18",
+                        "FAMPRC_NAME": "和家计划套餐和18元",
+                        "FAMPRC_DESC": "权益包含：30元100M宽带+20元IPTV等"
+                    },
+                    {
+                        "FAMPRC_ID": "BMAG4623",
+                        "FAMPRC_PRICE": "38",
+                        "FAMPRC_NAME": "和家计划套餐和38元",
+                        "FAMPRC_DESC": "权益包含：30元100M宽带+20元IPTV等"
+                    }
+                ]
+            },
+            "PROMPT_MSG": "",
+            "REQUEST_ID": "20191024114659609_12384_73",
+            "RETURN_CODE": "0",
+            "RETURN_MSG": "OK",
+            "RUN_IP": "10.208.201.60",
+            "USER_MSG": "OK"
+        },
+        "HEADER": {
+            "ROUTING": {
+                "ROUTE_KEY": "15",
+                "ROUTE_VALUE": "16"
+            }
+        }
+    }
+}
